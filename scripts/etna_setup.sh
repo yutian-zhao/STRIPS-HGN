@@ -2,7 +2,7 @@
 set -e
 
 # Setup expected paths
-STRIPS_HGN_DIR="$~/strips-hgn"
+STRIPS_HGN_DIR="$HOME/strips-hgn"
 SRC_DIR="$STRIPS_HGN_DIR/src"
 FD_DIR="${SRC_DIR}/fast_downward"
 
@@ -21,7 +21,7 @@ VIRTUAL_ENV="comp4550"
 ## Setup STRIPS-HGN ##
 ######################
 # Clone the main STRIPS-HGN repo
-cd $~
+cd $HOME
 echo "Cloning STRIPS-HGN Repo from Gitlab. Please enter Username and Password."
 git clone https://gitlab.com/yutian-zhao/strips-hgn.git
 cd $STRIPS_HGN_DIR
