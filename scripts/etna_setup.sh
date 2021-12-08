@@ -15,9 +15,10 @@ VIRTUAL_ENV="comp4550"
 
 # manually create virtual environment
 # conda create --name comp4550
-# conde activate comp4550
-# conda install pip
-# conde activate base
+# conda activate comp4550
+# conda install python=3.7.7
+## conda install pip
+# conda deactivate
 
 
 ######################
@@ -46,4 +47,13 @@ cd $FD_DIR
 
 # Set Python path
 export PYTHONPATH=$SRC_DIR
+echo ""
+
+# Add .pth file to ~/anaconda3/envs/comp4550/lib/python3.7/site-packages
+# /home/users/u6489809/strips-hgn/src
+
+# Change back up directories and try run the training script
+cd $SRC_DIR
+echo "Running train.py script to check dependencies installed correctly"
+python ../experiments/gripper.py || echo "Successfully ran gripper.py"
 echo ""
