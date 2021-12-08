@@ -23,7 +23,7 @@ VIRTUAL_ENV="comp4550"
 # Clone the main STRIPS-HGN repo
 cd $HOME
 echo "Cloning STRIPS-HGN Repo from Gitlab. Please enter Username and Password."
-git clone https://gitlab.com/yutian-zhao/strips-hgn.git
+git clone https://github.com/yutian-zhao/strips-hgn.git
 cd $STRIPS_HGN_DIR
 
 # Activate PyTorch virtual env
