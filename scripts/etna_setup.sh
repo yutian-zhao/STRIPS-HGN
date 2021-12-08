@@ -15,6 +15,9 @@ VIRTUAL_ENV="comp4550"
 
 # manually create virtual environment
 # conda create --name comp4550
+# conde activate comp4550
+# conda install pip
+# conde activate base
 
 
 ######################
