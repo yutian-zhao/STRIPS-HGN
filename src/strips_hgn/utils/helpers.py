@@ -57,7 +57,7 @@ def create_experiment_results_directory(
             [
                 prefix,
                 _EXPERIMENT_DIRECTORY_FORMAT.format(
-                    datetime=datetime.now().isoformat()
+                    datetime=datetime.now().isoformat().replace(":", "_")
                 ),
             ]
         )

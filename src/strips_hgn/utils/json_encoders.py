@@ -19,8 +19,9 @@ class ArgsEncoder(JSONEncoder):
     """ For encoding command line arguments """
 
     def default(self, o: Any) -> Any:
-        if issubclass(o, AbstractFeatureMapper):
-            return o.name()
+        if isinstance(o, type):
+            if issubclass(o, AbstractFeatureMapper):
+                return o.name()
         elif isinstance(o, Enum):
             return o.value
         else:
