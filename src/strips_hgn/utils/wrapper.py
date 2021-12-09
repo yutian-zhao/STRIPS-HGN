@@ -39,9 +39,8 @@ def wrap_method(
     # Setup experiment result directory and logger
     if not experiments_dir:
         log_level = logging.DEBUG if args.debug else logging.INFO
-        domain_str = args.domain if args.domain else '_'.join(args.domains)
         experiments_dir = setup_experiment(
-            domain_str+experiment_type, results_directory, log_level
+            experiment_type, results_directory, log_level
         )
 
     dump_args(args, experiments_dir, f"{experiment_type}_args.json")
