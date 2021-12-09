@@ -1,5 +1,5 @@
 import logging
-from typing import FrozenSet
+from typing import FrozenSet, Optional
 
 from strips_hgn.planning import Proposition, STRIPSProblem
 from strips_hgn.utils import Number
@@ -19,28 +19,28 @@ The code for loading existing training data will be implemented in the future.
 
 _log = logging.getLogger(__name__)
 
-
 class StateValuePair(object):
     """
     A pair which consists of a state and heuristic value.
     This can't be a NamedTuple otherwise the default json encoder complains.
     """
 
-    def __init__(self, state: FrozenSet[Proposition], value: Number):
+    def __init__(self, state: FrozenSet[Proposition], value: Number, target: Optional[FrozenSet[Proposition]] = None):
         self.state: FrozenSet[Proposition] = state
         self.value: Number = value
+        self.target: FrozenSet[Proposition] = state
 
     def __repr__(self):
-        return f"StateValuePair(state={self.state}, value={self.value})"
+        return f"StateValuePair(state={self.state}, value={self.value}, goal={self.target})"
 
     def to_json_dict(self) -> dict:
         # For saving training data
         json_dict = {
             "state": [prop for prop in self.state],
             "value": self.value,
+            "target": [prop for prop in self.target],
         }
         return json_dict
-
 
 class TrainingPair(StateValuePair):
     """
@@ -55,13 +55,13 @@ class TrainingPair(StateValuePair):
     def __init__(
         self, problem: STRIPSProblem, state_value_pair: StateValuePair
     ):
-        super().__init__(state_value_pair.state, state_value_pair.value)
+        super().__init__(state_value_pair.state, state_value_pair.value, state_value_pair.target)
         self.problem = problem
 
     def __repr__(self):
         return (
             f"TrainingPair(problem={self.problem.name}, "
-            f"state={self.state}, value={self.value})"
+            f"state={self.state}, value={self.value}, target={self.target})"
         )
 
     def to_json_dict(self) -> dict:
