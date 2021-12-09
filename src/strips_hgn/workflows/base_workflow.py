@@ -1,4 +1,4 @@
-from typing import FrozenSet, Type
+from typing import FrozenSet, Type, Optional
 
 import torch
 
@@ -66,9 +66,7 @@ class BaseFeatureMappingWorkflow(object):
         """
         return self._static_hyperedge_feature_mapper
 
-    def _get_node_feature_mapper(
-        self, current_state: FrozenSet[Proposition], problem: STRIPSProblem
-    ) -> NodeFeatureMapper:
+    def _get_node_feature_mapper(self, current_state: FrozenSet[Proposition], problem: STRIPSProblem, target: Optional[FrozenSet[Proposition]] = None) -> NodeFeatureMapper:
         """
         The node feature mappers need to be instantiated based on the current
         state and goal states. Hence, a separate one is needed for each
@@ -87,7 +85,7 @@ class BaseFeatureMappingWorkflow(object):
             # Create node feature mapper for current state and the goal
             self._node_feature_mapper_cls: Type[PropositionInStateAndGoal]
             return self._node_feature_mapper_cls(
-                current_state=current_state, goal_state=problem.goals
+                current_state=current_state, goal_state=target if target else problem.goals
             )
         else:
             raise RuntimeError(
@@ -96,7 +94,7 @@ class BaseFeatureMappingWorkflow(object):
             )
 
     def _get_input_hypergraphs_tuple(
-        self, current_state: FrozenSet[Proposition], hypergraph: HypergraphView
+        self, current_state: FrozenSet[Proposition],  hypergraph: HypergraphView, target: Optional[FrozenSet[Proposition]] = None
     ) -> HypergraphsTuple:
         """
         Computes and returns the input HypergraphsTuple for a state and a
@@ -133,7 +131,7 @@ class BaseFeatureMappingWorkflow(object):
             node_features=torch.tensor(
                 hypergraph.node_features(
                     self._get_node_feature_mapper(
-                        current_state, hypergraph.problem
+                        current_state, hypergraph.problem, target
                     )
                 ),
                 dtype=torch.float32,

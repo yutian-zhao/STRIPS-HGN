@@ -76,7 +76,7 @@ class BaseTrainingDataWorkflow(BaseFeatureMappingWorkflow, ABC):
 
         # The input HypergraphsTuple with its node and hyperedge features.
         input_h_tuple = self._get_input_hypergraphs_tuple(
-            current_state=training_pair.state, hypergraph=hypergraph
+            current_state=training_pair.state, hypergraph=hypergraph, target=training_pair.target
         )
 
         # The target HypergraphsTuple has its global feature set to the target
