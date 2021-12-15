@@ -1,7 +1,7 @@
 import logging
 from abc import ABC, abstractmethod
 from enum import Enum
-from typing import Any, Callable, List, Tuple
+from typing import Any, Callable, List, Tuple, Optional
 
 import pyperplan.grounding as grounding
 from pyperplan.heuristics.blind import BlindHeuristic
@@ -111,6 +111,7 @@ def find_solution(
         [Task, Heuristic, Any], Tuple[List[str], SearchMetrics]
     ],
     max_search_time: Number,
+    all: Optional[bool] = False,
 ) -> Tuple[List[str], SearchMetrics]:
     """
     Runs a search algorithm to find a solution for a task
@@ -129,10 +130,25 @@ def find_solution(
     # Only support A* search for now
     if search_algo == astar_search:
         solution, metrics = astar_search(
-            task, heuristic, max_search_time=max_search_time
+            task, heuristic, max_search_time=max_search_time, all=all
         )
         _log.info(f"Search took ~{round(metrics.search_time, 5)}s")
     else:
         raise RuntimeError(f"Unsupported search algorithm {search_algo}")
 
     return solution, metrics
+
+
+def get_optimal_actions_using_py(problem, all: Optional[bool] = False):
+    _, task = get_domain_and_task(
+        problem.domain_pddl, problem.problem_pddl
+    )
+    _log.info(f"Running a star + h max with pyperplan")
+    sol, metrics = find_solution(
+        task=task,
+        heuristic=hMaxHeuristic(task),
+        search_algo=astar_search,
+        max_search_time=5*60,  # 5 min time out for each problem
+        all=all,
+    )
+    return sol, metrics

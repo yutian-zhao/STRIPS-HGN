@@ -8,6 +8,8 @@ from strips_hgn.training_data import StateValuePair
 from strips_hgn.utils.metrics import CountMetric, metrics_logger
 from strips_hgn.utils.timer import TimedOperation, timed
 
+from strips_hgn.planning.pyperplan_api import get_all_optimal_actions_using_py, get_optimal_actions_using_py
+
 _log = logging.getLogger(__name__)
 
 
@@ -21,6 +23,109 @@ def _generate_optimal_state_value_pairs_for_problem(
     ----------
     problem: STRIPSProblem, the problem we are generating state-value pairs for
 
+    Returns
+    -------
+    List[StateValuePair] with the trajectories of the states and optimal
+    heuristic values
+    """
+    # Start a timer
+    metric_context = {"domain": problem.domain_name, "problem": problem.name}
+    timer = TimedOperation(
+        "GenerateOptimalStateValuePairsTime",
+        context=metric_context,
+        log_level=TRAINING_DATA_TIMER_LOG_LEVEL,
+    ).start()
+
+    optimal_plans, _ = get_optimal_actions_using_py(problem, all=True)
+
+    # Check some edge cases
+    if len(optimal_plans) == 0:
+        _log.warning(f"Initial state for {problem} is already a goal state!")
+        return []
+    elif optimal_plans is None:
+        _log.error(f"Unable to find optimal solution for {problem}")
+        return []
+
+    name_to_action: Dict[str, STRIPSAction] = {
+        action.name: action for action in problem.actions
+    }
+
+    # Run Fast-Downward to get the optimal plan
+    # optimal_plan: Optional[List[str]] = get_optimal_actions_using_fd(problem)
+
+    trajectories = []
+    for optimal_plan in optimal_plans:
+        # Form state-value pairs for trajectory which is at first the initial state
+        current_state = problem.initial_state
+        trajectory: List[StateValuePair] = [
+            StateValuePair(current_state, len(optimal_plan))
+        ]
+
+        for idx, action_name in enumerate(optimal_plan):
+            # Apply action in the current state
+            action = name_to_action[action_name.name]
+            current_state = action.apply(current_state)
+
+            # Create new state-value pair
+            remaining_plan_length = len(optimal_plan) - (idx + 1)
+            trajectory.append(StateValuePair(current_state, remaining_plan_length))
+        
+        for t in trajectory:
+            t.target = current_state
+        
+        trajectories += trajectory
+#-------------------------------
+    # trajectories = []
+    # for optimal_plan in optimal_plans:
+    #     # Form state-value pairs for trajectory which is at first the initial state
+    #     current_state = problem.initial_state
+    #     trajectory: List[StateValuePair] = [
+    #         StateValuePair(current_state, len(optimal_plan))
+    #     ]
+
+    #     for idx, action_name in enumerate(optimal_plan):
+    #         # Apply action in the current state
+    #         action = name_to_action[action_name.name]
+    #         current_state = action.apply(current_state)
+
+    #         # Create new state-value pair
+    #         # remaining_plan_length = len(optimal_plan) - (idx + 1)
+    #         # trajectory.append(StateValuePair(current_state, remaining_plan_length))
+
+    #     trajectory.append(StateValuePair(problem.initial_state, len(optimal_plan), target = current_state))
+        
+    #     trajectories += trajectory
+#-------------------------------
+    # Check current state is a goal state and the number of pairs
+    # assert problem.is_goal_state(current_state)
+    # assert len(trajectory) == len(optimal_plan) + 1
+
+    # Stop timer and add metric for number of state-value pairs
+    timer.stop()
+    metrics_logger.add_metric(
+        CountMetric(
+            "NumberOfOptimalStateValuePairs",
+            len(trajectories),
+            context=metric_context,
+        )
+    )
+
+    # for t in trajectories:
+            
+    #     print(t)
+    #     print('\n')
+
+    return trajectories
+
+
+def _generate_optimal_state_value_pairs_for_problem_using_fd(
+    problem: STRIPSProblem
+) -> List[StateValuePair]:
+    """
+    Generates the optimal state-value pairs for a planning problem.
+    Parameters
+    ----------
+    problem: STRIPSProblem, the problem we are generating state-value pairs for
     Returns
     -------
     List[StateValuePair] with the trajectories of the states and optimal
