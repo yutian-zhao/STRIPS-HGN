@@ -8,7 +8,7 @@ from strips_hgn.training_data import StateValuePair
 from strips_hgn.utils.metrics import CountMetric, metrics_logger
 from strips_hgn.utils.timer import TimedOperation, timed
 
-from strips_hgn.planning.pyperplan_api import get_all_optimal_actions_using_py, get_optimal_actions_using_py
+from strips_hgn.planning.pyperplan_api import get_optimal_actions_using_py
 
 _log = logging.getLogger(__name__)
 
