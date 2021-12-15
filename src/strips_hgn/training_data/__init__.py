@@ -28,7 +28,7 @@ class StateValuePair(object):
     def __init__(self, state: FrozenSet[Proposition], value: Number, target: Optional[FrozenSet[Proposition]] = None):
         self.state: FrozenSet[Proposition] = state
         self.value: Number = value
-        self.target: FrozenSet[Proposition] = state
+        self.target: FrozenSet[Proposition] = target
 
     def __repr__(self):
         return f"StateValuePair(state={self.state}, value={self.value}, goal={self.target})"
@@ -38,7 +38,7 @@ class StateValuePair(object):
         json_dict = {
             "state": [prop for prop in self.state],
             "value": self.value,
-            "target": [prop for prop in self.target],
+            "target": [prop for prop in self.target] if self.target else None,
         }
         return json_dict
 
