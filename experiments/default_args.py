@@ -20,7 +20,7 @@ from strips_hgn.planning import (
 DEFAULT_ARGS = {
     # Training data generation and k-fold
     "num_bins": 4,
-    "num_folds": 5,
+    "num_folds": 5, # 10 in the paper
     # Feature Mappers
     "global_feature_mapper_cls": NumberOfNodesAndEdgesGlobalFeatureMapper,
     "node_feature_mapper_cls": PropositionInStateAndGoal,
