@@ -36,7 +36,10 @@ def _generate_optimal_state_value_pairs_for_problem(
         log_level=TRAINING_DATA_TIMER_LOG_LEVEL,
     ).start()
 
-    optimal_plans, _ = get_optimal_actions_using_py(problem, all=True)
+    all = False
+    optimal_plans, _ = get_optimal_actions_using_py(problem, all)
+    if not all:
+        optimal_plans = [optimal_plans]
 
     # Check some edge cases
     if len(optimal_plans) == 0:
@@ -70,8 +73,13 @@ def _generate_optimal_state_value_pairs_for_problem(
             remaining_plan_length = len(optimal_plan) - (idx + 1)
             trajectory.append(StateValuePair(current_state, remaining_plan_length))
         
-        for t in trajectory:
-            t.target = current_state
+        # Check current state is a goal state and the number of pairs
+        assert problem.is_goal_state(current_state)
+        assert len(trajectory) == len(optimal_plan) + 1
+        
+        if all:
+            for t in trajectory:
+                t.target = current_state
         
         trajectories += trajectory
 #-------------------------------

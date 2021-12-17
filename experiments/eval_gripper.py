@@ -15,6 +15,6 @@ if __name__ == "__main__":
         args=get_eval_args(
             configurations=[_CONFIGURATION],
             max_search_time=1*60,
-            checkpoint= "../results/train-strips-hgn-2021-12-09T13_06_58.353251/model-best.ckpt",
+            checkpoint= "../results/gripper_all_90/model-best.ckpt",
         )
     )

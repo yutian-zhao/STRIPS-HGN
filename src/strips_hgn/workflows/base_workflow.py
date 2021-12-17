@@ -84,8 +84,11 @@ class BaseFeatureMappingWorkflow(object):
         if self._node_feature_mapper_cls == PropositionInStateAndGoal:
             # Create node feature mapper for current state and the goal
             self._node_feature_mapper_cls: Type[PropositionInStateAndGoal]
+
+            # if target is not given, set to goals by default
             if not target:
                 target=problem.goals
+
             return self._node_feature_mapper_cls(
                 current_state=current_state, goal_state=target
             )

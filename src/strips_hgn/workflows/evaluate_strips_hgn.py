@@ -146,7 +146,11 @@ class EvaluateSTRIPSHGNWorkflow(BaseFeatureMappingWorkflow):
                     str(heuristic): metrics._asdict()
                     for heuristic, metrics in heuristic_to_metrics.items()
                 }
-
+                
+                # stop when fail to solve a problem to save evaluation time
+                # if self._evaluation_metrics["results"][problem.name]["strips-hgn"]["search_state"].name != "success":
+                #     break
+            
             else:
                 raise RuntimeError(f"Unsupported planner {self._planner}")
 
