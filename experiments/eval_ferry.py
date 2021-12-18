@@ -15,6 +15,6 @@ if __name__ == "__main__":
         args=get_eval_args(
             configurations=[_CONFIGURATION],
             max_search_time=5*60,
-            checkpoint= "../results/ferry_all_10/model-best.ckpt",
+            checkpoint= "../results/ferry_all_3/model-best.ckpt",
         )
     )
