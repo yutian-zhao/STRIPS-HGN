@@ -10,6 +10,7 @@ from strips_hgn.utils.timer import TimedOperation, timed
 
 from strips_hgn.planning.pyperplan_api import get_optimal_actions_using_py
 import random
+from collections import Counter
 
 _log = logging.getLogger(__name__)
 
@@ -57,7 +58,7 @@ def _generate_optimal_state_value_pairs_for_problem(
     # Run Fast-Downward to get the optimal plan
     # optimal_plan: Optional[List[str]] = get_optimal_actions_using_fd(problem)
 
-    trajectories = []
+    all_trajectories = []
     for optimal_plan in optimal_plans:
         # Form state-value pairs for trajectory which is at first the initial state
         current_state = problem.initial_state
@@ -82,19 +83,33 @@ def _generate_optimal_state_value_pairs_for_problem(
             for t in trajectory:
                 t.target = current_state
         
-        trajectories.append(trajectory)
+        all_trajectories.append(trajectory)
     
     if all:
-        optimal_trajectory = trajectories[-1]
-        other_trajectories = [t for trajectory in trajectories[:-1] for t in trajectory]
-        if len(other_trajectories) >= 5*len(optimal_trajectory):
-            sampled_trajectories = random.sample(other_trajectories, 5*len(optimal_trajectory))
+        optimal_trajectory = all_trajectories[-1]
+        # print(len(optimal_trajectory))
+        other_trajectories = [t for trajectory in all_trajectories[:-1] for t in trajectory]
+        if len(other_trajectories) >= 4*len(optimal_trajectory):
+            sampled_trajectories = random.sample(other_trajectories, 4*len(optimal_trajectory))
+            sampled_trajectories = sampled_trajectories + optimal_trajectory
         else:
             sampled_trajectories = other_trajectories + optimal_trajectory
-        trajectories = sampled_trajectories
+        
     else:
-        trajectories = trajectories[0]
+        sampled_trajectories = all_trajectories[0]
+        
+        # print(len(trajectories))
 
+    trajectories = []
+    for t in sampled_trajectories:
+        if t.value>=2:
+            trajectories.append(t)
+
+    # for t in trajectories:
+    #     cnt[t.value] += 1
+    # print(cnt)
+
+    # assert True == False
 #-------------------------------
     # trajectories = []
     # for optimal_plan in optimal_plans:
