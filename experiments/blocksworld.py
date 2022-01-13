@@ -47,5 +47,6 @@ if __name__ == "__main__":
             configurations=[_CONFIGURATION],
             # 10 minutes
             max_training_time=10 * 60,
+            num_folds=3,
         )
     )

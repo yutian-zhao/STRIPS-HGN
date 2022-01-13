@@ -9,6 +9,7 @@ from strips_hgn.utils.metrics import CountMetric, metrics_logger
 from strips_hgn.utils.timer import TimedOperation, timed
 
 from strips_hgn.planning.pyperplan_api import get_optimal_actions_using_py
+import random
 
 _log = logging.getLogger(__name__)
 
@@ -36,7 +37,7 @@ def _generate_optimal_state_value_pairs_for_problem(
         log_level=TRAINING_DATA_TIMER_LOG_LEVEL,
     ).start()
 
-    all = False
+    all = True
     optimal_plans, _ = get_optimal_actions_using_py(problem, all)
     if not all:
         optimal_plans = [optimal_plans]
@@ -74,14 +75,26 @@ def _generate_optimal_state_value_pairs_for_problem(
             trajectory.append(StateValuePair(current_state, remaining_plan_length))
         
         # Check current state is a goal state and the number of pairs
-        assert problem.is_goal_state(current_state)
+        # assert problem.is_goal_state(current_state)
         assert len(trajectory) == len(optimal_plan) + 1
         
         if all:
             for t in trajectory:
                 t.target = current_state
         
-        trajectories += trajectory
+        trajectories.append(trajectory)
+    
+    if all:
+        optimal_trajectory = trajectories[-1]
+        other_trajectories = [t for trajectory in trajectories[:-1] for t in trajectory]
+        if len(other_trajectories) >= 5*len(optimal_trajectory):
+            sampled_trajectories = random.sample(other_trajectories, 5*len(optimal_trajectory))
+        else:
+            sampled_trajectories = other_trajectories + optimal_trajectory
+        trajectories = sampled_trajectories
+    else:
+        trajectories = trajectories[0]
+
 #-------------------------------
     # trajectories = []
     # for optimal_plan in optimal_plans:
