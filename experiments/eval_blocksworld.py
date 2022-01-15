@@ -21,7 +21,7 @@ if __name__ == "__main__":
     eval_wrapper(
         args=get_eval_args(
             configurations=[_CONFIGURATION],
-            max_search_time=100,
+            max_search_time=5*60,
             checkpoint= "../results/blocksworld_sample5_10/model-best.ckpt",
         )
     )
