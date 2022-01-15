@@ -146,19 +146,28 @@ def train_main(args: TrainingArgs, experiments_dir: str):
                 )
             best_train_wf = current_train_wf
 
+            # Make a copy of the best fold model to the main experiments results dir
+            # every time a better model is trained
+            best_model_fname = os.path.join(experiments_dir, _BEST_MODEL_FNAME)
+            copyfile(
+                os.path.join(best_train_wf.checkpoint_dir, _BEST_MODEL_FNAME),
+                best_model_fname,
+            )
+            _log.info(f"Copied best STRIPS-HGN to {best_model_fname}")
+
     _log.info(
         f"Best STRIPS-HGN found at {best_train_wf.prefix} with val loss of "
         f"{best_train_wf.best_val_loss}. Checkpoint directory = "
         f"{best_train_wf.checkpoint_dir}"
     )
 
-    # Make a copy of the best fold model to the main experiments results dir
-    best_model_fname = os.path.join(experiments_dir, _BEST_MODEL_FNAME)
-    copyfile(
-        os.path.join(best_train_wf.checkpoint_dir, _BEST_MODEL_FNAME),
-        best_model_fname,
-    )
-    _log.info(f"Copied best STRIPS-HGN to {best_model_fname}")
+    # # Make a copy of the best fold model to the main experiments results dir
+    # best_model_fname = os.path.join(experiments_dir, _BEST_MODEL_FNAME)
+    # copyfile(
+    #     os.path.join(best_train_wf.checkpoint_dir, _BEST_MODEL_FNAME),
+    #     best_model_fname,
+    # )
+    # _log.info(f"Copied best STRIPS-HGN to {best_model_fname}")
 
 
 def train_wrapper(args: TrainingArgs):
