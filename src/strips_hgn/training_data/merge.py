@@ -6,6 +6,9 @@ from strips_hgn.planning import STRIPSProblem
 from strips_hgn.training_data import StateValuePair, TrainingPair
 from strips_hgn.utils.metrics import CountMetric, metrics_logger
 
+from collections import Counter
+import numpy as np
+
 _log = logging.getLogger(__name__)
 
 
@@ -42,7 +45,21 @@ def merge_state_value_pairs_by_domain(
             for state_value_pair in state_value_pairs
         ]
         domain_to_training_pairs[problem.domain_name].extend(training_pairs)
+    
+    # uniform sample
+    for domain, training_pairs in domain_to_training_pairs.items():
+        cnt = Counter() 
+        probs = []
+        for t in training_pairs:                       
+            cnt[t.value] += 1
 
+        for t in training_pairs: 
+            probs.append(1/(len(cnt.keys())*cnt[t.value]))
+
+        n = 300 if len(training_pairs) > 300 else len(training_pairs)
+        # print("/////////////////////////", n, len(training_pairs))
+        domain_to_training_pairs[domain] = np.random.choice(training_pairs, size=n, replace=False, p=probs).tolist()
+    
     if remove_duplicates:
         # TODO: figure out best way to implement this
         # Options: (option 2 is strongly preferred)

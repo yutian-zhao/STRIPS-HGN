@@ -11,6 +11,7 @@ from strips_hgn.utils.timer import TimedOperation, timed
 from strips_hgn.planning.pyperplan_api import get_optimal_actions_using_py
 import random
 from collections import Counter
+import numpy as np
 
 _log = logging.getLogger(__name__)
 
@@ -38,7 +39,7 @@ def _generate_optimal_state_value_pairs_for_problem(
         log_level=TRAINING_DATA_TIMER_LOG_LEVEL,
     ).start()
 
-    all = True
+    all = False
     optimal_plans, _ = get_optimal_actions_using_py(problem, all)
     if not all:
         optimal_plans = [optimal_plans]
@@ -85,11 +86,13 @@ def _generate_optimal_state_value_pairs_for_problem(
         
         all_trajectories.append(trajectory)
     
+    mode = []  # ['sample', 'low']
+
     if all:
         optimal_trajectory = all_trajectories[-1]
         # print(len(optimal_trajectory))
         other_trajectories = [t for trajectory in all_trajectories[:-1] for t in trajectory]
-        if len(other_trajectories) >= 4*len(optimal_trajectory):
+        if 'sample' in mode and len(other_trajectories) >= 4*len(optimal_trajectory):
             sampled_trajectories = random.sample(other_trajectories, 4*len(optimal_trajectory))
             sampled_trajectories = sampled_trajectories + optimal_trajectory
         else:
@@ -101,9 +104,13 @@ def _generate_optimal_state_value_pairs_for_problem(
         # print(len(trajectories))
 
     trajectories = []
-    for t in sampled_trajectories:
-        if t.value>=2:
-            trajectories.append(t)
+    if 'low' in mode:
+        for t in sampled_trajectories:
+            if t.value>=2:
+                trajectories.append(t)
+    else:
+        trajectories = sampled_trajectories
+
 
     # for t in trajectories:
     #     cnt[t.value] += 1
