@@ -40,8 +40,9 @@ def _generate_optimal_state_value_pairs_for_problem(
     ).start()
 
     all = False
-    optimal_plans, _ = get_optimal_actions_using_py(problem, all)
-    if not all:
+    use_novelty = True
+    optimal_plans, _ = get_optimal_actions_using_py(problem, all=all, use_novelty=use_novelty)
+    if not (all or use_novelty):
         optimal_plans = [optimal_plans]
 
     # Check some edge cases
@@ -80,7 +81,7 @@ def _generate_optimal_state_value_pairs_for_problem(
         # assert problem.is_goal_state(current_state)
         assert len(trajectory) == len(optimal_plan) + 1
         
-        if all:
+        if all or use_novelty:
             for t in trajectory:
                 t.target = current_state
         
@@ -88,7 +89,7 @@ def _generate_optimal_state_value_pairs_for_problem(
     
     mode = []  # ['sample', 'low']
 
-    if all:
+    if all or use_novelty:
         optimal_trajectory = all_trajectories[-1]
         # print(len(optimal_trajectory))
         other_trajectories = [t for trajectory in all_trajectories[:-1] for t in trajectory]

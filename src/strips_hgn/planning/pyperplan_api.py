@@ -14,7 +14,7 @@ from pyperplan.heuristics.relaxation import (
 )
 from pyperplan.pddl.parser import Parser
 from pyperplan.pddl.pddl import Domain, Problem
-from pyperplan.search import SearchMetrics, astar_search
+from pyperplan.search import SearchMetrics, astar_search, breadth_first_search
 from pyperplan.task import Task
 
 from strips_hgn.utils import Number
@@ -113,6 +113,7 @@ def find_solution(
     ],
     max_search_time: Number,
     all: Optional[bool] = False,
+    use_novelty: Optional[bool] = False,
     heuristic_models = None, # test : Optional[List[STRIPSHGNHeuristic]]
 ) -> Tuple[List[str], SearchMetrics]:
     """
@@ -132,16 +133,19 @@ def find_solution(
     # Only support A* search for now
     if search_algo == astar_search:
         solution, metrics = astar_search(
-            task, heuristic, max_search_time=max_search_time, all=all, heuristic_models=heuristic_models
+            task, heuristic, max_search_time=max_search_time, all=all, use_novelty=use_novelty, heuristic_models=heuristic_models
         )
         _log.info(f"Search took ~{round(metrics.search_time, 5)}s")
+        return solution, metrics
+    elif search_algo == breadth_first_search:
+        return  breadth_first_search(task, max_search_time=max_search_time, all=all, use_novelty=use_novelty), None
     else:
         raise RuntimeError(f"Unsupported search algorithm {search_algo}")
 
-    return solution, metrics
+    
 
 
-def get_optimal_actions_using_py(problem, all: Optional[bool] = False, heuristic_models = None): # : Optional[List[STRIPSHGNHeuristic]]
+def get_optimal_actions_using_py(problem, all: Optional[bool] = False, use_novelty: Optional[bool] = False, heuristic_models = None): # : Optional[List[STRIPSHGNHeuristic]]
     _, task = get_domain_and_task(
         problem.domain_pddl, problem.problem_pddl
     )
@@ -150,9 +154,10 @@ def get_optimal_actions_using_py(problem, all: Optional[bool] = False, heuristic
     sol, metrics = find_solution(
         task=task,
         heuristic=hMaxHeuristic(task), # hAddHeuristic(task), # hAddHeuristic(task), # default hmax
-        search_algo=astar_search,
-        max_search_time=3,  # 5 min time out for each problem
+        search_algo=breadth_first_search, # breadth_first_search, # astar_search,
+        max_search_time=5*60,  # 5 min time out for each problem
         all=all,
+        use_novelty=use_novelty,
         heuristic_models = heuristic_models # None # test
     )
     return sol, metrics

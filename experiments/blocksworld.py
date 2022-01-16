@@ -46,7 +46,7 @@ if __name__ == "__main__":
         args=get_training_args(
             configurations=[_CONFIGURATION],
             # 10 minutes
-            max_training_time=10 * 60,
-            num_folds=3,
+            max_training_time=11 * 60,
+            num_folds=10,
         )
     )

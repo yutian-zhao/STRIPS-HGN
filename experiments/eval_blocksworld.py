@@ -12,7 +12,7 @@ _CONFIGURATION = DomainAndProblemConfiguration(
     domain_pddl="domain.pddl",
     problem_pddls=["blocks{0}/task{1}.pddl".format(i, pad_str(j)) for i in range(6, 11) for j in range(1, 21)],
 )
-print(_CONFIGURATION.problems)
+
 assert len(_CONFIGURATION.problems) == 100
 
 
@@ -22,6 +22,6 @@ if __name__ == "__main__":
         args=get_eval_args(
             configurations=[_CONFIGURATION],
             max_search_time=5*60,
-            checkpoint= "../results/blocksworld_uniform300_10/model-best.ckpt",
+            checkpoint= "../results/blocksworld_bfs300_10_fold3/model-best.ckpt",
         )
     )
