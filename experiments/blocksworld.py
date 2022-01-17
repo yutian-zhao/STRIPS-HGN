@@ -40,13 +40,16 @@ _CONFIGURATION = DomainAndProblemConfiguration(
 )
 assert len(_CONFIGURATION.problems) == 30
 
+mode=['solution', 'novel', 'bfs', 'nontrivial']
 
 if __name__ == "__main__":
     train_wrapper(
         args=get_training_args(
             configurations=[_CONFIGURATION],
             # 10 minutes
-            max_training_time=11 * 60,
+            max_training_time=15 * 60,
             num_folds=10,
-        )
+        ),
+        experiment_type='blocksworld_'+'_'.join(mode),
+        mode=mode,
     )

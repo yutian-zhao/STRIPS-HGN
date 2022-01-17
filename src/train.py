@@ -45,7 +45,7 @@ def _copy_best_model(train_workflow: TrainSTRIPSHGNWorkflow):
 
 
 @timed("TrainingDriverMethodTime")
-def train_main(args: TrainingArgs, experiments_dir: str):
+def train_main(args: TrainingArgs, experiments_dir: str, mode=['solutions'],):
     """
     Main runner method.
 
@@ -71,6 +71,7 @@ def train_main(args: TrainingArgs, experiments_dir: str):
         node_feature_mapper_cls=args.node_feature_mapper_cls,
         hyperedge_feature_mapper_cls=args.hyperedge_feature_mapper_cls,
         experiment_dir=experiments_dir,
+        mode=mode,
     )
     kfold_dataloaders: List[
         Tuple[DataLoader, DataLoader]
@@ -170,13 +171,14 @@ def train_main(args: TrainingArgs, experiments_dir: str):
     # _log.info(f"Copied best STRIPS-HGN to {best_model_fname}")
 
 
-def train_wrapper(args: TrainingArgs):
+def train_wrapper(args: TrainingArgs, experiment_type="train", mode=['solutions']):
     # Wrap the training method
     wrap_method(
         args=args,
         wrapped_method=train_main,
-        experiment_type="train",
+        experiment_type=experiment_type,
         results_directory=_RESULTS_DIRECTORY,
+        mode=mode,
     )
 
 

@@ -112,8 +112,7 @@ def find_solution(
         [Task, Heuristic, Any], Tuple[List[str], SearchMetrics]
     ],
     max_search_time: Number,
-    all: Optional[bool] = False,
-    use_novelty: Optional[bool] = False,
+    mode,
     heuristic_models = None, # test : Optional[List[STRIPSHGNHeuristic]]
 ) -> Tuple[List[str], SearchMetrics]:
     """
@@ -133,31 +132,36 @@ def find_solution(
     # Only support A* search for now
     if search_algo == astar_search:
         solution, metrics = astar_search(
-            task, heuristic, max_search_time=max_search_time, all=all, use_novelty=use_novelty, heuristic_models=heuristic_models
+            task, heuristic, max_search_time=max_search_time, mode=mode, heuristic_models=heuristic_models
         )
         _log.info(f"Search took ~{round(metrics.search_time, 5)}s")
         return solution, metrics
     elif search_algo == breadth_first_search:
-        return  breadth_first_search(task, max_search_time=max_search_time, all=all, use_novelty=use_novelty), None
+        return  breadth_first_search(task, max_search_time=max_search_time, mode=mode), None
     else:
         raise RuntimeError(f"Unsupported search algorithm {search_algo}")
 
     
 
 
-def get_optimal_actions_using_py(problem, all: Optional[bool] = False, use_novelty: Optional[bool] = False, heuristic_models = None): # : Optional[List[STRIPSHGNHeuristic]]
+def get_optimal_actions_using_py(problem, mode, heuristic_models=None): # : Optional[List[STRIPSHGNHeuristic]]
     _, task = get_domain_and_task(
         problem.domain_pddl, problem.problem_pddl
     )
     _log.info(f"Running a star + h max with pyperplan")
 
+    if 'bfs' in mode:
+        search_algo = breadth_first_search
+    else:
+        # astar by default
+        search_algo = astar_search
+
     sol, metrics = find_solution(
         task=task,
         heuristic=hMaxHeuristic(task), # hAddHeuristic(task), # hAddHeuristic(task), # default hmax
-        search_algo=breadth_first_search, # breadth_first_search, # astar_search,
+        search_algo=search_algo, # breadth_first_search, # astar_search,
         max_search_time=5*60,  # 5 min time out for each problem
-        all=all,
-        use_novelty=use_novelty,
-        heuristic_models = heuristic_models # None # test
+        mode=mode,
+        heuristic_models = heuristic_models, # None # test
     )
     return sol, metrics

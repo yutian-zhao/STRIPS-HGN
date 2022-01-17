@@ -17,7 +17,7 @@ _log = logging.getLogger(__name__)
 
 
 def _generate_optimal_state_value_pairs_for_problem(
-    problem: STRIPSProblem
+    problem: STRIPSProblem, mode=['solutions']
 ) -> List[StateValuePair]:
     """
     Generates the optimal state-value pairs for a planning problem.
@@ -39,78 +39,80 @@ def _generate_optimal_state_value_pairs_for_problem(
         log_level=TRAINING_DATA_TIMER_LOG_LEVEL,
     ).start()
 
-    all = False
-    use_novelty = True
-    optimal_plans, _ = get_optimal_actions_using_py(problem, all=all, use_novelty=use_novelty)
-    if not (all or use_novelty):
-        optimal_plans = [optimal_plans]
+    state_value_pairs, _ = get_optimal_actions_using_py(problem, mode=mode)
+    # if not (all or use_novelty):
+    #     optimal_plans = [optimal_plans]
 
     # Check some edge cases
-    if len(optimal_plans) == 0:
+    if len(state_value_pairs) == 0:
         _log.warning(f"Initial state for {problem} is already a goal state!")
         return []
-    elif optimal_plans is None:
+    elif state_value_pairs is None:
         _log.error(f"Unable to find optimal solution for {problem}")
         return []
 
-    name_to_action: Dict[str, STRIPSAction] = {
-        action.name: action for action in problem.actions
-    }
+    trajectory = []
+    for state_value_pair in state_value_pairs:
+        trajectory.append(StateValuePair(state=state_value_pair[0], target=state_value_pair[1], value=state_value_pair[2]))
+
+    # name_to_action: Dict[str, STRIPSAction] = {
+    #     action.name: action for action in problem.actions
+    # }
 
     # Run Fast-Downward to get the optimal plan
     # optimal_plan: Optional[List[str]] = get_optimal_actions_using_fd(problem)
 
-    all_trajectories = []
-    for optimal_plan in optimal_plans:
-        # Form state-value pairs for trajectory which is at first the initial state
-        current_state = problem.initial_state
-        trajectory: List[StateValuePair] = [
-            StateValuePair(current_state, len(optimal_plan))
-        ]
+    # all_trajectories = []
+    # for optimal_plan in optimal_plans:
+    #     # Form state-value pairs for trajectory which is at first the initial state
+    #     current_state = problem.initial_state
+    #     trajectory: List[StateValuePair] = [
+    #         StateValuePair(current_state, len(optimal_plan))
+    #     ]
 
-        for idx, action_name in enumerate(optimal_plan):
-            # Apply action in the current state
-            action = name_to_action[action_name.name]
-            current_state = action.apply(current_state)
+    #     for idx, action_name in enumerate(optimal_plan):
+    #         # Apply action in the current state
+    #         action = name_to_action[action_name.name]
+    #         current_state = action.apply(current_state)
 
-            # Create new state-value pair
-            remaining_plan_length = len(optimal_plan) - (idx + 1)
-            trajectory.append(StateValuePair(current_state, remaining_plan_length))
+    #         # Create new state-value pair
+    #         remaining_plan_length = len(optimal_plan) - (idx + 1)
+    #         trajectory.append(StateValuePair(current_state, remaining_plan_length))
         
-        # Check current state is a goal state and the number of pairs
-        # assert problem.is_goal_state(current_state)
-        assert len(trajectory) == len(optimal_plan) + 1
+    #     # Check current state is a goal state and the number of pairs
+    #     # assert problem.is_goal_state(current_state)
+    #     assert len(trajectory) == len(optimal_plan) + 1
         
-        if all or use_novelty:
-            for t in trajectory:
-                t.target = current_state
+    #     if all or use_novelty:
+    #         for t in trajectory:
+    #             t.target = current_state
         
-        all_trajectories.append(trajectory)
+    #     all_trajectories.append(trajectory)
     
-    mode = []  # ['sample', 'low']
+    # mode = []  # ['sample', 'low']
 
-    if all or use_novelty:
-        optimal_trajectory = all_trajectories[-1]
-        # print(len(optimal_trajectory))
-        other_trajectories = [t for trajectory in all_trajectories[:-1] for t in trajectory]
-        if 'sample' in mode and len(other_trajectories) >= 4*len(optimal_trajectory):
-            sampled_trajectories = random.sample(other_trajectories, 4*len(optimal_trajectory))
-            sampled_trajectories = sampled_trajectories + optimal_trajectory
-        else:
-            sampled_trajectories = other_trajectories + optimal_trajectory
+    # if all or use_novelty:
+    #     optimal_trajectory = all_trajectories[-1]
+    #     # print(len(optimal_trajectory))
+    #     other_trajectories = [t for trajectory in all_trajectories[:-1] for t in trajectory]
+    #     if 'sample' in mode and len(other_trajectories) >= 4*len(optimal_trajectory):
+    #         sampled_trajectories = random.sample(other_trajectories, 4*len(optimal_trajectory))
+    #         sampled_trajectories = sampled_trajectories + optimal_trajectory
+    #     else:
+    #         sampled_trajectories = other_trajectories + optimal_trajectory
         
-    else:
-        sampled_trajectories = all_trajectories[0]
+    # else:
+    #     sampled_trajectories = all_trajectories[0]
         
-        # print(len(trajectories))
+    #     # print(len(trajectories))
 
-    trajectories = []
-    if 'low' in mode:
-        for t in sampled_trajectories:
-            if t.value>=2:
-                trajectories.append(t)
-    else:
-        trajectories = sampled_trajectories
+    # trajectories = []
+    # if 'low' in mode:
+    #     for t in sampled_trajectories:
+    #         if t.value>=2:
+    #             trajectories.append(t)
+    # else:
+    #     trajectories = sampled_trajectories
 
 
     # for t in trajectories:
@@ -149,7 +151,7 @@ def _generate_optimal_state_value_pairs_for_problem(
     metrics_logger.add_metric(
         CountMetric(
             "NumberOfOptimalStateValuePairs",
-            len(trajectories),
+            len(trajectory),
             context=metric_context,
         )
     )
@@ -159,7 +161,7 @@ def _generate_optimal_state_value_pairs_for_problem(
     #     print(t)
     #     print('\n')
 
-    return trajectories
+    return trajectory
 
 
 def _generate_optimal_state_value_pairs_for_problem_using_fd(
@@ -233,7 +235,7 @@ def _generate_optimal_state_value_pairs_for_problem_using_fd(
     log_level=TRAINING_DATA_TIMER_LOG_LEVEL,
 )
 def generate_optimal_state_value_pairs(
-    problems: List[STRIPSProblem]
+    problems: List[STRIPSProblem], mode=['solutions']
 ) -> Dict[STRIPSProblem, List[StateValuePair]]:
     """
     Generate the state-value pairs from the optimal plans of each task by using
@@ -261,7 +263,7 @@ def generate_optimal_state_value_pairs(
 
         # Generate state-value pairs for each problem
         state_value_pairs = _generate_optimal_state_value_pairs_for_problem(
-            problem
+            problem, mode=mode
         )
 
         _log.debug(

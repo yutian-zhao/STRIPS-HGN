@@ -16,5 +16,6 @@ if __name__ == "__main__":
             configurations=[_CONFIGURATION],
             max_search_time=5*60,
             checkpoint= "../results/ferry_all_3/model-best.ckpt",
-        )
+        ),
+        experiment_type='ferry',
     )

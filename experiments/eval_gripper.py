@@ -16,5 +16,6 @@ if __name__ == "__main__":
             configurations=[_CONFIGURATION],
             max_search_time=1*60,
             checkpoint= "../results/gripper_all_90/model-best.ckpt",
-        )
+        ),
+        experiment_type='gripper',
     )

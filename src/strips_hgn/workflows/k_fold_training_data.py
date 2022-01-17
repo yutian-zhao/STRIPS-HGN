@@ -51,6 +51,7 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         node_feature_mapper_cls: Type[NodeFeatureMapper],
         hyperedge_feature_mapper_cls: Type[HyperedgeFeatureMapper],
         experiment_dir: str,
+        mode: List[str],
     ):
         """
         Parameters
@@ -81,6 +82,7 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         self._num_bins = num_bins
         self._remove_duplicates = remove_duplicates
         self._shuffle = shuffle
+        self._mode = mode
 
     @timed("KFoldTrainingDataWorkflow.GenerateTrainingDataTime")
     def _generate_kfold_training_data(
@@ -99,7 +101,7 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         """
         # 1. Generate optimal state-value pairs for all problems
         problem_to_state_value_pairs = generate_optimal_state_value_pairs(
-            self._problems
+            self._problems, mode=self._mode
         )
 
         # 2. Merge state-value pairs by domain
