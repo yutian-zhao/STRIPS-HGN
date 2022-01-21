@@ -51,7 +51,7 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         node_feature_mapper_cls: Type[NodeFeatureMapper],
         hyperedge_feature_mapper_cls: Type[HyperedgeFeatureMapper],
         experiment_dir: str,
-        mode: List[str],
+        mode=None,
     ):
         """
         Parameters

@@ -17,7 +17,7 @@ _log = logging.getLogger(__name__)
 
 
 def _generate_optimal_state_value_pairs_for_problem(
-    problem: STRIPSProblem, mode=['solutions']
+    problem: STRIPSProblem, mode=None
 ) -> List[StateValuePair]:
     """
     Generates the optimal state-value pairs for a planning problem.
@@ -235,7 +235,7 @@ def _generate_optimal_state_value_pairs_for_problem_using_fd(
     log_level=TRAINING_DATA_TIMER_LOG_LEVEL,
 )
 def generate_optimal_state_value_pairs(
-    problems: List[STRIPSProblem], mode=['solutions']
+    problems: List[STRIPSProblem], mode=None,
 ) -> Dict[STRIPSProblem, List[StateValuePair]]:
     """
     Generate the state-value pairs from the optimal plans of each task by using

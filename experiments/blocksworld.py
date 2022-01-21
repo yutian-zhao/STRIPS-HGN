@@ -40,7 +40,7 @@ _CONFIGURATION = DomainAndProblemConfiguration(
 )
 assert len(_CONFIGURATION.problems) == 30
 
-mode=['solution', 'novel', 'bfs', 'nontrivial']
+mode={'mode':'train', 'all':False, 'search':'bfs', 'distance': 0, 'novel':True, 'lifted':False}
 
 if __name__ == "__main__":
     train_wrapper(
@@ -50,6 +50,6 @@ if __name__ == "__main__":
             max_training_time=15 * 60,
             num_folds=10,
         ),
-        experiment_type='blocksworld_'+'_'.join(mode),
+        experiment_type='blocksworld'+'_'+'_'.join([str(i)+'_'+str(j) for i, j in mode.items()]),
         mode=mode,
     )

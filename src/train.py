@@ -45,7 +45,7 @@ def _copy_best_model(train_workflow: TrainSTRIPSHGNWorkflow):
 
 
 @timed("TrainingDriverMethodTime")
-def train_main(args: TrainingArgs, experiments_dir: str, mode=['solutions'],):
+def train_main(args: TrainingArgs, experiments_dir: str, mode=None,):
     """
     Main runner method.
 
@@ -171,7 +171,7 @@ def train_main(args: TrainingArgs, experiments_dir: str, mode=['solutions'],):
     # _log.info(f"Copied best STRIPS-HGN to {best_model_fname}")
 
 
-def train_wrapper(args: TrainingArgs, experiment_type="train", mode=['solutions']):
+def train_wrapper(args: TrainingArgs, experiment_type="train", mode=None):
     # Wrap the training method
     wrap_method(
         args=args,

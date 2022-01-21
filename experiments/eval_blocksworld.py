@@ -15,6 +15,7 @@ _CONFIGURATION = DomainAndProblemConfiguration(
 
 assert len(_CONFIGURATION.problems) == 100
 
+mode = {'mode':'eval'}# , {'mode':'train', 'all':False, 'search':'astar', 'distance': 0, 'novel':False, 'lifted':False}
 
 if __name__ == "__main__":
 
@@ -22,7 +23,9 @@ if __name__ == "__main__":
         args=get_eval_args(
             configurations=[_CONFIGURATION],
             max_search_time=5*60,
-            checkpoint= "../results/train-strips-hgn-2022-01-16T17_10_47.131542/model-best.ckpt",
+            checkpoint= "../results/blocksworld_novel_bfs_nontrivial_15min_fold10_1/model-best.ckpt",
         ),
-        experiment_type='blocksworld',
+        experiment_type='blocksworld_novel_bfs_nontrivial_15min_fold10_1'
+            +'_'+'_'.join([str(i)+'_'+str(j) for i, j in mode.items()]),
+        mode=mode,
     )

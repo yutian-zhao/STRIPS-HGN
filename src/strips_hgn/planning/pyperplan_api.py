@@ -112,7 +112,7 @@ def find_solution(
         [Task, Heuristic, Any], Tuple[List[str], SearchMetrics]
     ],
     max_search_time: Number,
-    mode,
+    mode=None,
     heuristic_models = None, # test : Optional[List[STRIPSHGNHeuristic]]
 ) -> Tuple[List[str], SearchMetrics]:
     """
@@ -144,21 +144,27 @@ def find_solution(
     
 
 
-def get_optimal_actions_using_py(problem, mode, heuristic_models=None): # : Optional[List[STRIPSHGNHeuristic]]
+def get_optimal_actions_using_py(problem, mode=None, heuristic_models=None): # : Optional[List[STRIPSHGNHeuristic]]
     _, task = get_domain_and_task(
         problem.domain_pddl, problem.problem_pddl
     )
     _log.info(f"Running a star + h max with pyperplan")
 
-    if 'bfs' in mode:
+    if mode and mode.get('search')=='bfs':
         search_algo = breadth_first_search
     else:
         # astar by default
         search_algo = astar_search
 
+    if mode and mode.get('mode')=='eval':
+        heuristic = hAddHeuristic(task)
+    else:
+        # astar by default
+        heuristic = hMaxHeuristic(task)
+
     sol, metrics = find_solution(
         task=task,
-        heuristic=hMaxHeuristic(task), # hAddHeuristic(task), # hAddHeuristic(task), # default hmax
+        heuristic=heuristic, # hMaxHeuristic(task), # hAddHeuristic(task), # default hmax
         search_algo=search_algo, # breadth_first_search, # astar_search,
         max_search_time=5*60,  # 5 min time out for each problem
         mode=mode,

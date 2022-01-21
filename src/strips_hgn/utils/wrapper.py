@@ -14,7 +14,7 @@ def wrap_method(
     experiment_type: str,
     results_directory: str,
     experiments_dir: Optional[str] = None,
-    mode=['solutions'],
+    mode=None,
 ):
     """
     This method is used to wrap main methods by clearing metrics, setting
@@ -50,7 +50,10 @@ def wrap_method(
     exception = None
     try:
         # Run the wrapped method
-        wrapped_method(args, experiments_dir, mode)
+        if mode and 'eval' in mode['mode']:
+            wrapped_method(args, experiments_dir)
+        else:
+            wrapped_method(args, experiments_dir, mode)
 
     except Exception as ex:
         _log.error("An unexpected error occurred.", exc_info=True)
