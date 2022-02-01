@@ -26,10 +26,10 @@ def _none_function(_):
 
 def make_mlp_model(input_dim, hidden_units=32, num_layers=2):
     """ Simple MLP with a LayerNorm """
-    assert num_layers == 2, "Only num layers == 2 supported atm"
+    assert num_layers == 2, "Only num layers == 2 supported at the moment"
     return nn.Sequential(
         nn.Linear(input_dim, hidden_units),
-        nn.LeakyReLU(inplace=True),
+        nn.LeakyReLU(inplace=True), # "doesn't not use negative_slope, defualt to be 1e-2"
         nn.Linear(hidden_units, hidden_units),
         nn.LeakyReLU(inplace=True),
         # Normalize over last dimension
@@ -179,7 +179,7 @@ class EncodeProcessDecode(nn.Module):
         latent0: HypergraphsTuple = latent
 
         # Output for each time step (if in prediction mode, there will only
-        # be one element for the last step)
+        # be one element in the output from the last step)
         output_ops = []
 
         for idx in range(steps):

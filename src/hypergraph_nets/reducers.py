@@ -1,4 +1,5 @@
 import torch
+# import time
 
 # Maybe see if this is good: https://github.com/rusty1s/pytorch_scatter
 # My implementation is quite suboptimal
@@ -33,8 +34,39 @@ def _unsorted_segment_helper(
     segments = torch.zeros((num_segments, repeated_data.shape[1]))
     return repeated_data, indices, segments
 
+# device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+# print("Device", device)
+# t = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float).to(device)
+# index = torch.tensor([[0,0], [4,4], [2,2]]).to(device)
+# def time_fun(f, iter,):
+#     start_time = time.perf_counter()
+#     start = time.time()
+#     for i in range(iter):
+#         f(t, index, 6)
+#     print(time.perf_counter()-start_time)
+#     print(time.time()-start)
+
 
 def torch_unsorted_segment_sum(
+    data: torch.Tensor, segment_ids: torch.Tensor, num_segments
+):
+    """
+    Compute sums along segments of a Tensor
+
+    Better described here: https://www.tensorflow.org/api_docs/python/tf/math/unsorted_segment_sum
+    """
+    if len(segment_ids.shape) == 1:
+        segments = torch.zeros((num_segments, *data.shape[1:]))
+        segments.index_add_(0, segment_ids, data)
+        return segments
+    else:
+        segments = torch.zeros((num_segments+1, *data.shape[1:]))
+        for i in range(segment_ids.shape[1]):
+            segments.index_add_(0, segment_ids[:,i], data)
+        return segments[:-1]
+
+
+def torch_unsorted_segment_sum_2(
     data: torch.Tensor, segment_ids: torch.Tensor, num_segments
 ):
     """

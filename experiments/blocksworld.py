@@ -40,7 +40,7 @@ _CONFIGURATION = DomainAndProblemConfiguration(
 )
 assert len(_CONFIGURATION.problems) == 30
 
-mode={'mode':'train', 'all':False, 'search':'bfs', 'distance': 0, 'novel':True, 'lifted':False}
+mode={'mode':'train', 'all':False, 'search':'bfs', 'distance': 5, 'novel':0, 'lifted':False}
 
 if __name__ == "__main__":
     train_wrapper(
