@@ -171,6 +171,15 @@ def merge_hypergraphs_tuple(
         ]
     )
 
+    if n_node is not None and n_edge is not None:
+        assert len(n_node.shape)==1
+        offsets = torch.Tensor([torch.sum(n_node[:i]) for i in range(n_node.shape[0])]).to(n_node.dtype)
+        offsets = torch.repeat_interleave(offsets, n_edge, dim=0).reshape(-1, 1)
+        if receivers is not None:
+            receivers+=offsets
+        if senders is not None:
+            senders+=offsets
+
     # Check padding consistent across hypergraphs
     assert len(set(h.zero_padding for h in graphs_tuple_list)) == 1
     zero_padding = graphs_tuple_list[0].zero_padding

@@ -44,7 +44,6 @@ def _unsorted_segment_helper(
     segments = torch.zeros((num_segments, repeated_data.shape[1]))
     return repeated_data, indices, segments
 
-
 def torch_unsorted_segment_sum(
     data: torch.Tensor, segment_ids: torch.Tensor, num_segments
 ):
@@ -53,16 +52,32 @@ def torch_unsorted_segment_sum(
 
     Better described here: https://www.tensorflow.org/api_docs/python/tf/math/unsorted_segment_sum
     """
-    if len(segment_ids.shape) == 1:
-        segments = torch.zeros((num_segments, *data.shape[1:]))
-        segments.index_add_(0, segment_ids, data)
-        return segments
-    else:
-        segments = torch.zeros((num_segments+1, *data.shape[1:]))
-        segment_ids[segment_ids==-1] = num_segments # bad hack
-        for i in range(segment_ids.shape[1]):
-            segments = segments.index_add(0, segment_ids[:,i], data)
-        return segments[:-1]
+    repeated_data, indices, segments = _unsorted_segment_helper(
+        data, segment_ids, num_segments
+    )
+
+    # Do the summation, i.e. sum by index
+    sum_results = segments.index_add(0, indices, repeated_data)
+    return sum_results
+
+# def torch_unsorted_segment_sum_2(
+#     data: torch.Tensor, segment_ids: torch.Tensor, num_segments
+# ):
+#     """
+#     Compute sums along segments of a Tensor
+
+#     Better described here: https://www.tensorflow.org/api_docs/python/tf/math/unsorted_segment_sum
+#     """
+#     if len(segment_ids.shape) == 1:
+#         segments = torch.zeros((num_segments, *data.shape[1:]))
+#         segments.index_add_(0, segment_ids, data)
+#         return segments
+#     else:
+#         segments = torch.zeros((num_segments+1, *data.shape[1:]))
+#         segment_ids[segment_ids==-1] = num_segments # bad hack
+#         for i in range(segment_ids.shape[1]):
+#             segments = segments.index_add(0, segment_ids[:,i], data)
+#         return segments[:-1]
 
 # def torch_unsorted_segment_sum_1(
 #     data: torch.Tensor, segment_ids: torch.Tensor, num_segments
@@ -80,23 +95,6 @@ def torch_unsorted_segment_sum(
 #         for i in range(segment_ids.shape[1]):
 #             segments = scatter(src=data, index=segment_ids[:,i], dim=0, out=segments, dim_size=num_segments+1, reduce='sum')
 #         return segments[:-1]
-
-
-def torch_unsorted_segment_sum_2(
-    data: torch.Tensor, segment_ids: torch.Tensor, num_segments
-):
-    """
-    Compute sums along segments of a Tensor
-
-    Better described here: https://www.tensorflow.org/api_docs/python/tf/math/unsorted_segment_sum
-    """
-    repeated_data, indices, segments = _unsorted_segment_helper(
-        data, segment_ids, num_segments
-    )
-
-    # Do the summation, i.e. sum by index
-    sum_results = segments.index_add(0, indices, repeated_data)
-    return sum_results
 
 # def torch_unsorted_segment_sum_3(
 #     data: torch.Tensor, segment_ids: torch.Tensor, num_segments
