@@ -14,7 +14,7 @@ from pyperplan.heuristics.relaxation import (
 )
 from pyperplan.pddl.parser import Parser
 from pyperplan.pddl.pddl import Domain, Problem
-from pyperplan.search import SearchMetrics, astar_search, breadth_first_search
+from pyperplan.search import SearchMetrics, astar_search, breadth_first_search, novelty_search
 from pyperplan.task import Task
 
 from strips_hgn.utils import Number
@@ -138,6 +138,8 @@ def find_solution(
         return solution, metrics
     elif search_algo == breadth_first_search:
         return  breadth_first_search(task, max_search_time=max_search_time, mode=mode), None
+    elif search_algo == novelty_search:
+        return  novelty_search(task, max_search_time=max_search_time, mode=mode), None
     else:
         raise RuntimeError(f"Unsupported search algorithm {search_algo}")
 
@@ -152,6 +154,8 @@ def get_optimal_actions_using_py(problem, mode=None, heuristic_models=None): # :
 
     if mode and mode.get('search')=='bfs':
         search_algo = breadth_first_search
+    elif mode and mode.get('search')=='novelty':
+        search_algo = novelty_search
     else:
         # astar by default
         search_algo = astar_search
@@ -166,7 +170,7 @@ def get_optimal_actions_using_py(problem, mode=None, heuristic_models=None): # :
         task=task,
         heuristic=heuristic, # hMaxHeuristic(task), # hAddHeuristic(task), # default hmax
         search_algo=search_algo, # breadth_first_search, # astar_search,
-        max_search_time=5*60,  # 5 min time out for each problem
+        max_search_time=5,  # 5 s time out for each problem
         mode=mode,
         heuristic_models = heuristic_models, # None # test
     )

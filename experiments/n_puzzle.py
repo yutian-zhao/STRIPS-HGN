@@ -20,6 +20,7 @@ _CONFIGURATION = DomainAndProblemConfiguration(
 )
 assert len(_CONFIGURATION.problems) == 10
 
+mode={'mode':'train', 'all':False, 'search':'astar', 'distance': 0, 'novel':0, 'lifted':True}
 
 if __name__ == "__main__":
     train_wrapper(
@@ -27,5 +28,11 @@ if __name__ == "__main__":
             configurations=[_CONFIGURATION],
             # 10 minutes
             max_training_time=10 * 60,
-        )
+            num_folds=10,
+            # batch_size=4,
+            # learning_rate=0.002,
+        ),
+        experiment_type='npuzzle'+'_'+'_'.join([str(i)+'_'+str(j) for i, j in mode.items()]),
+        mode=mode,
     )
+
