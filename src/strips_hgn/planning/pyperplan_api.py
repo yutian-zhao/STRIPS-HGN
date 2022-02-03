@@ -170,7 +170,7 @@ def get_optimal_actions_using_py(problem, mode=None, heuristic_models=None): # :
         task=task,
         heuristic=heuristic, # hMaxHeuristic(task), # hAddHeuristic(task), # default hmax
         search_algo=search_algo, # breadth_first_search, # astar_search,
-        max_search_time=5,  # 5 s time out for each problem
+        max_search_time=60,  # 5 s time out for each problem
         mode=mode,
         heuristic_models = heuristic_models, # None # test
     )

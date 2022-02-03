@@ -58,8 +58,14 @@ def merge_state_value_pairs_by_domain(
 
         n_value_min = min(cnt.values())
         n_value = len(cnt.keys())
-
-        n = n_value*n_value_min if len(training_pairs) > 300 else len(training_pairs)
+         
+        if len(training_pairs) > 300 and n_value*n_value_min > 300:
+            n = n_value*n_value_min
+        elif len(training_pairs) > 300:
+            n =300
+        else:
+            n = len(training_pairs)
+        # n = n_value*n_value_min if len(training_pairs) > 300 and n_value*n_value_min > 300 else len(training_pairs)
         # print("/////////////////////////", n, len(training_pairs))
         domain_to_training_pairs[domain] = np.random.choice(training_pairs, size=n, replace=False, p=probs).tolist()
     
