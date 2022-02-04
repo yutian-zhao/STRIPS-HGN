@@ -77,12 +77,22 @@ def train_main(args: TrainingArgs, experiments_dir: str, mode=None,):
         Tuple[DataLoader, DataLoader]
     ] = kfold_training_data_wf.run()
 
+    if mode.get('auto_bslr', False):
+        bs = kfold_dataloaders[0][0].batch_size
+        new_learning_rate = 0.001*(bs//4)
+        if new_learning_rate==0:
+            new_learning_rate = 0.001
+        _log.info(
+                "Batch size is {}, learning rate are set from {} to {}".format(bs, args.learning_rate, new_learning_rate)
+            )
+        # args.learning_rate = new_learning_rate
+
     # Hyperparameter for STRIPS-HGN
     strips_hgn_hparams = Namespace(
         receiver_k=kfold_training_data_wf.max_receivers,
         sender_k=kfold_training_data_wf.max_senders,
         hidden_size=args.hidden_size,
-        learning_rate=args.learning_rate,
+        learning_rate=new_learning_rate if mode.get('auto_bslr', False) else args.learning_rate,
         weight_decay=args.weight_decay,
         global_feature_mapper_cls=args.global_feature_mapper_cls,
         node_feature_mapper_cls=args.node_feature_mapper_cls,
@@ -155,6 +165,9 @@ def train_main(args: TrainingArgs, experiments_dir: str, mode=None,):
                 best_model_fname,
             )
             _log.info(f"Copied best STRIPS-HGN to {best_model_fname}")
+
+            # Warning: only train the first fold
+            break
 
     _log.info(
         f"Best STRIPS-HGN found at {best_train_wf.prefix} with val loss of "

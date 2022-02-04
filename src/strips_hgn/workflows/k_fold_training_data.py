@@ -222,6 +222,20 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
             kfold_training_data
         )
 
+        # change batch size base on the number of training pairs
+        if self._mode.get('auto_bslr', False):
+            times = (len(kfold_datasets[0][0])//300)
+            
+            new_batch_size = times if times%2==0 else times+1
+            if new_batch_size == 0:
+                new_batch_size = 1
+
+            _log.info(
+                "One fold contains {} tuples, which is {} times of 300, batch size are set from {} to {}".format(len(kfold_datasets[0]), times, self._batch_size, new_batch_size)
+            )
+
+            self._batch_size = new_batch_size
+
         # Convert to torch DataLoaders
         kfold_dataloaders = create_dataloaders(
             kfold_datasets, batch_size=self._batch_size

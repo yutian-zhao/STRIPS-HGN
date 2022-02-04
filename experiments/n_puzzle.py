@@ -20,19 +20,23 @@ _CONFIGURATION = DomainAndProblemConfiguration(
 )
 assert len(_CONFIGURATION.problems) == 10
 
-mode={'mode':'train', 'all':True, 'search':'novelty', 'distance': 0, 'novel':2, 'lifted':True}
-
 if __name__ == "__main__":
-    train_wrapper(
-        args=get_training_args(
-            configurations=[_CONFIGURATION],
-            # 10 minutes
-            max_training_time=10 * 60,
-            num_folds=10,
-            batch_size=4,
-            learning_rate=0.004,
-        ),
-        experiment_type='npuzzle'+'_'+'_'.join([str(i)+'_'+str(j) for i, j in mode.items()]),
-        mode=mode,
-    )
+    for search_algo in ['astar', 'bfs', 'novelty']:
+        for all in [True, False]:
+            for novel in [0, 2]:
+                for lifted in [True, False]:
+                    if not ((search_algo=='novelty' and ((all==False ) or novel==0)) or (novel==0 and lifted==True)):
+                        mode={'mode':'train', 'all':all, 'search':search_algo, 'distance': 0, 'novel':novel, 'lifted':lifted}
+                        train_wrapper(
+                            args=get_training_args(
+                                configurations=[_CONFIGURATION],
+                                # 10 minutes
+                                max_training_time=10 * 60,
+                                num_folds=10,
+                                # batch_size=4,
+                                # learning_rate=0.004,
+                            ),
+                            experiment_type='npuzzle'+'_'+'_'.join([str(i)+'_'+str(j) for i, j in mode.items()]),
+                            mode=mode,
+                        )
 
