@@ -40,7 +40,9 @@ class Timer(object):
 
     def stop(self):
         self.pause()
-        self.stopped = True
+        self._accumulated_time = 0
+        # self._last_start_time = None
+        # self.stopped = True # reset the timer instead of fully stopping
 
     @property
     def total_time(self):
@@ -105,6 +107,7 @@ class TimedOperation(Timer):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.stop()
+        return False
 
 
 def timed(
