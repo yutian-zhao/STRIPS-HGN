@@ -121,12 +121,12 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         )
 
         # 4. Save training data to the experiments directory
-        save_training_data(
-            self._experiments_dir,
-            domain_to_training_pairs,
-            kfold_training_data,
-            indent=2,
-        )
+        # save_training_data(
+        #     self._experiments_dir,
+        #     domain_to_training_pairs,
+        #     kfold_training_data,
+        #     indent=2,
+        # )
         return kfold_training_data
 
     @timed("KFoldTrainingDataWorkflow.ConvertToHypergraphsTupleTime")
