@@ -38,6 +38,7 @@ def merge_state_value_pairs_by_domain(
     # Domain to training pairs. We determine a unique domain by its name
     domain_to_training_pairs = defaultdict(list)
 
+    _log.debug("Start creating Training Pairs.")
     for problem, state_value_pairs in problem_to_state_value_pairs.items():
         # Create TrainingPair objects which hold the problem context
         training_pairs = [
@@ -46,6 +47,7 @@ def merge_state_value_pairs_by_domain(
         ]
         domain_to_training_pairs[problem.domain_name].extend(training_pairs)
     
+    _log.debug("Start sampling Training Pairs.")
     # uniform sample
     for domain, training_pairs in domain_to_training_pairs.items():
         cnt = Counter() 
@@ -58,6 +60,7 @@ def merge_state_value_pairs_by_domain(
 
         n_value_min = min(cnt.values())
         n_value = len(cnt.keys())
+        _log.info("The smallest set of a heuristic value has {} samples, there are {} different heuristic values.".format(n_value_min, n_value))
          
         if len(training_pairs) > 300 and n_value*n_value_min > 300:
             n = n_value*n_value_min

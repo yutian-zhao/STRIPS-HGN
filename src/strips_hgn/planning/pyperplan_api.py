@@ -150,7 +150,7 @@ def get_optimal_actions_using_py(problem, mode=None, heuristic_models=None): # :
     _, task = get_domain_and_task(
         problem.domain_pddl, problem.problem_pddl
     )
-    _log.info(f"Running a star + h max with pyperplan")
+    # _log.info(f"Running a star + h max with pyperplan")
 
     if mode and mode.get('search')=='bfs':
         search_algo = breadth_first_search
