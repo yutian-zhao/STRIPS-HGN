@@ -5,11 +5,11 @@ import os
 
 _log = logging.getLogger(__name__)
 
-base_directory="../benchmarks/zenotravel/train"
+base_directory="../benchmarks/zenotravel"
 domain_pddl="domain.pddl"
 problem_pddls = []
 
-for root, dirs, files in os.walk(os.path.join(base_directory)):
+for root, dirs, files in os.walk(os.path.join(base_directory, "train")):
     for fname in files:
         if fname.endswith('.pddl'):
             problem_pddls.append(fname)
