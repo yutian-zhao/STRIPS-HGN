@@ -12,7 +12,7 @@ problem_pddls = []
 for root, dirs, files in os.walk(os.path.join(base_directory, "train")):
     for fname in files:
         if fname.endswith('.pddl'):
-            problem_pddls.append(fname)
+            problem_pddls.append("train/"+fname)
     break
 problem_pddls = sorted(problem_pddls)
 
