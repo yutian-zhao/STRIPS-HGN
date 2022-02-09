@@ -80,8 +80,6 @@ class TimedOperation(Timer):
 
     def stop(self):
         """ Stop the timer and add it to the metrics logger"""
-        super().stop()
-
         log_str = (
             f"Timer {self.name} stopped. Accumulated time: "
             f"{round(self.total_time, 5)}s."
@@ -101,6 +99,8 @@ class TimedOperation(Timer):
         metrics_logger.add_metric(
             TimeMetric(self.name, self.total_time, context=self.context)
         )
+
+        super().stop()
 
     def __enter__(self):
         return self.start()

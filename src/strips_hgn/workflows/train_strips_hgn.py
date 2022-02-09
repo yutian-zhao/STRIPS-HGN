@@ -113,7 +113,9 @@ class TrainSTRIPSHGNWorkflow(object):
             if val_loss == self.best_val_loss
         ]
         if len(filepath) > 1:
-            raise RuntimeError("Found 2 checkpoints for best val loss?")
+            # raise RuntimeError("Found 2 checkpoints for best val loss?")
+            _log.warning("Found 2 checkpoints for best val loss?")
+
 
         return filepath[0] if filepath else None
 
