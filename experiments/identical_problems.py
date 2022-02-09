@@ -2,7 +2,7 @@ import os
 import sys
 import subprocess
 
-from pyperplan.api import get_task
+from strips_hgn.planning.pyperplan_api import get_domain_and_task
 import re
 import random
 
@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
     #         prob_file = os.path.join(prob_dir, file)
     #         print(f"Processing {prob_file}")
-    #         task = get_task(domain_file, prob_file)
+    #         _, task = get_domain_and_task(domain_file, prob_file)
 
     #         key = (task.initial_state, task.goals)
     #         if task.goal_reached(task.initial_state):
