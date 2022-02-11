@@ -108,7 +108,8 @@ if __name__ == "__main__":
 
                 key = (task.initial_state, task.goals)
                 if task.goal_reached(task.initial_state):
-                    print("Args {''.join(args).strip(' ')} idx {idx} run {count}: INITIAL STATE IS GOAL STATE!!!")
+                    print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: INITIAL STATE IS GOAL STATE!!!")
+                    print(f"Removing {prob_file}")
                     os.remove(prob_file)
                     initial_is_goal += 1
                     continue
@@ -130,10 +131,12 @@ if __name__ == "__main__":
             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {identical_probs} problems are not unique")
             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {initial_is_goal} initial states are goals")
             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {validated_probs}/{num} problems are verified.")
-            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: generating {num-validated_probs} new problems.")
-            
+
             if num-validated_probs > 0:
-                validated_probs = 0
+                print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: generating {num-validated_probs} new problems.")
                 generate_problems(generator, args, num-validated_probs, domain_name, output_dir)
+                validated_probs = 0
+            else:
+                print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Complete.")
 
             
