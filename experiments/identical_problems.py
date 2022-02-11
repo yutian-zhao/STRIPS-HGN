@@ -91,7 +91,6 @@ if __name__ == "__main__":
             initial_is_goal = 0
             count += 1
             for file in os.listdir(output_dir):
-                print(file)
                 if not file.endswith(".pddl"):
                     print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Ignoring {file}")
                     continue
@@ -134,6 +133,7 @@ if __name__ == "__main__":
             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: generating {num-validated_probs} new problems.")
             
             if num-validated_probs > 0:
+                validated_probs = 0
                 generate_problems(generator, args, num-validated_probs, domain_name, output_dir)
 
             
