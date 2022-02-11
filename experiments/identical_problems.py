@@ -102,7 +102,6 @@ if __name__ == "__main__":
                     continue
 
                 prob_file = os.path.join(output_dir, file)
-                print(prob_file)
                 print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Processing {prob_file}")
                 _, task = get_domain_and_task(domain_file, prob_file)
 
@@ -123,10 +122,11 @@ if __name__ == "__main__":
                 else:
                     init_and_goals[key] = prob_file
                     validated_probs += 1
+                    
                     # print("  - Testing if the problem is trivial.")
                     # sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 5)
                     # if sol:
-                    #     print(len(sol), ": ", prob_file)
+                    #     print(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {file} solution length: {len(sol)}.")
 
             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {identical_probs} problems are not unique")
             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {initial_is_goal} initial states are goals")
