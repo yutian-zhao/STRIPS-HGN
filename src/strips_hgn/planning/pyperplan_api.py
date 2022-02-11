@@ -161,10 +161,10 @@ def get_optimal_actions_using_py(problem, mode=None, heuristic_models=None): # :
         search_algo = astar_search
 
     if mode and mode.get('mode')=='eval':
-        heuristic = LmCutHeuristic(task)
+        heuristic = HEURISTIC_STR_TO_CLASS[mode.get('heuristic', "lm-cut")](task)
     else:
         # astar by default
-        heuristic = hMaxHeuristic(task)
+        heuristic = HEURISTIC_STR_TO_CLASS[mode.get('heuristic', "h-max")](task)
 
     sol, metrics = find_solution(
         task=task,

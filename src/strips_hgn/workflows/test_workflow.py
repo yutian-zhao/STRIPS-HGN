@@ -46,7 +46,7 @@ def model_to_heuristics(checkpoint, problem):
     return STRIPSHGNHeuristic(model, state_to_input_h_tup, PlannerForEvaluation.pyperplan)
 
 
-def compare_heuristics_1(base_directory, domain_pddl, problem_pddls, checkpoints, ):
+def compare_heuristics_1(base_directory, domain_pddl, problem_pddls, checkpoints, mode={'mode':'eval'}):
     models = [STRIPSHGN.load_from_checkpoint(checkpoint)for checkpoint in checkpoints]  # timer?
     for model in models:
         model.eval()
@@ -81,7 +81,7 @@ def compare_heuristics_1(base_directory, domain_pddl, problem_pddls, checkpoints
 
             heuristics.append(STRIPSHGNHeuristic(model, state_to_input_h_tup, PlannerForEvaluation.pyperplan))
 
-        state_value_pairs, _ = get_optimal_actions_using_py(problem, mode={'mode':'eval'})
+        state_value_pairs, _ = get_optimal_actions_using_py(problem, mode=mode)
         # print(optimal_plan)
 
         # current_state = problem.initial_state

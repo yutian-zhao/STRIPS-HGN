@@ -33,7 +33,7 @@ DEFAULT_ARGS = {
     "weight_decay": 2.5e-4,
     "max_epochs": 9999,
     # TODO: play around with this parameter - bumped to very high for now
-    "patience": 20,
+    "patience": 9999, #20
     # Others
     "debug": True,
     "remove_duplicates": False,
