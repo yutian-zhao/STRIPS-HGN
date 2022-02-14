@@ -88,6 +88,15 @@ class STRIPSProblem(ABC):
     def number_of_actions(self) -> int:
         return len(self.actions)
 
+    def __eq__(self, other):
+        # TODO: This condition for equality and hash is quite loose based on the assumption that 
+        # the namings of damain pddl and problem pddl are unique.
+        return (self.domain_pddl == other.domain_pddl) \
+            and (self.problem_pddl == other.problem_pddl)
+
+    def __hash__(self):
+        return hash((self.domain_pddl, self.problem_pddl))
+
 
 class _PyperplanSTRIPSProblem(STRIPSProblem):
     """

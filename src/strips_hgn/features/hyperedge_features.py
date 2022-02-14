@@ -34,7 +34,7 @@ class ComplexHyperedgeFeatureMapper(HyperedgeFeatureMapper):
 
     def hyperedge_to_feature(self, hyperedge: Hyperedge) -> List[Number]:
         return [
-            hyperedge.weight,
+            hyperedge.weight,  # not neccessary for constant weight
             len(hyperedge.senders),
             len(hyperedge.receivers),
         ]
@@ -45,7 +45,7 @@ class ComplexHyperedgeFeatureMapper(HyperedgeFeatureMapper):
 
     @classmethod
     def input_size(cls) -> int:
-        return 3
+        return 3 # need to be constant with mapper
 
 
 class MoreComplexHyperedgeFeatureMapper(HyperedgeFeatureMapper):

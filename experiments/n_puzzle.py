@@ -27,30 +27,33 @@ assert len(_CONFIGURATION.problems) == 10
 
 
 if __name__ == "__main__":
-    # count = 0
-    # for search_algo in ['astar', 'bfs', 'novelty']:
-    #     for all in [True, False]:
-    #         for novel in [0, 2]:
-    #             for lifted in [True, False]:
-    #                 if not ((search_algo=='novelty' and ((all==False ) or novel==0)) or (novel==0 and lifted==True)):                        
-    #                     # if count >= 6:
-    #                       mode={'mode':'train', 'auto_bslr': True, 'all':all, 'search':search_algo, 'distance': 0, 'novel':novel, 'lifted':lifted}
-    for distance in range(1, 6):
-        mode={'mode':'train', 'search':'bfs', 'all':True, 'distance': distance, 'novel':0, 'lifted':False, 'auto_bslr': False}
-    # mode={'mode':'train', 'auto_bslr': False, 'all':True, 'search':'astar', 'distance': 0, 'novel':False, 'lifted':False}
-    train_wrapper(
-        args=get_training_args(
-            configurations=[_CONFIGURATION],
-            # 10 minutes
-            max_training_time=5 * 60,
-            num_folds=10,
-            batch_size=4,
-            learning_rate=0.002,
-        ),
-        experiment_type='npuzzle'+'_'+'_'.join([str(i)+'_'+str(j) for i, j in mode.items()]),
-        mode=mode,
-    )
-    #                     count += 1
+    repeats = 3
+    modes=[
+        {'domain':'npuzzle', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'npuzzle', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'npuzzle', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
+        {'domain':'npuzzle', 'mode':'train', 'search':'astar', 'all':True, 'novel':False, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'npuzzle', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'npuzzle', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
+        {'domain':'npuzzle', 'mode':'train', 'search':'bfs', 'all':True, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'npuzzle', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'npuzzle', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
+    ]
+    for i in range(repeats):
+        for mode in modes:
+            train_wrapper(
+                args=get_training_args(
+                    configurations=[_CONFIGURATION],
+                    # 10 minutes
+                    max_training_time=10 * 60,
+                    num_folds=10,
+                    # batch_size=32,
+                    # learning_rate=0.005,
+                ),
+                experiment_type=mode_to_str(mode),
+                mode=mode,
+            )
+
 
     # MODEL_NAMES = []
     # for root, dirs, files in os.walk("../results/"):

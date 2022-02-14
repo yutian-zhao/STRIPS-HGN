@@ -40,9 +40,12 @@ class Timer(object):
 
     def stop(self):
         self.pause()
-        self._accumulated_time = 0
+        # self._accumulated_time = 0
         # self._last_start_time = None
         # self.stopped = True # reset the timer instead of fully stopping
+
+    def reset(self):
+        self._accumulated_time = 0
 
     @property
     def total_time(self):
@@ -80,6 +83,8 @@ class TimedOperation(Timer):
 
     def stop(self):
         """ Stop the timer and add it to the metrics logger"""
+        super().stop()
+
         log_str = (
             f"Timer {self.name} stopped. Accumulated time: "
             f"{round(self.total_time, 5)}s."
@@ -100,7 +105,7 @@ class TimedOperation(Timer):
             TimeMetric(self.name, self.total_time, context=self.context)
         )
 
-        super().stop()
+        super().reset()
 
     def __enter__(self):
         return self.start()

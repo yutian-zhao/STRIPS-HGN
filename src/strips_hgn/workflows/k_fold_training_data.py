@@ -1,5 +1,7 @@
 import logging
 from typing import Dict, List, Tuple, Type
+import os
+import pickle
 
 from torch.utils.data import DataLoader
 
@@ -28,6 +30,7 @@ from strips_hgn.training_data.merge import merge_state_value_pairs_by_domain
 from strips_hgn.training_data.process import get_kfold_training_data
 from strips_hgn.training_data.save import save_training_data
 from strips_hgn.utils.timer import timed
+from strips_hgn.utils.helpers import mode_to_str
 from strips_hgn.workflows.training_data import BaseTrainingDataWorkflow
 
 _log = logging.getLogger(__name__)
@@ -100,14 +103,25 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         for the given fold.
         """
         # 1. Generate optimal state-value pairs for all problems
-        problem_to_state_value_pairs = generate_optimal_state_value_pairs(
-            self._problems, mode=self._mode
-        )
+        data_directory = os.path.join(os.path.dirname(os.path.dirname(os.path.normpath(self._experiments_dir))), 'training_data')
+        data_file = os.path.join(data_directory, mode_to_str(self._mode)+'.pkl')
+        if os.path.exists(data_file):
+            _log.info(f'Loading trianing data from {data_file}.')
+            problem_to_state_value_pairs = pickle.load(open(data_file, "rb" ))
+        else: 
+            problem_to_state_value_pairs = generate_optimal_state_value_pairs(
+                self._problems, mode=self._mode
+            )
+            if not os.path.exists(data_directory):
+                os.mkdir(data_directory)
+            _log.info(f'Dumping trianing data to {data_file}.')
+            pickle.dump(problem_to_state_value_pairs, open(data_file, "wb" ) )
 
         # 2. Merge state-value pairs by domain
         domain_to_training_pairs = merge_state_value_pairs_by_domain(
             problem_to_state_value_pairs,
             remove_duplicates=self._remove_duplicates,
+            mode = self._mode
         )
 
         # 3. Get k-fold training data and resample if required

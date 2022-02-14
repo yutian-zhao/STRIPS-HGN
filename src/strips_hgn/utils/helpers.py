@@ -120,3 +120,10 @@ def dump_args(args: BaseArgs, results_dir: str, dump_fname: str) -> str:
     args_fname = os.path.join(results_dir, dump_fname)
     json.dump(args.__dict__, open(args_fname, "w"), indent=2, cls=ArgsEncoder)
     return args_fname
+
+def mode_to_str(mode):
+    mode_str = mode['domain'] + "_mode_"+mode.get("mode", 'train')+"_search_"+ mode["search"] \
+            + "_all_"+str(mode.get("all", False)) + "_novel_"+str(mode.get("novel", 0)) \
+            + "_lifted_"+str(mode.get("lifted", False)) + "_distance_"+str(mode.get("distance", 0)) \
+            + "_bound_"+str(mode.get("bound", 300))
+    return mode_str

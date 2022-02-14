@@ -15,6 +15,7 @@ _log = logging.getLogger(__name__)
 def merge_state_value_pairs_by_domain(
     problem_to_state_value_pairs: Dict[STRIPSProblem, List[StateValuePair]],
     remove_duplicates: bool = False,
+    mode = None
 ) -> Dict[str, List[TrainingPair]]:
     """
     Generates a mapping of domain to corresponding TrainingPairs.
@@ -61,14 +62,18 @@ def merge_state_value_pairs_by_domain(
         n_value_min = min(cnt.values())
         n_value = len(cnt.keys())
         _log.info("The smallest set of a heuristic value has {} samples, there are {} different heuristic values.".format(n_value_min, n_value))
-         
-        if len(training_pairs) > 300:
+        
+        if mode:
+            data_amount = mode.get('bound', 300)
+        else:
+            data_amount = 300
+        if len(training_pairs) > data_amount:
         #     if n_value*n_value_min <= 10000:
         #         n = n_value*n_value_min
         #     else:
         #         n = 10000
         # elif len(training_pairs) > 300:
-            n =300
+            n = data_amount
         else:
             n = len(training_pairs)
         # n = n_value*n_value_min if len(training_pairs) > 300 and n_value*n_value_min > 300 else len(training_pairs)

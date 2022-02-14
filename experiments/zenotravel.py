@@ -1,5 +1,6 @@
 from default_args import get_training_args, DomainAndProblemConfiguration
 from train import train_wrapper
+from strips_hgn.utils.helpers import mode_to_str
 import logging
 import os
 
@@ -30,15 +31,15 @@ assert len(_CONFIGURATION.problems) == 20
 if __name__ == "__main__":
     repeats = 3
     modes=[
-        {'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
-        {'mode':'train', 'search':'astar', 'all':True, 'novel':False, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
-        {'mode':'train', 'search':'bfs', 'all':True, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'mode':'train', 'search':'novelty', 'all':True, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'zenotravel', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'zenotravel', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'zenotravel', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
+        {'domain':'zenotravel', 'mode':'train', 'search':'astar', 'all':True, 'novel':False, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'zenotravel', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'zenotravel', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
+        {'domain':'zenotravel', 'mode':'train', 'search':'bfs', 'all':True, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'zenotravel', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        {'domain':'zenotravel', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
     ]
     for i in range(repeats):
         for mode in modes:
@@ -51,7 +52,7 @@ if __name__ == "__main__":
                     # batch_size=32,
                     # learning_rate=0.005,
                 ),
-                experiment_type='zenotravel'+'_'+'_'.join([str(i)+'_'+str(j) for i, j in mode.items()]),
+                experiment_type=mode_to_str(mode),
                 mode=mode,
             )
 
