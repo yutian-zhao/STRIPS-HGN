@@ -10,13 +10,13 @@ def pad_str(s):
 _CONFIGURATION = DomainAndProblemConfiguration(
     base_directory="../benchmarks/blocks-slaney",
     domain_pddl="domain.pddl",
-    problem_pddls=["blocks{0}/task{1}.pddl".format(i, pad_str(j)) for i in range(6, 11) for j in range(1, 21)],
+    problem_pddls=["blocks{0}/task{1}.pddl".format(i, pad_str(j)) for i in range(6, 16) for j in range(1, 2)],
 )
 
-assert len(_CONFIGURATION.problems) == 100
+# assert len(_CONFIGURATION.problems) == 100
 
 mode = {'mode':'eval'}# , {'mode':'train', 'all':False, 'search':'astar', 'distance': 0, 'novel':False, 'lifted':False}
-model_name = ""
+model_name = "blocksworld_mode_train_search_novelty_all_True_distance_0_novel_2_lifted_False_auto_bslr_False-strips-hgn-02-10-12-11-59"
 
 if __name__ == "__main__":
 
