@@ -1,5 +1,6 @@
 from default_args import get_eval_args, DomainAndProblemConfiguration
 from eval import eval_wrapper
+import os 
 
 def pad_str(s):
     
@@ -16,7 +17,7 @@ _CONFIGURATION = DomainAndProblemConfiguration(
 # assert len(_CONFIGURATION.problems) == 100
 
 mode = {'mode':'eval'}# , {'mode':'train', 'all':False, 'search':'astar', 'distance': 0, 'novel':False, 'lifted':False}
-model_name = "blocksworld_mode_train_search_novelty_all_True_distance_0_novel_2_lifted_False_auto_bslr_False-strips-hgn-02-10-12-11-59"
+model_name = "blocksworld_mode_train_all_False_search_astar_distance_0_novel_0_lifted_False"
 
 if __name__ == "__main__":
 

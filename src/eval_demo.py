@@ -23,6 +23,9 @@ from strips_hgn.planning import (
     Proposition,
 )
 
+from strips_hgn.workflows.base_workflow import BaseFeatureMappingWorkflow
+
+
 
 def _get_node_feature_mapper(
     node_feature_mapper_cls: Type[NodeFeatureMapper],
@@ -109,16 +112,27 @@ def eval_demo(
         json.dumps(hparams.__dict__, indent=2, default=str),
     )
 
-    def state_to_input_h_tup(state):
-        # Function that maps from a state to a HypergraphsTuple
-        return _get_input_hypergraphs_tuple(
-            current_state=state,
-            hypergraph=hypergraph,
-            max_receivers=hparams.receiver_k,
-            max_senders=hparams.sender_k,
+    # def state_to_input_h_tup(state):
+    #     # Function that maps from a state to a HypergraphsTuple
+    #     return _get_input_hypergraphs_tuple(
+    #         current_state=state,
+    #         hypergraph=hypergraph,
+    #         max_receivers=hparams.receiver_k,
+    #         max_senders=hparams.sender_k,
+    #         node_feature_mapper_cls=hparams.node_feature_mapper_cls,
+    #         hyperedge_feature_mapper_cls=hparams.hyperedge_feature_mapper_cls,
+    #     )
+
+    wf = BaseFeatureMappingWorkflow(
+            global_feature_mapper_cls=hparams.global_feature_mapper_cls,
             node_feature_mapper_cls=hparams.node_feature_mapper_cls,
             hyperedge_feature_mapper_cls=hparams.hyperedge_feature_mapper_cls,
+            max_receivers=model.hparams.receiver_k,
+            max_senders=model.hparams.sender_k,
         )
+
+    def state_to_input_h_tup(state) -> HypergraphsTuple:
+        return wf._get_input_hypergraphs_tuple(state, hypergraph)
 
     # There are two ways we can call the heuristic
     # 1. Call the STRIPSHGN directly with a HypergraphsTuple
@@ -126,7 +140,8 @@ def eval_demo(
 
     # Option 1: Call the STRIPSHGN directly with a HypergraphsTuple
     input_h_tuple = state_to_input_h_tup(problem.initial_state)
-    output_h_tuple = model(input_h_tuple, num_steps)
+    # print(input_h_tuple)
+    output_h_tuple = model(input_h_tuple) # , num_steps
     assert len(output_h_tuple) == 1
 
     heuristic_val = output_h_tuple[0].globals.item()
@@ -151,7 +166,10 @@ def eval_demo(
 
 if __name__ == "__main__":
     eval_demo(
-        domain_pddl="../benchmarks/blocks-slaney/domain.pddl",
-        problem_pddl="../benchmarks/blocks-slaney/blocks10/task01.pddl",
-        checkpoint="../results/blocksworld-example-new.ckpt",
+        # domain_pddl="../benchmarks/blocks-slaney/domain.pddl",
+        # problem_pddl="../benchmarks/blocks-slaney/blocks10/task01.pddl",
+        # checkpoint="../results/blocksworld-example-new.ckpt",
+        domain_pddl="../benchmarks/blocksworld/domain.pddl",
+        problem_pddl="../benchmarks/blocksworld/10/blocksworld10-1107.pddl",
+        checkpoint="../results/blocksworld_mode_trainlarge3_search_astar_all_False_novel_0_lifted_False_distance_0_bound_300-strips-hgn-02-19-20-33-25/model-best.ckpt",
     )

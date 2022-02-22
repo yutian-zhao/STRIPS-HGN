@@ -73,7 +73,7 @@ class STRIPSHGN(LightningModule):
         try to minimise number of message passing steps to get to the target
         graph.
         """
-        return calc_avg_loss(self._criterion, pred_graphs, target_graph)
+        return calc_loss(self._criterion, pred_graphs, target_graph)
 
     def setup_prediction_mode(self):
         # Set flag for prediction mode
@@ -148,3 +148,15 @@ def calc_avg_loss(
         )
 
     return accum_loss / len(pred_graphs)
+
+def calc_loss(
+    criterion,
+    pred_graphs: List[HypergraphsTuple],
+    target_graph: HypergraphsTuple,
+):
+    """
+    Calculates average loss for a criterion over multiple predictions
+    """
+    accum_loss = criterion(target_graph.globals, pred_graphs[-1].globals)
+
+    return accum_loss

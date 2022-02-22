@@ -122,7 +122,7 @@ def dump_args(args: BaseArgs, results_dir: str, dump_fname: str) -> str:
     return args_fname
 
 def mode_to_str(mode):
-    mode_str = mode['domain'] + "_mode_"+mode.get("mode", 'train')+"_search_"+ mode["search"] \
+    mode_str = mode['domain'] + "_mode_"+mode.get("mode", 'train')+'_'+mode.get('type', '')+"_search_"+ mode["search"] \
             + "_all_"+str(mode.get("all", False)) + "_novel_"+str(mode.get("novel", 0)) \
             + "_lifted_"+str(mode.get("lifted", False)) + "_distance_"+str(mode.get("distance", 0)) \
             + "_bound_"+str(mode.get("bound", 300))

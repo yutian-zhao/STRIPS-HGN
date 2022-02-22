@@ -105,10 +105,19 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         # 1. Generate optimal state-value pairs for all problems
         data_directory = os.path.join(os.path.dirname(os.path.dirname(os.path.normpath(self._experiments_dir))), 'training_data')
         data_file = os.path.join(data_directory, mode_to_str(self._mode)+'.pkl')
-        if os.path.exists(data_file):
+
+        problem_to_state_value_pairs = None
+        if os.path.exists(data_file):  # load if data file exists
             _log.info(f'Loading trianing data from {data_file}.')
             problem_to_state_value_pairs = pickle.load(open(data_file, "rb" ))
-        else: 
+            _log.info(f"Loaded training data contains {len(problem_to_state_value_pairs.keys())} problems.")
+            _log.info(f"Loaded problems are: {[k.name for k in problem_to_state_value_pairs.keys()]}.")
+            for p in self._problems:
+                if p not in problem_to_state_value_pairs.keys():
+                    _log.warning(f'{p.name} is not in the saved data.')
+                    problem_to_state_value_pairs = None
+                    break
+        if not problem_to_state_value_pairs: 
             problem_to_state_value_pairs = generate_optimal_state_value_pairs(
                 self._problems, mode=self._mode
             )

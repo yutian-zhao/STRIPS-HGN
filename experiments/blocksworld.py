@@ -7,9 +7,9 @@ _CONFIGURATION = DomainAndProblemConfiguration(
     base_directory="../benchmarks/blocksworld",
     domain_pddl="domain.pddl",
     # {3, 4, 5 blocks} x 10 problems = 30 problems
-    problem_pddls=sorted(['10/'+ p for p in os.listdir("../benchmarks/blocksworld/3")])[:1]+
-        sorted(['11/'+p for p in os.listdir("../benchmarks/blocksworld/4")])[:1]+
-        sorted(['12/'+p for p in os.listdir("../benchmarks/blocksworld/5")])[:1]
+    problem_pddls=sorted(['10/'+ p for p in os.listdir("../benchmarks/blocksworld/10")])[:1]+
+        sorted(['11/'+p for p in os.listdir("../benchmarks/blocksworld/11")])[:1]+
+        sorted(['12/'+p for p in os.listdir("../benchmarks/blocksworld/12")])[:1]
 )
 assert len(_CONFIGURATION.problems) == 30
 

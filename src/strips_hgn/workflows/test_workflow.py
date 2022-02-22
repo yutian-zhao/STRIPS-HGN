@@ -2,6 +2,7 @@ import os
 import sys
 import functools
 import matplotlib.pyplot as plt 
+import logging
 
 
 from pyperplan.search import searchspace
@@ -23,6 +24,7 @@ from strips_hgn.planning import (
 )
 from strips_hgn.workflows.base_workflow import BaseFeatureMappingWorkflow
 
+_log = logging.getLogger(__name__)
 
 # added by yutian
 def model_to_heuristics(checkpoint, problem):
@@ -45,6 +47,62 @@ def model_to_heuristics(checkpoint, problem):
 
     return STRIPSHGNHeuristic(model, state_to_input_h_tup, PlannerForEvaluation.pyperplan)
 
+
+def compare_heuristics_0(base_directory, domain_pddl, problem_pddls, checkpoints, mode={'mode':'eval'}):
+    models = [STRIPSHGN.load_from_checkpoint(checkpoint)for checkpoint in checkpoints]
+    for model in models:
+        model.eval()
+        model.setup_prediction_mode()
+
+    args = BaseArgs(domain=os.path.join(base_directory, domain_pddl), 
+        domains=None,
+        problems=[os.path.join(base_directory, problem) for problem in problem_pddls],
+        debug=True)
+
+    problems = args.get_strips_problems()
+
+    h_values = []
+    for idx, problem in enumerate(problems):
+        print(problem.name)
+        hypergraph = DeleteRelaxationHypergraphView(problem)
+
+        state_value_pairs, _ = get_optimal_actions_using_py(problem, mode=mode)
+        target=None
+        
+        hs = []
+        optimal_vals = []
+        for pair in state_value_pairs:
+            optimal_vals.append(pair[2])
+            assert target==None or target==pair[1]
+            target=pair[1]
+        hs.append(optimal_vals)
+
+        for model in models:
+            hparams = model.hparams
+
+            wf = BaseFeatureMappingWorkflow(
+                global_feature_mapper_cls=hparams.global_feature_mapper_cls,
+                node_feature_mapper_cls=hparams.node_feature_mapper_cls,
+                hyperedge_feature_mapper_cls=hparams.hyperedge_feature_mapper_cls,
+                max_receivers=model.hparams.receiver_k,
+                max_senders=model.hparams.sender_k,
+            )
+
+            # def state_to_input_h_tup(state) -> HypergraphsTuple:
+            #     return wf._get_input_hypergraphs_tuple(state, hypergraph)
+
+            h_vals = []
+            for pair in state_value_pairs:
+                input_h_tuple = wf._get_input_hypergraphs_tuple(pair[0], hypergraph, pair[1])
+                output_h_tuple = model(input_h_tuple) # , num_steps
+                assert len(output_h_tuple) == 1
+                heuristic_val = output_h_tuple[0].globals.item()
+                h_vals.append(heuristic_val)
+            hs.append(h_vals)
+
+        h_values.append(hs)
+
+    return h_values
 
 def compare_heuristics_1(base_directory, domain_pddl, problem_pddls, checkpoints, mode={'mode':'eval'}):
     models = [STRIPSHGN.load_from_checkpoint(checkpoint)for checkpoint in checkpoints]  # timer?
@@ -82,36 +140,7 @@ def compare_heuristics_1(base_directory, domain_pddl, problem_pddls, checkpoints
             heuristics.append(STRIPSHGNHeuristic(model, state_to_input_h_tup, PlannerForEvaluation.pyperplan))
 
         state_value_pairs, _ = get_optimal_actions_using_py(problem, mode=mode)
-        # print(optimal_plan)
-
-        # current_state = problem.initial_state
-        # trajectory: List[StateValuePair] = [
-        #     StateValuePair(current_state, len(optimal_plan))
-        # ]
-
-        # name_to_action: Dict[str, STRIPSAction] = {
-        #     action.name: action for action in problem.actions
-        # }
-
-        # parent = searchspace.make_root_node(current_state)
-        
         hs = [[pair[2]] + [heuristic(searchspace.make_root_node(pair[0])) for heuristic in heuristics] for pair in state_value_pairs]
-
-        # for idx, action_name in enumerate(optimal_plan):
-        #     # Apply action in the current state
-        #     action = name_to_action[action_name.name]
-        #     current_state = action.apply(current_state)
-        #     child = searchspace.make_child_node(parent, action, current_state)
-
-        #     # Create new state-value pair
-        #     remaining_plan_length = len(optimal_plan) - (idx + 1)
-        #     hs.append([remaining_plan_length] + [heuristic(child) for heuristic in heuristics])
-
-        #     parent = child
-
-        # assert problem.is_goal_state(current_state)
-        # assert len(hs) == len(optimal_plan) + 1
-
         h_values.append(list(zip(*hs)))
 
     return h_values

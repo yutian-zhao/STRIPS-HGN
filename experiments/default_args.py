@@ -30,7 +30,7 @@ DEFAULT_ARGS = {
     # Training Hyperparameters
     "batch_size": 1,
     "learning_rate": 0.001,
-    "weight_decay": 2.5e-4,
+    "weight_decay": 0.00025, # 0.00025
     "max_epochs": 9999,
     # TODO: play around with this parameter - bumped to very high for now
     "patience": 9999, #20
