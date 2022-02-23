@@ -7,24 +7,24 @@ _CONFIGURATION = DomainAndProblemConfiguration(
     base_directory="../benchmarks/blocksworld",
     domain_pddl="domain.pddl",
     # {3, 4, 5 blocks} x 10 problems = 30 problems
-    problem_pddls=sorted(['10/'+ p for p in os.listdir("../benchmarks/blocksworld/10")])[:1]+
-        sorted(['11/'+p for p in os.listdir("../benchmarks/blocksworld/11")])[:1]+
-        sorted(['12/'+p for p in os.listdir("../benchmarks/blocksworld/12")])[:1]
+    problem_pddls=sorted(['3/'+ p for p in os.listdir("../benchmarks/blocksworld/3")])[:10]+
+        sorted(['4/'+p for p in os.listdir("../benchmarks/blocksworld/4")])[:10]+
+        sorted(['5/'+p for p in os.listdir("../benchmarks/blocksworld/5")])[:10]
 )
 assert len(_CONFIGURATION.problems) == 30
 
 if __name__ == "__main__":
-    repeats = 3
+    repeats = 1
     modes=[
         {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
         {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
-        {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':True, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':True, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
         {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
-        {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':True, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':True, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
         {'domain':'blocksworld', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'domain':'blocksworld', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
     ]
     for i in range(repeats):
         for mode in modes:

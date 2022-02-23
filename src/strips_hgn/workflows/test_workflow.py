@@ -140,8 +140,12 @@ def compare_heuristics_1(base_directory, domain_pddl, problem_pddls, checkpoints
             heuristics.append(STRIPSHGNHeuristic(model, state_to_input_h_tup, PlannerForEvaluation.pyperplan))
 
         state_value_pairs, _ = get_optimal_actions_using_py(problem, mode=mode)
-        hs = [[pair[2]] + [heuristic(searchspace.make_root_node(pair[0])) for heuristic in heuristics] for pair in state_value_pairs]
-        h_values.append(list(zip(*hs)))
+        if state_value_pairs:
+            hs = [[pair[2]] + [heuristic(searchspace.make_root_node(pair[0])) for heuristic in heuristics] for pair in state_value_pairs]
+            h_values.append(list(zip(*hs)))
+        else:
+            print("Solutions are not found.")
+            h_values.append([() for i in range(len(heuristics)+1)])
 
     return h_values
 
