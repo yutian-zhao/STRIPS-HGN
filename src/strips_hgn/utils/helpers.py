@@ -13,6 +13,7 @@ _log = logging.getLogger(__name__)
 
 _EXPERIMENT_DIRECTORY_FORMAT = "strips-hgn-{datetime}"
 
+NAME_ENTRIES = ['all', 'novel', "complement", "lifted"]
 
 def natural_sort_key(s, _nsre=re.compile("([0-9]+)")):
     """ Taken from: https://stackoverflow.com/a/16090640 """
@@ -122,8 +123,6 @@ def dump_args(args: BaseArgs, results_dir: str, dump_fname: str) -> str:
     return args_fname
 
 def mode_to_str(mode):
-    mode_str = mode['domain'] + "_mode_"+mode.get("mode", 'train')+'_'+mode.get('type', '')+"_search_"+ mode["search"] \
-            + "_all_"+str(mode.get("all", False)) + "_novel_"+str(mode.get("novel", 0)) \
-            + "_lifted_"+str(mode.get("lifted", False)) + "_distance_"+str(mode.get("distance", 0)) \
-            + "_bound_"+str(mode.get("bound", 300))
+    mode_str = mode['domain'] + "_mode_"+mode.get("mode", 'train')+mode.get('type', '_')+mode["search"]+'_' \
+            + '_'.join([entry+"_"+str(mode.get(entry, 'unset')) for entry in NAME_ENTRIES])
     return mode_str

@@ -16,15 +16,18 @@ assert len(_CONFIGURATION.problems) == 30
 if __name__ == "__main__":
     repeats = 1
     modes=[
-        {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        # {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
-        # {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':True, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        # {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
-        # {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':True, 'novel':0, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        {'domain':'blocksworld', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':False, 'distance': 0, 'auto_bslr': False},
-        # {'domain':'blocksworld', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':True, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, "complement": 0, 'lifted':0, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, "complement": 25, 'lifted':0, 'distance': 0, 'auto_bslr': False},
+        {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, "complement": 0, 'lifted':1000, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, "complement": 25, 'lifted':1, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':True, 'novel':0, "complement": 0, 'lifted':0, 'distance': 0, 'auto_bslr': False},
+        {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, "complement": 25, 'lifted':0, 'distance': 0, 'auto_bslr': False},
+        {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, "complement": 0, 'lifted':1000, 'distance': 0, 'auto_bslr': False},        
+        # {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':False, 'novel':2, "complement": 25, 'lifted':1, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'bfs', 'all':True, 'novel':0, "complement": 0, 'lifted':0, 'distance': 0, 'auto_bslr': False},
+        {'domain':'blocksworld', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':0, 'distance': 0, 'auto_bslr': False},
+        {'domain':'blocksworld', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, 'lifted':1000, 'distance': 0, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'novelty', 'all':True, 'novel':2, "complement": 25, 'lifted':1, 'distance': 0, 'auto_bslr': False},
     ]
     for i in range(repeats):
         for mode in modes:
