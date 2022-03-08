@@ -184,7 +184,7 @@ def train_main(args: TrainingArgs, experiments_dir: str, mode=None,):
     # _log.info(f"Copied best STRIPS-HGN to {best_model_fname}")
 
 
-def train_wrapper(args: TrainingArgs, experiment_type="train", mode=None):
+def train_wrapper(args: TrainingArgs, experiment_type="train", mode=None, use_logging=True):
     # Wrap the training method
     wrap_method(
         args=args,
@@ -192,6 +192,7 @@ def train_wrapper(args: TrainingArgs, experiment_type="train", mode=None):
         experiment_type=experiment_type,
         results_directory=_RESULTS_DIRECTORY,
         mode=mode,
+        use_logging=use_logging
     )
 
 

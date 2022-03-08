@@ -15,6 +15,7 @@ def wrap_method(
     results_directory: str,
     experiments_dir: Optional[str] = None,
     mode=None,
+    use_logging=True
 ):
     """
     This method is used to wrap main methods by clearing metrics, setting
@@ -41,7 +42,7 @@ def wrap_method(
     if not experiments_dir:
         log_level = logging.DEBUG if args.debug else logging.INFO
         experiments_dir = setup_experiment(
-            experiment_type, results_directory, log_level
+            experiment_type, results_directory, log_level, use_logging=use_logging
         )
 
     dump_args(args, experiments_dir, f"{experiment_type}_args.json")

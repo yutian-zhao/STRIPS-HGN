@@ -122,6 +122,8 @@ class EvaluateSTRIPSHGNWorkflow(BaseFeatureMappingWorkflow):
         )
 
         # Run search for all the problems
+        # implement early stopping
+        last_success = -1
         for idx, problem in enumerate(problems):
             _log.info(
                 f"Evaluating {problem.name} for {problem.domain_name} "
@@ -148,7 +150,9 @@ class EvaluateSTRIPSHGNWorkflow(BaseFeatureMappingWorkflow):
                 }
                 
                 # stop when fail to solve a problem to save evaluation time
-                if self._evaluation_metrics["results"][problem.name]["strips-hgn"]["search_state"].name != "success":
+                if self._evaluation_metrics["results"][problem.name]["strips-hgn"]["search_state"].name == "success":
+                    last_success=idx
+                elif idx-last_success>=5:
                     break
             
             else:

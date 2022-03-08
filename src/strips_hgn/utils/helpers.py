@@ -75,7 +75,7 @@ def create_experiment_results_directory(
 
 
 def setup_experiment(
-    prefix: str, base_results_dir: str, log_level=logging.INFO
+    prefix: str, base_results_dir: str, log_level=logging.INFO, use_logging=True
 ) -> str:
     """
     Sets up an experiment by creating directories and logger
@@ -96,7 +96,8 @@ def setup_experiment(
     )
 
     # Setup logger
-    setup_full_logging(full_experiment_dir, log_level=log_level)
+    if use_logging:
+        setup_full_logging(full_experiment_dir, log_level=log_level)
 
     # Log experiments directory after logger has been set up
     _log.info(f"Experiment results directory: {full_experiment_dir}")

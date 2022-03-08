@@ -46,7 +46,7 @@ def eval_main(args: EvaluationArgs, experiments_dir: str):
     eval_wf.run(problems=args.get_strips_problems())
 
 
-def eval_wrapper(args: EvaluationArgs, experiment_type='eval', mode={'mode':'eval'}):
+def eval_wrapper(args: EvaluationArgs, experiment_type='eval', mode={'mode':'eval'}, use_logging=True):
     # Wrap the evaluation method
     wrap_method(
         args=args,
@@ -54,6 +54,7 @@ def eval_wrapper(args: EvaluationArgs, experiment_type='eval', mode={'mode':'eva
         experiment_type=experiment_type,
         results_directory=_RESULTS_DIRECTORY,
         mode=mode,
+        use_logging=use_logging,
     )
 
 
