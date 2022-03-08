@@ -36,6 +36,8 @@ class STRIPSHGN(LightningModule):
         self.hparams = hparams
         self._prediction_mode = False
         self._criterion = MSELoss()
+        # added
+        self.best_val_loss = float('inf')
 
         # Override hidden size if not specified
         if "hidden_size" not in hparams:
@@ -73,7 +75,7 @@ class STRIPSHGN(LightningModule):
         try to minimise number of message passing steps to get to the target
         graph.
         """
-        return calc_loss(self._criterion, pred_graphs, target_graph)
+        return calc_avg_loss(self._criterion, pred_graphs, target_graph)
 
     def setup_prediction_mode(self):
         # Set flag for prediction mode
@@ -128,7 +130,9 @@ class STRIPSHGN(LightningModule):
 
     def validation_epoch_end(self, outputs):
         avg_loss = torch.stack([step["val_loss"] for step in outputs]).mean()
-        tensorboard_logs = {"val_loss": avg_loss}
+        if avg_loss < self.best_val_loss:
+            self.best_val_loss = avg_loss
+        tensorboard_logs = {"val_loss": avg_loss, 'best_val_loss': self.best_val_loss}
         return {"avg_val_loss": avg_loss, "log": tensorboard_logs}
 
 

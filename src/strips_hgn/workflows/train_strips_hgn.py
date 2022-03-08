@@ -48,6 +48,7 @@ class TrainSTRIPSHGNWorkflow(object):
 
         # Lightning stuff (callback, logger, etc.)
         self._early_stop_callback = EarlyStoppingWithMaxTrainingTime(
+            monitor='best_val_loss', # added
             patience=early_stopping_patience,
             max_training_time=max_training_time,
         )

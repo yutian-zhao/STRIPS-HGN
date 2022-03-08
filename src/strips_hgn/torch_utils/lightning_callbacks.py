@@ -11,7 +11,7 @@ class EarlyStoppingWithMaxTrainingTime(EarlyStopping):
     Early Stopping with Max Training Time
     """
 
-    def __init__(self, patience: int, max_training_time: int):
+    def __init__(self, monitor: str, patience: int, max_training_time: int):
         """
         Parameters
         ----------
@@ -20,7 +20,7 @@ class EarlyStoppingWithMaxTrainingTime(EarlyStopping):
         max_training_time: maximum training time in seconds, elapsed time will
             be checked at the end of every epoch
         """
-        super().__init__(patience=patience)
+        super().__init__(monitor=monitor, patience=patience)
 
         assert max_training_time > 0
         self._max_training_time = max_training_time
