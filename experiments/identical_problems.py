@@ -1,6 +1,7 @@
 import os
 import sys
 import subprocess
+import logging
 
 from strips_hgn.planning.pyperplan_api import get_domain_and_task, find_solution
 import re
@@ -20,6 +21,8 @@ from pyperplan.pddl.pddl import Domain, Problem
 from pyperplan.search import SearchMetrics, astar_search, breadth_first_search, novelty_search
 from pyperplan.task import Task
 
+_log = logging.getLogger(__name__)
+
 def natural_sort(l):
     """ https://stackoverflow.com/a/4836734 """
     convert = lambda text: int(text) if text.isdigit() else text.lower()
@@ -36,7 +39,7 @@ def generate_problems(generator, args, num, domain_name, output_dir):
             randn = random.randint(1000, 9999)
             fname = domain_name+''.join(args).strip(" ")+'-'+str(randn)+'.pddl'
         with open(os.path.join(output_dir, fname), 'bw') as file:
-            # print(proc.stdout)
+            # _log.info(proc.stdout)
             file.write(proc.stdout)
         
 
@@ -49,6 +52,7 @@ python identical_problems.py <domain_pddl> <dir-1> <dir-2> ... <dir-n>
 Each dir is a directory containing PDDL problem instances
 """
 if __name__ == "__main__":
+
     # generator = "./../../pddl-generators/sokoban/random/sokoban-generator-typed"
     # domain_name = 'sokoban'
     # arg_list = [['-n', '5', '-b', '2', '-w', '3'],
@@ -75,79 +79,84 @@ if __name__ == "__main__":
     num = 50
     domain_file = "../benchmarks/blocksworld/domain.pddl"
 
-    # for idx, args in enumerate(arg_list):
-    #     print(f"===== Processing Args {''.join(args).strip(' ')} idx {idx} =====")
-    #     output_dir = domain_dir+''.join(args).strip(" ")
+    handler = logging.FileHandler(os.path.join(domain_dir, 'generate_problems.log'))
+    handler.setLevel(logging.INFO)
+    _log.setLevel(logging.INFO)
+    _log.addHandler(handler)
 
-    #     if not os.path.exists(output_dir):
-    #         os.mkdir(output_dir)
+    for idx, args in enumerate(arg_list):
+        _log.info(f"===== Processing Args {''.join(args).strip(' ')} idx {idx} =====")
+        output_dir = domain_dir+''.join(args).strip(" ")
 
-    #     validated_probs = 0
-    #     count = 0
+        if not os.path.exists(output_dir):
+            os.mkdir(output_dir)
 
-    #     while validated_probs < num:
-    #         init_and_goals = {}
-    #         identical_probs = 0
-    #         initial_is_goal = 0
-    #         trivial_probs = 0
-    #         count += 1
-    #         for file in os.listdir(output_dir):
-    #             if not file.endswith(".pddl"):
-    #                 print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Ignoring {file}")
-    #                 continue
+        validated_probs = 0
+        count = 0
 
-    #             if file == "slaney_gen.pddl" or file == 'domain.pddl':
-    #                 # For the blocks-slaney file structure
-    #                 # TODO: Problem naming collision.
-    #                 # May need to repicate or modify structure files.
-    #                 continue
+        while validated_probs < num:
+            init_and_goals = {}
+            identical_probs = 0
+            initial_is_goal = 0
+            trivial_probs = 0
+            count += 1
+            for file in os.listdir(output_dir):
+                if not file.endswith(".pddl"):
+                    _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Ignoring {file}")
+                    continue
 
-    #             prob_file = os.path.join(output_dir, file)
-    #             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Processing {prob_file}")
-    #             _, task = get_domain_and_task(domain_file, prob_file)
+                if file == "slaney_gen.pddl" or file == 'domain.pddl':
+                    # For the blocks-slaney file structure
+                    # TODO: Problem naming collision.
+                    # May need to repicate or modify structure files.
+                    continue
 
-    #             key = (task.initial_state, task.goals)
-    #             if task.goal_reached(task.initial_state):
-    #                 print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: INITIAL STATE IS GOAL STATE!!!")
-    #                 print(f"Removing {prob_file}")
-    #                 os.remove(prob_file)
-    #                 initial_is_goal += 1
-    #                 continue
+                prob_file = os.path.join(output_dir, file)
+                _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Processing {prob_file}")
+                _, task = get_domain_and_task(domain_file, prob_file)
 
-    #             if key in init_and_goals:
-    #                 print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Initial state and goal already encountered in {init_and_goals[key]}")
-    #                 print(f"Removing {prob_file}")
-    #                 os.remove(prob_file)
-    #                 identical_probs += 1
-    #                 continue
-    #             else:
-    #                 print("  - Testing if the problem is trivial.")
-    #                 sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 5)
-    #                 if sol:
-    #                     if len(sol) < 5:
-    #                         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: problem is trivial.")
-    #                         print(f"Removing {prob_file}")
-    #                         os.remove(prob_file)
-    #                         trivial_probs+=1
-    #                     else:
-    #                         init_and_goals[key] = prob_file
-    #                         validated_probs += 1
-    #                         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
-    #                 else:
-    #                     init_and_goals[key] = prob_file
-    #                     validated_probs += 1
+                key = (task.initial_state, task.goals)
+                if task.goal_reached(task.initial_state):
+                    _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: INITIAL STATE IS GOAL STATE!!!")
+                    _log.info(f"Removing {prob_file}")
+                    os.remove(prob_file)
+                    initial_is_goal += 1
+                    continue
 
-    #         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {identical_probs} problems are not unique.")
-    #         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {initial_is_goal} initial states are goals.")
-    #         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {trivial_probs} problems are trivial.")
-    #         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {validated_probs}/{num} problems are verified.")
+                if key in init_and_goals:
+                    _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Initial state and goal already encountered in {init_and_goals[key]}")
+                    _log.info(f"Removing {prob_file}")
+                    os.remove(prob_file)
+                    identical_probs += 1
+                    continue
+                else:
+                    _log.info("  - Testing if the problem is trivial.")
+                    sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 5)
+                    if sol:
+                        if len(sol) < 5:
+                            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: problem is trivial.")
+                            _log.info(f"Removing {prob_file}")
+                            os.remove(prob_file)
+                            trivial_probs+=1
+                        else:
+                            init_and_goals[key] = prob_file
+                            validated_probs += 1
+                            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
+                    else:
+                        init_and_goals[key] = prob_file
+                        validated_probs += 1
 
-    #         if num-validated_probs > 0:
-    #             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: generating {num-validated_probs} new problems.")
-    #             generate_problems(generator, args, num-validated_probs, domain_name, output_dir)
-    #             validated_probs = 0
-    #         else:
-    #             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Complete.")
+            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {identical_probs} problems are not unique.")
+            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {initial_is_goal} initial states are goals.")
+            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {trivial_probs} problems are trivial.")
+            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {validated_probs}/{num} problems are verified.")
+
+            if num-validated_probs > 0:
+                _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: generating {num-validated_probs} new problems.")
+                generate_problems(generator, args, num-validated_probs, domain_name, output_dir)
+                validated_probs = 0
+            else:
+                _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Complete.")
 
     pattern = r"\(define\s\(problem\s(.*)\)"
     for root, dirs, files in os.walk(domain_dir):
