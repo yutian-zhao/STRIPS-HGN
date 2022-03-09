@@ -75,88 +75,88 @@ if __name__ == "__main__":
     num = 50
     domain_file = "../benchmarks/blocksworld/domain.pddl"
 
-    for idx, args in enumerate(arg_list):
-        print(f"===== Processing Args {''.join(args).strip(' ')} idx {idx} =====")
-        output_dir = domain_dir+''.join(args).strip(" ")
+    # for idx, args in enumerate(arg_list):
+    #     print(f"===== Processing Args {''.join(args).strip(' ')} idx {idx} =====")
+    #     output_dir = domain_dir+''.join(args).strip(" ")
 
-        if not os.path.exists(output_dir):
-            os.mkdir(output_dir)
+    #     if not os.path.exists(output_dir):
+    #         os.mkdir(output_dir)
 
-        validated_probs = 0
-        count = 0
+    #     validated_probs = 0
+    #     count = 0
 
-        while validated_probs < num:
-            init_and_goals = {}
-            identical_probs = 0
-            initial_is_goal = 0
-            trivial_probs = 0
-            count += 1
-            for file in os.listdir(output_dir):
-                if not file.endswith(".pddl"):
-                    print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Ignoring {file}")
-                    continue
+    #     while validated_probs < num:
+    #         init_and_goals = {}
+    #         identical_probs = 0
+    #         initial_is_goal = 0
+    #         trivial_probs = 0
+    #         count += 1
+    #         for file in os.listdir(output_dir):
+    #             if not file.endswith(".pddl"):
+    #                 print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Ignoring {file}")
+    #                 continue
 
-                if file == "slaney_gen.pddl" or file == 'domain.pddl':
-                    # For the blocks-slaney file structure
-                    # TODO: Problem naming collision.
-                    # May need to repicate or modify structure files.
-                    continue
+    #             if file == "slaney_gen.pddl" or file == 'domain.pddl':
+    #                 # For the blocks-slaney file structure
+    #                 # TODO: Problem naming collision.
+    #                 # May need to repicate or modify structure files.
+    #                 continue
 
-                prob_file = os.path.join(output_dir, file)
-                print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Processing {prob_file}")
-                _, task = get_domain_and_task(domain_file, prob_file)
+    #             prob_file = os.path.join(output_dir, file)
+    #             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Processing {prob_file}")
+    #             _, task = get_domain_and_task(domain_file, prob_file)
 
-                key = (task.initial_state, task.goals)
-                if task.goal_reached(task.initial_state):
-                    print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: INITIAL STATE IS GOAL STATE!!!")
-                    print(f"Removing {prob_file}")
-                    os.remove(prob_file)
-                    initial_is_goal += 1
-                    continue
+    #             key = (task.initial_state, task.goals)
+    #             if task.goal_reached(task.initial_state):
+    #                 print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: INITIAL STATE IS GOAL STATE!!!")
+    #                 print(f"Removing {prob_file}")
+    #                 os.remove(prob_file)
+    #                 initial_is_goal += 1
+    #                 continue
 
-                if key in init_and_goals:
-                    print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Initial state and goal already encountered in {init_and_goals[key]}")
-                    print(f"Removing {prob_file}")
-                    os.remove(prob_file)
-                    identical_probs += 1
-                    continue
-                else:
-                    print("  - Testing if the problem is trivial.")
-                    sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 5)
-                    if sol:
-                        if len(sol) < 5:
-                            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: problem is trivial.")
-                            print(f"Removing {prob_file}")
-                            os.remove(prob_file)
-                            trivial_probs+=1
-                        else:
-                            init_and_goals[key] = prob_file
-                            validated_probs += 1
-                            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
-                    else:
-                        init_and_goals[key] = prob_file
-                        validated_probs += 1
+    #             if key in init_and_goals:
+    #                 print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Initial state and goal already encountered in {init_and_goals[key]}")
+    #                 print(f"Removing {prob_file}")
+    #                 os.remove(prob_file)
+    #                 identical_probs += 1
+    #                 continue
+    #             else:
+    #                 print("  - Testing if the problem is trivial.")
+    #                 sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 5)
+    #                 if sol:
+    #                     if len(sol) < 5:
+    #                         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: problem is trivial.")
+    #                         print(f"Removing {prob_file}")
+    #                         os.remove(prob_file)
+    #                         trivial_probs+=1
+    #                     else:
+    #                         init_and_goals[key] = prob_file
+    #                         validated_probs += 1
+    #                         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
+    #                 else:
+    #                     init_and_goals[key] = prob_file
+    #                     validated_probs += 1
 
-            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {identical_probs} problems are not unique.")
-            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {initial_is_goal} initial states are goals.")
-            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {trivial_probs} problems are trivial.")
-            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {validated_probs}/{num} problems are verified.")
+    #         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {identical_probs} problems are not unique.")
+    #         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {initial_is_goal} initial states are goals.")
+    #         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {trivial_probs} problems are trivial.")
+    #         print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {validated_probs}/{num} problems are verified.")
 
-            if num-validated_probs > 0:
-                print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: generating {num-validated_probs} new problems.")
-                generate_problems(generator, args, num-validated_probs, domain_name, output_dir)
-                validated_probs = 0
-            else:
-                print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Complete.")
+    #         if num-validated_probs > 0:
+    #             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: generating {num-validated_probs} new problems.")
+    #             generate_problems(generator, args, num-validated_probs, domain_name, output_dir)
+    #             validated_probs = 0
+    #         else:
+    #             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Complete.")
 
     pattern = r"\(define\s\(problem\s(.*)\)"
     for root, dirs, files in os.walk(domain_dir):
         for file in files:
             if file.endswith('.pddl') and file != "slaney_gen.pddl" and file != 'domain.pddl':
                 lines = None
-                with open(file, 'r') as f:
+                with open(os.path.join(root, file), 'r') as f:
                     lines = f.readlines()
-                with open(file, 'w') as f:
+                with open(os.path.join(root, file), 'w') as f:
                     for l in lines:
                         match = re.findall(pattern, l)
                         if len(match) >0:
