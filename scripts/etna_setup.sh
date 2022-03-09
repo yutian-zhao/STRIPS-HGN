@@ -8,16 +8,20 @@ FD_DIR="${SRC_DIR}/fast_downward"
 
 VIRTUAL_ENV="comp4550"
 
+# for fastdownward
+sudo apt install cmake g++ make
+
 # manually install anaconda
-# wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
-# bash ~/Anaconda3-2021.11-Linux-x86_64.sh
-# source ~/.bashrc
+wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
+bash ~/Anaconda3-2021.11-Linux-x86_64.sh
+source ~/.bashrc
 
 # manually create virtual environment
-# conda create --name comp4550
-# conda activate comp4550
-# conda install python=3.7.7
-## conda install pip
+echo "Activating ${VIRTUAL_ENV} conda environment"
+conda create --name $VIRTUAL_ENV
+conda activate $VIRTUAL_ENV
+conda install python=3.7.7
+conda install pip
 # conda deactivate
 
 
@@ -29,10 +33,6 @@ cd $HOME
 echo "Cloning STRIPS-HGN Repo from Gitlab. Please enter Username and Password."
 git clone https://github.com/yutian-zhao/strips-hgn.git
 cd $STRIPS_HGN_DIR
-
-# Activate PyTorch virtual env
-echo "Activating ${VIRTUAL_ENV} conda environment"
-source activate $VIRTUAL_ENV
 
 # Uninstall enum34 which breaks pyperplan and install Python dependencies
 echo "Installing STRIPS-HGN Python Dependencies"
@@ -46,6 +46,7 @@ cd $FD_DIR
 ./build.py
 
 # Set Python path
+# export PYTHONPATH=${PYTHONPATH}:${HOME}/strips-hgn/src
 export PYTHONPATH=$SRC_DIR
 echo ""
 
