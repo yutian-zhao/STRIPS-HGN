@@ -70,9 +70,9 @@ if __name__ == "__main__":
 
     generator = "./../../pddl-generators/blocksworld/blocksworld 4 "
     domain_name = 'blocksworld'
-    arg_list = [str(i) for i in range(3, 16)]
+    arg_list = [str(i) for i in range(3, 21)]
     domain_dir = "../benchmarks/blocksworld/"
-    num = 20
+    num = 50
     domain_file = "../benchmarks/blocksworld/domain.pddl"
 
     for idx, args in enumerate(arg_list):
@@ -89,6 +89,7 @@ if __name__ == "__main__":
             init_and_goals = {}
             identical_probs = 0
             initial_is_goal = 0
+            trivial_probs = 0
             count += 1
             for file in os.listdir(output_dir):
                 if not file.endswith(".pddl"):
@@ -120,16 +121,25 @@ if __name__ == "__main__":
                     identical_probs += 1
                     continue
                 else:
-                    init_and_goals[key] = prob_file
-                    validated_probs += 1
-                    
-                    # print("  - Testing if the problem is trivial.")
-                    # sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 5)
-                    # if sol:
-                    #     print(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {file} solution length: {len(sol)}.")
+                    print("  - Testing if the problem is trivial.")
+                    sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 5)
+                    if sol:
+                        if len(sol) < 5:
+                            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: problem is trivial.")
+                            print(f"Removing {prob_file}")
+                            os.remove(prob_file)
+                            trivial_probs+=1
+                        else:
+                            init_and_goals[key] = prob_file
+                            validated_probs += 1
+                            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
+                    else:
+                        init_and_goals[key] = prob_file
+                        validated_probs += 1
 
-            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {identical_probs} problems are not unique")
-            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {initial_is_goal} initial states are goals")
+            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {identical_probs} problems are not unique.")
+            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {initial_is_goal} initial states are goals.")
+            print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {trivial_probs} problems are trivial.")
             print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {validated_probs}/{num} problems are verified.")
 
             if num-validated_probs > 0:
@@ -139,4 +149,18 @@ if __name__ == "__main__":
             else:
                 print(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Complete.")
 
-            
+    pattern = r"\(define\s\(problem\s(.*)\)"
+    for root, dirs, files in os.walk(domain_dir):
+        for file in files:
+            if file.endswith('.pddl') and file != "slaney_gen.pddl" and file != 'domain.pddl':
+                lines = None
+                with open(file, 'r') as f:
+                    lines = f.readlines()
+                with open(file, 'w') as f:
+                    for l in lines:
+                        match = re.findall(pattern, l)
+                        if len(match) >0:
+                            l = l.replace(match[0], file[:-5])
+                        f.write(l)
+    
+

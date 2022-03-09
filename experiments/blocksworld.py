@@ -22,11 +22,11 @@ _CONFIGURATION = DomainAndProblemConfiguration(
 )
 
 if __name__ == "__main__":
-    setup_full_logging('../results/', 'experiments'+'-'+datetime.now().strftime("%m-%d-%H-%M-%S")+'.log')
+    _log.info(f'Starting experiments: {datetime.now().strftime("%m-%d-%H-%M-%S")}.')
 
-    repeats = 3
+    repeats = 2
     modes=[
-        {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
+        # {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
         {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
         {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':1, 'distance': 0, 'bound': 600, 'auto_bslr': False},
         {'domain':'blocksworld', 'mode':'train', 'search':'astar', 'all':True, 'novel':0, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
@@ -116,52 +116,52 @@ if __name__ == "__main__":
                                 best_loss = float(l[(l.find('(best ')+6): (l.find('(best ')+10)])
 
                 report[train_dirname] = {'best_loss': best_loss, 'coverage': solved_count/total_count, 'pass': (solved_count/total_count)>=0.7}
+                json.dump(
+                    report,
+                    open(os.path.join('../results', 'report.json'), "w"),
+                    indent=2,
+                )
                 _log.info('Reporting {}: {}'.format(train_dirname, report[train_dirname]))
         
-        # prepare test problems
-        test_problem_pddls = []
-        for i in range(6, 11):
-            problem_set = set([str(i)+'/'+ p for p in os.listdir("../benchmarks/blocksworld/"+str(i))])-used_problems 
-            test_problem_pddls += sorted(random.choices(list(problem_set), k=10))
+    # prepare test problems
+    test_problem_pddls = []
+    for i in range(6, 11):
+        problem_set = set([str(i)+'/'+ p for p in os.listdir("../benchmarks/blocksworld/"+str(i))])-used_problems 
+        test_problem_pddls += sorted(random.choices(list(problem_set), k=10))
 
-        for mode in modes:
-            mode_name = mode_to_str(mode)
-            best_model = None
-            best_loss = float('inf')
-            coverage = 0
+    for mode in modes:
+        mode_name = mode_to_str(mode)
+        best_model = None
+        best_loss = float('inf')
+        coverage = 0
 
-            for model_name, metrics in report.items():
-                if mode_name in model_name:
-                    if metrics['pass']:
-                        best_model = model_name
-                        break
-                    elif metrics['coverage'] > coverage:
-                        best_model = model_name
-                    elif metrics['coverage'] == coverage and metrics['best_loss'] < best_loss:
-                        best_model = model_name
-            _log.info(f"Testing: {best_model}.")
-            # best_models.append(best_model)
+        for model_name, metrics in report.items():
+            if mode_name in model_name:
+                if metrics['pass']:
+                    best_model = model_name
+                    break
+                elif metrics['coverage'] > coverage:
+                    best_model = model_name
+                elif metrics['coverage'] == coverage and metrics['best_loss'] < best_loss:
+                    best_model = model_name
+        _log.info(f"Testing: {best_model}.")
+        # best_models.append(best_model)
 
-            # test phase
-            _TEST_CONFIGURATION = DomainAndProblemConfiguration(
-                base_directory="../benchmarks/blocksworld",
-                domain_pddl="domain.pddl",
-                problem_pddls=test_problem_pddls,
-                )
-
-            eval_wrapper(
-                args=get_eval_args(
-                    configurations=[_TEST_CONFIGURATION],
-                    max_search_time=10*60,
-                    checkpoint= "../results/{}/model-best.ckpt".format(best_model),
-                ),
-                experiment_type=best_model.replace('train', 'eval'),
-                mode={'mode':'eval'},
+        # test phase
+        _TEST_CONFIGURATION = DomainAndProblemConfiguration(
+            base_directory="../benchmarks/blocksworld",
+            domain_pddl="domain.pddl",
+            problem_pddls=test_problem_pddls,
             )
 
-    json.dump(
-        report,
-        open(os.path.join('../results', 'report'+'-'+datetime.now().strftime("%m-%d-%H-%M-%S")+'.json'), "w"),
-        indent=2,
-    )
+        eval_wrapper(
+            args=get_eval_args(
+                configurations=[_TEST_CONFIGURATION],
+                max_search_time=10*60,
+                checkpoint= "../results/{}/model-best.ckpt".format(best_model),
+            ),
+            experiment_type=best_model.replace('train', 'eval'),
+            mode={'mode':'eval'},
+        )
+
     _log.info("EXPERIEMENTS COMPLETE!")
