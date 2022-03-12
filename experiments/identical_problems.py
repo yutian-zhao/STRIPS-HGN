@@ -72,12 +72,19 @@ if __name__ == "__main__":
     # num = 10
     # domain_file = "../benchmarks/sokoban/typed-sokoban.pddl"
 
-    generator = "./../../pddl-generators/blocksworld/blocksworld 4 "
-    domain_name = 'blocksworld'
-    arg_list = [str(i) for i in range(3, 21)]
-    domain_dir = "../benchmarks/blocksworld/"
-    num = 50
-    domain_file = "../benchmarks/blocksworld/domain.pddl"
+    # generator = "./../../pddl-generators/blocksworld/blocksworld 4 "
+    # domain_name = 'blocksworld'
+    # arg_list = [str(i) for i in range(3, 21)]
+    # domain_dir = "../benchmarks/blocksworld/"
+    # num = 50
+    # domain_file = "../benchmarks/blocksworld/domain.pddl"
+
+    generator = "./../../pddl-generators/npuzzle/n-puzzle-generator -n "
+    domain_name = 'npuzzle'
+    arg_list = [str(i) for i in range(3,4)]
+    domain_dir = "../benchmarks/npuzzle/"
+    num = 100
+    domain_file = "../benchmarks/npuzzle/n-puzzle-typed.pddl"
 
     handler = logging.FileHandler(os.path.join(domain_dir, 'generate_problems.log'))
     handler.setLevel(logging.INFO)
@@ -131,17 +138,17 @@ if __name__ == "__main__":
                     continue
                 else:
                     _log.info("  - Testing if the problem is trivial.")
-                    sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 5)
+                    sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 1)
                     if sol:
-                        if len(sol) < 5:
-                            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: problem is trivial.")
-                            _log.info(f"Removing {prob_file}")
-                            os.remove(prob_file)
-                            trivial_probs+=1
-                        else:
-                            init_and_goals[key] = prob_file
-                            validated_probs += 1
-                            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
+                        # if len(sol) < 5:
+                        #     _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: problem is trivial.")
+                        #     _log.info(f"Removing {prob_file}")
+                        #     os.remove(prob_file)
+                        #     trivial_probs+=1
+                        # else:
+                        init_and_goals[key] = prob_file
+                        validated_probs += 1
+                        _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
                     else:
                         init_and_goals[key] = prob_file
                         validated_probs += 1
