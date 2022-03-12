@@ -70,7 +70,7 @@ if __name__ == "__main__":
 
                 # validation phase
                 for dirname in os.listdir("../results"):
-                    if mode_to_str(mode) in dirname and not dirname.replace("train", "eval") in os.listdir("../results"):
+                    if mode_to_str(mode) in dirname and not dirname.replace("train", "eval") in "_".join(os.listdir("../results")):
                         train_dirname = dirname
                         break
                         
@@ -85,7 +85,7 @@ if __name__ == "__main__":
                     args=get_eval_args(
                         configurations=[_VALID_CONFIGURATION],
                         max_search_time=10*60,
-                        checkpoint= "../results/{}/model-best.ckpt".format(dirname),
+                        checkpoint= "../results/{}/model-best.ckpt".format(train_dirname),
                     ),
                     experiment_type=train_dirname.replace("train", "eval"),
                     mode={'mode':'eval'},
