@@ -32,8 +32,9 @@ def natural_sort(l):
 def generate_problems(generator, args, num, domain_name, output_dir):
     for i in range(num):
         # Notice, if shell=False, output files may be weird.
-        proc = subprocess.run(generator+args, capture_output=True, shell=True) 
         randn = random.randint(1000, 9999)
+        # proc = subprocess.run(generator+str(randn)+' '+args, capture_output=True, shell=True) 
+        proc = subprocess.run(generator+args, capture_output=True, shell=True) 
         fname = domain_name+''.join(args).strip(" ")+'-'+str(randn)+'.pddl'
         while os.path.exists(os.path.join(output_dir, fname)):
             randn = random.randint(1000, 9999)
@@ -86,7 +87,7 @@ if __name__ == "__main__":
     # num = 100
     # domain_file = "../benchmarks/npuzzle/n-puzzle-typed.pddl"
 
-    generator = "./../../pddl-generators/zenotravel/ztravel 4550 "
+    generator = "./../../pddl-generators/zenotravel/ztravel "
     domain_name = 'ztravel'
     arg_list = []
     for c in range(2, 5):
@@ -151,15 +152,15 @@ if __name__ == "__main__":
                     _log.info("  - Testing if the problem is trivial.")
                     sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 1)
                     if sol:
-                        # if len(sol) < 5:
-                        #     _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: problem is trivial.")
-                        #     _log.info(f"Removing {prob_file}")
-                        #     os.remove(prob_file)
-                        #     trivial_probs+=1
-                        # else:
-                        init_and_goals[key] = prob_file
-                        validated_probs += 1
-                        _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
+                        if len(sol) < 5:
+                            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: problem is trivial.")
+                            _log.info(f"Removing {prob_file}")
+                            os.remove(prob_file)
+                            trivial_probs+=1
+                        else:
+                            init_and_goals[key] = prob_file
+                            validated_probs += 1
+                            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
                     else:
                         init_and_goals[key] = prob_file
                         validated_probs += 1

@@ -12,15 +12,6 @@ from default_args import get_training_args, DomainAndProblemConfiguration, get_e
 
 _log = logging.getLogger(__name__)
 
-_CONFIGURATION = DomainAndProblemConfiguration(
-    base_directory="../benchmarks/blocksworld",
-    domain_pddl="domain.pddl",
-    # {3, 4, 5 blocks} x 10 problems = 30 problems
-    problem_pddls=sorted(['3/'+ p for p in os.listdir("../benchmarks/blocksworld/3")])[:10]+
-        sorted(['4/'+p for p in os.listdir("../benchmarks/blocksworld/4")])[:10]+
-        sorted(['5/'+p for p in os.listdir("../benchmarks/blocksworld/5")])[:10]
-)
-
 if __name__ == "__main__":
     _log.info(f'Starting experiments: {datetime.now().strftime("%m-%d-%H-%M-%S")}.')
 
@@ -40,6 +31,19 @@ if __name__ == "__main__":
     report = {}
     used_problems = set()
     # best_models = []
+
+    train_problem_pddls = sorted(['3/'+ p for p in os.listdir("../benchmarks/blocksworld/3")])[:10]+ \
+        sorted(['4/'+p for p in os.listdir("../benchmarks/blocksworld/4")])[:10]+ \
+        sorted(['5/'+p for p in os.listdir("../benchmarks/blocksworld/5")])[:10]
+    for pddl in train_problem_pddls:
+        used_problems.add(pddl)
+
+    _CONFIGURATION = DomainAndProblemConfiguration(
+        base_directory="../benchmarks/blocksworld",
+        domain_pddl="domain.pddl",
+        # {3, 4, 5 blocks} x 10 problems = 30 problems
+        problem_pddls=train_problem_pddls
+    )
 
     for i in range(repeats):
         _log.info(f"Repeat: {i}.")
