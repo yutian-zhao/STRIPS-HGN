@@ -79,12 +79,23 @@ if __name__ == "__main__":
     # num = 50
     # domain_file = "../benchmarks/blocksworld/domain.pddl"
 
-    generator = "./../../pddl-generators/npuzzle/n-puzzle-generator -n "
-    domain_name = 'npuzzle'
-    arg_list = [str(i) for i in range(3,4)]
-    domain_dir = "../benchmarks/npuzzle/"
-    num = 100
-    domain_file = "../benchmarks/npuzzle/n-puzzle-typed.pddl"
+    # generator = "./../../pddl-generators/npuzzle/n-puzzle-generator -n "
+    # domain_name = 'npuzzle'
+    # arg_list = [str(i) for i in range(3,4)]
+    # domain_dir = "../benchmarks/npuzzle/"
+    # num = 100
+    # domain_file = "../benchmarks/npuzzle/n-puzzle-typed.pddl"
+
+    generator = "./../../pddl-generators/zenotravel/ztravel 4550 "
+    domain_name = 'ztravel'
+    arg_list = []
+    for c in range(2, 5):
+        for pl in range(2, 6):
+            for p in range(2, 8):
+                arg_list.append("{} {} {}".format(c, pl, p))
+    domain_dir = "../benchmarks/ztravel/"
+    num = 5
+    domain_file = "../benchmarks/ztravel/domain.pddl"
 
     handler = logging.FileHandler(os.path.join(domain_dir, 'generate_problems.log'))
     handler.setLevel(logging.INFO)
