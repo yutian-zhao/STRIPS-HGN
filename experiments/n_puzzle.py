@@ -33,13 +33,13 @@ if __name__ == "__main__":
 
     train_problem_pddls = []
     for i in range(3, 4):
-        train_problem_pddls += sorted(random.choices([str(i)+'/'+ p for p in os.listdir("../benchmarks/npuzzle/"+str(i))], k=10))
+        train_problem_pddls += sorted(random.sample([str(i)+'/'+ p for p in os.listdir("../benchmarks/npuzzle/"+str(i))], k=10))
     _log.info(f"Training problems are: {train_problem_pddls}.")
     for pddl in train_problem_pddls:
         used_problems.add(pddl)
 
     _CONFIGURATION = DomainAndProblemConfiguration(
-        base_directory="../benchmarks/n-puzzle",
+        base_directory="../benchmarks/npuzzle",
         domain_pddl="n-puzzle-typed.pddl",
         problem_pddls=train_problem_pddls,
     )
@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
         valid_problem_pddls = []
         for i in range(3,4):
-            valid_problem_pddls += sorted(random.choices([str(i)+'/'+ p for p in os.listdir("../benchmarks/npuzzle/"+str(i))], k=5))
+            valid_problem_pddls += sorted(random.sample([str(i)+'/'+ p for p in os.listdir("../benchmarks/npuzzle/"+str(i))], k=5))
         _log.info(f"Validation problems are: {valid_problem_pddls}.")
         for pddl in valid_problem_pddls:
             used_problems.add(pddl)
@@ -129,7 +129,7 @@ if __name__ == "__main__":
     test_problem_pddls = []
     for i in range(3, 4):
         problem_set = set([str(i)+'/'+ p for p in os.listdir("../benchmarks/npuzzle/"+str(i))])-used_problems 
-        test_problem_pddls += sorted(random.choices(list(problem_set), k=50))
+        test_problem_pddls += sorted(random.sample(list(problem_set), k=50))
 
     for mode in modes:
         mode_name = mode_to_str(mode)

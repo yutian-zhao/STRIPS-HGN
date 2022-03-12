@@ -12,8 +12,6 @@ from default_args import get_training_args, DomainAndProblemConfiguration, get_e
 
 _log = logging.getLogger(__name__)
 
-train_problem_pddls = []
-
 if __name__ == "__main__":
     _log.info(f'Starting experiments: {datetime.now().strftime("%m-%d-%H-%M-%S")}.')
 
@@ -34,11 +32,13 @@ if __name__ == "__main__":
     used_problems = set()
     # best_models = []
 
+    train_problem_pddls = []
     for c in range(2, 4):
         for pl in range(2, 5):
-            for p in range(2, 6):
-                train_problem_pddls += sorted(random.choices(["{} {} {}".format(c, pl, p)+'/'+ p for p in os.listdir("../benchmarks/ztravel/"+"{} {} {}".format(c, pl, p))], k=1))
+            for p in range(3, 6):
+                train_problem_pddls += sorted(random.sample(["{} {} {}".format(c, pl, p)+'/'+ prob for prob in os.listdir("../benchmarks/ztravel/"+"{} {} {}".format(c, pl, p))], k=1))
     for pddl in train_problem_pddls:
+        print("___________"+pddl)
         used_problems.add(pddl)
         
     _CONFIGURATION = DomainAndProblemConfiguration(
@@ -55,8 +55,8 @@ if __name__ == "__main__":
         for c in range(2, 5):
             for pl in range(2, 6):
                 for p in range(3, 8):
-                    train_problem_pddls += sorted(random.choices(["{} {} {}".format(c, pl, p)+'/'+ p for p in os.listdir("../benchmarks/ztravel/"+"{} {} {}".format(c, pl, p))], k=1))
-        valid_problem_pddls = sorted(random.choices(valid_problem_pddls, k=10))
+                    valid_problem_pddls += sorted(random.sample(["{} {} {}".format(c, pl, p)+'/'+ prob for prob in os.listdir("../benchmarks/ztravel/"+"{} {} {}".format(c, pl, p))], k=1))
+        valid_problem_pddls = sorted(random.sample(valid_problem_pddls, k=10))
         _log.info(f"Validation problems are: {valid_problem_pddls}.")
         for pddl in valid_problem_pddls:
             used_problems.add(pddl)
@@ -138,8 +138,8 @@ if __name__ == "__main__":
     for c in range(2, 5):
         for pl in range(2, 6):
             for p in range(3, 8):
-                problem_set = set(["{} {} {}".format(c, pl, p)+'/'+ p for p in os.listdir("../benchmarks/ztravel/"+"{} {} {}".format(c, pl, p))])-used_problems
-                test_problem_pddls += sorted(random.choices(list(problem_set), k=1))
+                problem_set = set(["{} {} {}".format(c, pl, p)+'/'+ prob for prob in os.listdir("../benchmarks/ztravel/"+"{} {} {}".format(c, pl, p))])-used_problems
+                test_problem_pddls += sorted(random.sample(list(problem_set), k=1))
 
     for mode in modes:
         mode_name = mode_to_str(mode)
