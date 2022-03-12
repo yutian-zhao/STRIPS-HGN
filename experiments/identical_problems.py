@@ -91,7 +91,7 @@ if __name__ == "__main__":
     arg_list = []
     for c in range(2, 5):
         for pl in range(2, 6):
-            for p in range(2, 8):
+            for p in range(3, 8):
                 arg_list.append("{} {} {}".format(c, pl, p))
     domain_dir = "../benchmarks/ztravel/"
     num = 5
