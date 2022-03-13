@@ -40,7 +40,7 @@ if __name__ == "__main__":
             args=get_eval_args(
                 configurations=[_VALID_CONFIGURATION],
                 max_search_time=5*60,
-                checkpoint= "../results/n-puzzle/{}/model-best.ckpt".format(train_dirname),
+                checkpoint= "../results/n-puzzle/{}/model-best.ckpt".format(model),
             ),
             experiment_type=model.replace("train", "eval"),
             mode={'mode':'eval'},

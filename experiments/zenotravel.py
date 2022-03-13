@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     repeats = 3
     modes=[
-        # {'domain':'ztravel', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
+        {'domain':'ztravel', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
         {'domain':'ztravel', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
         {'domain':'ztravel', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':1, 'distance': 0, 'bound': 600, 'auto_bslr': False},
         {'domain':'ztravel', 'mode':'train', 'search':'astar', 'all':True, 'novel':0, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     for c in range(2, 4):
         for pl in range(2, 5):
             for p in range(3, 6):
-                train_problem_pddls += sorted(random.sample(["{} {} {}".format(c, pl, p)+'/'+ prob for prob in os.listdir("../benchmarks/ztravel/"+"{} {} {}".format(c, pl, p))], k=1))
+                train_problem_pddls += sorted(random.sample(["{}{}{}".format(c, pl, p)+'/'+ prob for prob in os.listdir("../benchmarks/ztravel/"+"{}{}{}".format(c, pl, p))], k=1))
     for pddl in train_problem_pddls:
         print("___________"+pddl)
         used_problems.add(pddl)
@@ -55,8 +55,8 @@ if __name__ == "__main__":
         for c in range(2, 5):
             for pl in range(2, 6):
                 for p in range(3, 8):
-                    valid_problem_pddls += sorted(random.sample(["{} {} {}".format(c, pl, p)+'/'+ prob for prob in os.listdir("../benchmarks/ztravel/"+"{} {} {}".format(c, pl, p))], k=1))
-        valid_problem_pddls = sorted(random.sample(valid_problem_pddls, k=10))
+                    valid_problem_pddls += sorted(random.sample(["{}{}{}".format(c, pl, p)+'/'+ prob for prob in os.listdir("../benchmarks/ztravel/"+"{}{}{}".format(c, pl, p))], k=1))
+        valid_problem_pddls = valid_problem_pddls[2::6]
         _log.info(f"Validation problems are: {valid_problem_pddls}.")
         for pddl in valid_problem_pddls:
             used_problems.add(pddl)
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     for c in range(2, 5):
         for pl in range(2, 6):
             for p in range(3, 8):
-                problem_set = set(["{} {} {}".format(c, pl, p)+'/'+ prob for prob in os.listdir("../benchmarks/ztravel/"+"{} {} {}".format(c, pl, p))])-used_problems
+                problem_set = set(["{}{}{}".format(c, pl, p)+'/'+ prob for prob in os.listdir("../benchmarks/ztravel/"+"{}{}{}".format(c, pl, p))])-used_problems
                 test_problem_pddls += sorted(random.sample(list(problem_set), k=1))
 
     for mode in modes:

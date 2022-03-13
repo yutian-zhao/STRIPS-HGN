@@ -51,13 +51,15 @@ def merge_state_value_pairs_by_domain(
     _log.debug("Start sampling Training Pairs.")
     # uniform sample
     for domain, training_pairs in domain_to_training_pairs.items():
-        cnt = Counter() 
+        prob_cnt = defaultdict(lambda: Counter()) 
         probs = []
+        num_prob_value = 0
         for t in training_pairs:                       
-            cnt[t.value] += 1
-
+            prob_cnt[t.problem][t.value] += 1
+        for prob in prob_cnt.keys():
+            num_prob_value += len(prob_cnt[prob].keys())
         for t in training_pairs: 
-            probs.append(1/(len(cnt.keys())*cnt[t.value]))
+            probs.append(1/(num_prob_value*prob_cnt[t.problem][t.value]))
 
         n_value_min = min(cnt.values())
         n_value = len(cnt.keys())

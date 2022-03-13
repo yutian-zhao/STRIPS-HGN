@@ -35,10 +35,10 @@ def generate_problems(generator, args, num, domain_name, output_dir):
         randn = random.randint(1000, 9999)
         # proc = subprocess.run(generator+str(randn)+' '+args, capture_output=True, shell=True) 
         proc = subprocess.run(generator+args, capture_output=True, shell=True) 
-        fname = domain_name+''.join(args).strip(" ")+'-'+str(randn)+'.pddl'
+        fname = domain_name+''.join(args).replace(' ', '')+'-'+str(randn)+'.pddl'
         while os.path.exists(os.path.join(output_dir, fname)):
             randn = random.randint(1000, 9999)
-            fname = domain_name+''.join(args).strip(" ")+'-'+str(randn)+'.pddl'
+            fname = domain_name+''.join(args).replace(' ', '')+'-'+str(randn)+'.pddl'
         with open(os.path.join(output_dir, fname), 'bw') as file:
             # _log.info(proc.stdout)
             file.write(proc.stdout)
@@ -104,8 +104,8 @@ if __name__ == "__main__":
     _log.addHandler(handler)
 
     for idx, args in enumerate(arg_list):
-        _log.info(f"===== Processing Args {''.join(args).strip(' ')} idx {idx} =====")
-        output_dir = domain_dir+''.join(args).strip(" ")
+        _log.info(f"===== Processing Args {''.join(args).replace(' ', '')} idx {idx} =====")
+        output_dir = domain_dir+''.join(args).replace(' ', '')
 
         if not os.path.exists(output_dir):
             os.mkdir(output_dir)
@@ -121,7 +121,7 @@ if __name__ == "__main__":
             count += 1
             for file in os.listdir(output_dir):
                 if not file.endswith(".pddl"):
-                    _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Ignoring {file}")
+                    _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: Ignoring {file}")
                     continue
 
                 if file == "slaney_gen.pddl" or file == 'domain.pddl':
@@ -131,19 +131,19 @@ if __name__ == "__main__":
                     continue
 
                 prob_file = os.path.join(output_dir, file)
-                _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Processing {prob_file}")
+                _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: Processing {prob_file}")
                 _, task = get_domain_and_task(domain_file, prob_file)
 
                 key = (task.initial_state, task.goals)
                 if task.goal_reached(task.initial_state):
-                    _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: INITIAL STATE IS GOAL STATE!!!")
+                    _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: INITIAL STATE IS GOAL STATE!!!")
                     _log.info(f"Removing {prob_file}")
                     os.remove(prob_file)
                     initial_is_goal += 1
                     continue
 
                 if key in init_and_goals:
-                    _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Initial state and goal already encountered in {init_and_goals[key]}")
+                    _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: Initial state and goal already encountered in {init_and_goals[key]}")
                     _log.info(f"Removing {prob_file}")
                     os.remove(prob_file)
                     identical_probs += 1
@@ -153,29 +153,29 @@ if __name__ == "__main__":
                     sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 1)
                     if sol:
                         if len(sol) < 5:
-                            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: problem is trivial.")
+                            _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: problem is trivial.")
                             _log.info(f"Removing {prob_file}")
                             os.remove(prob_file)
                             trivial_probs+=1
                         else:
                             init_and_goals[key] = prob_file
                             validated_probs += 1
-                            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
+                            _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count} {prob_file} solution length: {len(sol)}.")
                     else:
                         init_and_goals[key] = prob_file
                         validated_probs += 1
 
-            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {identical_probs} problems are not unique.")
-            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {initial_is_goal} initial states are goals.")
-            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {trivial_probs} problems are trivial.")
-            _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: {validated_probs}/{num} problems are verified.")
+            _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: {identical_probs} problems are not unique.")
+            _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: {initial_is_goal} initial states are goals.")
+            _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: {trivial_probs} problems are trivial.")
+            _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: {validated_probs}/{num} problems are verified.")
 
             if num-validated_probs > 0:
-                _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: generating {num-validated_probs} new problems.")
+                _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: generating {num-validated_probs} new problems.")
                 generate_problems(generator, args, num-validated_probs, domain_name, output_dir)
                 validated_probs = 0
             else:
-                _log.info(f"Args {''.join(args).strip(' ')} idx {idx} run {count}: Complete.")
+                _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: Complete.")
 
     pattern = r"\(define\s\(problem\s(.*)\)"
     for root, dirs, files in os.walk(domain_dir):
