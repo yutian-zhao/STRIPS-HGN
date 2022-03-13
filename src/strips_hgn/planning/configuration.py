@@ -38,6 +38,9 @@ class SearchAlgorithm(_BasePlanningEnum, PyperplanSupportedEnum):
     """ Search Algorithm """
 
     a_star = "a-star"
+    greedy_best_first_search = 'gbfs'
+    weighted_astar_search = 'weighted-a-star'
+
 
     def to_pyperplan(self, _: PyperplanTask):
         if self.value not in SEARCH_ALGO_STR_TO_FUNC:

@@ -42,7 +42,7 @@ DEFAULT_ARGS = {
 
 DEFAULT_EVAL_ARGS = {
     "heuristics": [], # Heuristic.h_add
-    "search_algorithm": SearchAlgorithm.a_star,
+    "search_algorithm": SearchAlgorithm.greedy_best_first_search,
     "planner": PlannerForEvaluation.pyperplan, # problem
     "debug": True,
     # max_search_time: float

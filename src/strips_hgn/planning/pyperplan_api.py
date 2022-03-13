@@ -14,7 +14,7 @@ from pyperplan.heuristics.relaxation import (
 )
 from pyperplan.pddl.parser import Parser
 from pyperplan.pddl.pddl import Domain, Problem
-from pyperplan.search import SearchMetrics, astar_search, breadth_first_search, novelty_search
+from pyperplan.search import SearchMetrics, astar_search, breadth_first_search, novelty_search, greedy_best_first_search, weighted_astar_search
 from pyperplan.task import Task
 
 from strips_hgn.utils import Number
@@ -34,8 +34,8 @@ HEURISTIC_STR_TO_CLASS = {
 # Only support A*
 SEARCH_ALGO_STR_TO_FUNC = {
     "a-star": astar_search,
-    # "weighted-a-star": weighted_astar_search,
-    # "gbfs": greedy_best_first_search,
+    "weighted-a-star": weighted_astar_search,
+    "gbfs": greedy_best_first_search,
 }
 
 """
@@ -130,16 +130,14 @@ def find_solution(
     A tuple containing the solution to the task and the search metrics
     """
     # Only support A* search for now
-    if search_algo == astar_search:
-        solution, metrics = astar_search(
+    if search_algo == astar_search or search_algo == greedy_best_first_search or search_algo == weighted_astar_search:
+        solution, metrics = search_algo(
             task, heuristic, max_search_time=max_search_time, mode=mode, heuristic_models=heuristic_models
         )
         _log.info(f"Search took ~{round(metrics.search_time, 5)}s")
         return solution, metrics
-    elif search_algo == breadth_first_search:
-        return  breadth_first_search(task, max_search_time=max_search_time, mode=mode), None
-    elif search_algo == novelty_search:
-        return  novelty_search(task, max_search_time=max_search_time, mode=mode), None
+    elif search_algo == breadth_first_search or search_algo == novelty_search:
+        return  search_algo(task, max_search_time=max_search_time, mode=mode), None
     else:
         raise RuntimeError(f"Unsupported search algorithm {search_algo}")
 
