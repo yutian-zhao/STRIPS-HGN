@@ -61,9 +61,9 @@ def merge_state_value_pairs_by_domain(
         for t in training_pairs: 
             probs.append(1/(num_prob_value*prob_cnt[t.problem][t.value]))
 
-        n_value_min = min(cnt.values())
-        n_value = len(cnt.keys())
-        _log.info("The smallest set of a heuristic value has {} samples, there are {} different heuristic values.".format(n_value_min, n_value))
+        # n_value_min = min(cnt.values())
+        # n_value = len(cnt.keys())
+        # _log.info("The smallest set of a heuristic value has {} samples, there are {} different heuristic values.".format(n_value_min, n_value))
         
         if mode:
             data_amount = mode.get('bound', 300)
