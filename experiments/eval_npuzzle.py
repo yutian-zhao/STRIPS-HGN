@@ -1,40 +1,47 @@
-from default_args import get_eval_args, DomainAndProblemConfiguration
-from eval import eval_wrapper
 import os
+import random 
+import json
+import logging
+from datetime import datetime
 
+from eval import eval_wrapper
+from train import train_wrapper
+from strips_hgn.utils.helpers import mode_to_str
+from strips_hgn.utils.logging_setup import setup_full_logging
+from default_args import get_training_args, DomainAndProblemConfiguration, get_eval_args
 
-base_directory="../benchmarks/n-puzzle/test"
-domain_pddl="domain.pddl"
-problem_pddls = []
-
-for root, dirs, files in os.walk(os.path.join(base_directory)):
-    for fname in files:
-        if fname.startswith("n-puzzle-3x3-s"):
-            problem_pddls.append(fname)
-    break
-
-problem_pddls = sorted(problem_pddls)
-
-_CONFIGURATION = DomainAndProblemConfiguration(
-    base_directory=base_directory,
-    domain_pddl=domain_pddl,
-    problem_pddls=problem_pddls,
-)
-
-assert len(_CONFIGURATION.problems) == 50, "number of problems should be 50 instead of {}".format(len(_CONFIGURATION.problems))
-
-mode = {'mode':'eval'}# , {'mode':'train', 'all':False, 'search':'astar', 'distance': 0, 'novel':False, 'lifted':False}
-
-model_name = "npuzzle_mode_train_all_False_search_astar_distance_0_novel_0_lifted_False"
+_log = logging.getLogger(__name__)
 
 if __name__ == "__main__":
+    # base_directory = "../results/zenotravel"
+    # domain_pddl="domain.pddl"
+    valid_problem_pddls = []
+    for i in range(3,4):
+        valid_problem_pddls += sorted(random.sample([str(i)+'/'+ p for p in os.listdir("../benchmarks/npuzzle/"+str(i))], k=5))
+    _log.info(f"Validation problems are: {valid_problem_pddls}.")
+    for pddl in valid_problem_pddls:
+        used_problems.add(pddl)
 
-    eval_wrapper(
-        args=get_eval_args(
-            configurations=[_CONFIGURATION],
-            max_search_time=5*60,
-            checkpoint= "../results/{}/model-best.ckpt".format(model_name),
-        ),
-        experiment_type=model_name.replace("train", "eval"),
-        mode=mode,
-    )
+    models = [
+        "npuzzle_mode_train_all_False_search_astar_distance_0_novel_2_lifted_False-strips-hgn-02-05-18-55-21",
+        "npuzzle_mode_train_auto_bslr_True_all_True_search_novelty_distance_0_novel_2_lifted_False-strips-hgn-02-06-23-11-52",
+        "npuzzle_mode_train_all_False_search_bfs_distance_0_novel_2_lifted_False",
+        "npuzzle_mode_train_all_False_search_astar_distance_0_novel_0_lifted_False",
+    ]
+
+    _VALID_CONFIGURATION = DomainAndProblemConfiguration(
+        base_directory="../benchmarks/npuzzle",
+        domain_pddl="n-puzzle-typed.pddl",
+        problem_pddls=valid_problem_pddls,
+        )
+    
+    for model in models:
+        eval_wrapper(
+            args=get_eval_args(
+                configurations=[_VALID_CONFIGURATION],
+                max_search_time=5*60,
+                checkpoint= "../results/n-puzzle/{}/model-best.ckpt".format(train_dirname),
+            ),
+            experiment_type=model.replace("train", "eval"),
+            mode={'mode':'eval'},
+        )
