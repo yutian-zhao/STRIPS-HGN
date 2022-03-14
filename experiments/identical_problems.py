@@ -98,10 +98,13 @@ if __name__ == "__main__":
     # num = 5
     # domain_file = "../benchmarks/ztravel/domain.pddl"
 
-    handler = logging.FileHandler(os.path.join(domain_dir, 'generate_problems.log'))
-    handler.setLevel(logging.INFO)
+    file_handler = logging.FileHandler(os.path.join(domain_dir, 'generate_problems.log'))
+    file_handler.setLevel(logging.INFO)
+    stream_handler = logging.StreamHandler()
+    stream_handler.setLevel(logging.INFO)
     _log.setLevel(logging.INFO)
-    _log.addHandler(handler)
+    _log.addHandler(file_handler)
+    _log.addHandler(stream_handler)
 
     for idx, args in enumerate(arg_list):
         _log.info(f"===== Processing Args {''.join(args).replace(' ', '')} idx {idx} =====")
