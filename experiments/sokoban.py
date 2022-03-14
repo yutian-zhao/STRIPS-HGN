@@ -35,7 +35,7 @@ if __name__ == "__main__":
     train_problem_pddls = []
     for n in [5, 7]:
             for w in range(3, 6):
-                train_problem_pddls += sorted(random.sample(["-{}-b2-{}".format(n, w)+'/'+ prob for prob in os.listdir("../benchmarks/sokoban/"+"-{}-b2-{}".format(n, w))], k=4))
+                train_problem_pddls += sorted(random.sample(["-n{}-b2-w{}".format(n, w)+'/'+ prob for prob in os.listdir("../benchmarks/sokoban/"+"-n{}-b2-w{}".format(n, w))], k=4))
     for pddl in train_problem_pddls:
         used_problems.add(pddl)
 
@@ -52,7 +52,7 @@ if __name__ == "__main__":
         valid_problem_pddls = []
         for n in [5, 7, 8]:
             for w in range(3, 6):
-                valid_problem_pddls += sorted(random.sample(["-{}-b2-{}".format(n, w)+'/'+ prob for prob in os.listdir("../benchmarks/sokoban/"+"-{}-b2-{}".format(n, w))], k=1))
+                valid_problem_pddls += sorted(random.sample(["-n{}-b2-w{}".format(n, w)+'/'+ prob for prob in os.listdir("../benchmarks/sokoban/"+"-n{}-b2-w{}".format(n, w))], k=1))
         _log.info(f"Validation problems are: {valid_problem_pddls}.")
         for pddl in valid_problem_pddls:
             used_problems.add(pddl)
@@ -133,7 +133,7 @@ if __name__ == "__main__":
     test_problem_pddls = []
     for n in [5, 7, 8]:
             for w in range(3, 6):
-                problem_set = set(["-{}-b2-{}".format(n, w)+'/'+ prob for prob in os.listdir("../benchmarks/sokoban/"+"-{}-b2-{}".format(n, w))])-used_problems
+                problem_set = set(["-n{}-b2-w{}".format(n, w)+'/'+ prob for prob in os.listdir("../benchmarks/sokoban/"+"-n{}-b2-w{}".format(n, w))])-used_problems
                 test_problem_pddls += sorted(random.sample(list(problem_set), k=6))
 
     for mode in modes:
