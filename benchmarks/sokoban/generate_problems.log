@@ -1,0 +1,691 @@
+===== Processing Args -n5-b2-w3 idx 0 =====
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2324.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5696.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4169.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7532.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5556.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8303.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9162.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7737.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9677.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8512.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-3332.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-1116.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9035.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9948.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2790.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7217.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-6405.pddl
+===== Processing Args -n5-b2-w3 idx 0 =====
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2324.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5696.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4169.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7532.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5556.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8303.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9162.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7737.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9677.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8512.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-3332.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-1116.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9035.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9948.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2790.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7217.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-6060.pddl
+Args -n5-b2-w3 idx 0 run 1: Initial state and goal already encountered in ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl
+Removing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-6060.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-6405.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4308.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9173.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: 1 problems are not unique.
+Args -n5-b2-w3 idx 0 run 1: 0 initial states are goals.
+Args -n5-b2-w3 idx 0 run 1: 0 problems are trivial.
+Args -n5-b2-w3 idx 0 run 1: 20/20 problems are verified.
+Args -n5-b2-w3 idx 0 run 1: Complete.
+===== Processing Args -n5-b2-w4 idx 1 =====
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5512.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-9119.pddl
+===== Processing Args -n5-b2-w3 idx 0 =====
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2324.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5696.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4169.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7532.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5556.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8303.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9162.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7737.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9677.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8512.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-3332.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-1116.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9035.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9948.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2790.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7217.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-6405.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4308.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9173.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: 0 problems are not unique.
+Args -n5-b2-w3 idx 0 run 1: 0 initial states are goals.
+Args -n5-b2-w3 idx 0 run 1: 0 problems are trivial.
+Args -n5-b2-w3 idx 0 run 1: 20/20 problems are verified.
+Args -n5-b2-w3 idx 0 run 1: Complete.
+===== Processing Args -n5-b2-w4 idx 1 =====
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5512.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-9119.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-2105.pddl
+===== Processing Args -n5-b2-w3 idx 0 =====
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2324.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5696.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4169.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7532.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5556.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8303.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9162.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7737.pddl
+===== Processing Args -n5-b2-w3 idx 0 =====
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2324.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5696.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4169.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7532.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5556.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8303.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9162.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7737.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9677.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8512.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-3332.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-1116.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9035.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9948.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2790.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7217.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-6060.pddl
+===== Processing Args -n5-b2-w3 idx 0 =====
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2324.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5696.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4169.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7532.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5556.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8303.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9162.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7737.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9677.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8512.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-3332.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-1116.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9035.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9948.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2790.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7217.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-6060.pddl
+Args -n5-b2-w3 idx 0 run 1: Initial state and goal already encountered in ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl
+Removing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-6060.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-6405.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4308.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9173.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w3 idx 0 run 1: 1 problems are not unique.
+Args -n5-b2-w3 idx 0 run 1: 0 initial states are goals.
+Args -n5-b2-w3 idx 0 run 1: 0 problems are trivial.
+Args -n5-b2-w3 idx 0 run 1: 20/20 problems are verified.
+Args -n5-b2-w3 idx 0 run 1: Complete.
+===== Processing Args -n5-b2-w4 idx 1 =====
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5512.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-9119.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-2105.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-8672.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5344.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-2325.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-4671.pddl
+Args -n5-b2-w4 idx 1 run 1: Initial state and goal already encountered in ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-2325.pddl
+Removing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-4671.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-9687.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-6124.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-7692.pddl
+Args -n5-b2-w4 idx 1 run 1: Initial state and goal already encountered in ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-9119.pddl
+Removing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-7692.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-3499.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-1350.pddl
+Args -n5-b2-w4 idx 1 run 1: Initial state and goal already encountered in ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-6124.pddl
+Removing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-1350.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-1404.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-1325.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-9975.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5546.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5636.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-6771.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-7504.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-3165.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-2324.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-2509.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5940.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w4 idx 1 run 1: 3 problems are not unique.
+Args -n5-b2-w4 idx 1 run 1: 0 initial states are goals.
+Args -n5-b2-w4 idx 1 run 1: 0 problems are trivial.
+Args -n5-b2-w4 idx 1 run 1: 20/20 problems are verified.
+Args -n5-b2-w4 idx 1 run 1: Complete.
+===== Processing Args -n5-b2-w5 idx 2 =====
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-8669.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-4852.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-6330.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-4208.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-7856.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-3814.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-5219.pddl
+  - Testing if the problem is trivial.
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-9168.pddl
+===== Processing Args -n5-b2-w3 idx 0 =====
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2324.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5696.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4169.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7532.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-5556.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8303.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9162.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7737.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9677.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-8512.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-3332.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-1116.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9035.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9948.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-2790.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-7217.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-6405.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-4308.pddl
+Args -n5-b2-w3 idx 0 run 1: Processing ../benchmarks/sokoban/-n5-b2-w3/sokoban-n5-b2-w3-9173.pddl
+Args -n5-b2-w3 idx 0 run 1: 0 problems are not unique.
+Args -n5-b2-w3 idx 0 run 1: 0 initial states are goals.
+Args -n5-b2-w3 idx 0 run 1: 0 problems are trivial.
+Args -n5-b2-w3 idx 0 run 1: 20/20 problems are verified.
+Args -n5-b2-w3 idx 0 run 1: Complete.
+===== Processing Args -n5-b2-w4 idx 1 =====
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5512.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-9119.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-2105.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-8672.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5344.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-2325.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-9687.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-6124.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-3499.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-1404.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-1325.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-9975.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5546.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5636.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-6771.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-7504.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-3165.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-2324.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-2509.pddl
+Args -n5-b2-w4 idx 1 run 1: Processing ../benchmarks/sokoban/-n5-b2-w4/sokoban-n5-b2-w4-5940.pddl
+Args -n5-b2-w4 idx 1 run 1: 0 problems are not unique.
+Args -n5-b2-w4 idx 1 run 1: 0 initial states are goals.
+Args -n5-b2-w4 idx 1 run 1: 0 problems are trivial.
+Args -n5-b2-w4 idx 1 run 1: 20/20 problems are verified.
+Args -n5-b2-w4 idx 1 run 1: Complete.
+===== Processing Args -n5-b2-w5 idx 2 =====
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-8669.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-4852.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-6330.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-4208.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-7856.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-3814.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-5219.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-9168.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-6143.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-5385.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-3956.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-6959.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-3317.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-2119.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-7568.pddl
+Args -n5-b2-w5 idx 2 run 1: Initial state and goal already encountered in ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-7856.pddl
+Removing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-7568.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-3625.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-3914.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-1657.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-2183.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-4295.pddl
+Args -n5-b2-w5 idx 2 run 1: Initial state and goal already encountered in ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-8669.pddl
+Removing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-4295.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-5117.pddl
+Args -n5-b2-w5 idx 2 run 1: Processing ../benchmarks/sokoban/-n5-b2-w5/sokoban-n5-b2-w5-7043.pddl
+Args -n5-b2-w5 idx 2 run 1: 2 problems are not unique.
+Args -n5-b2-w5 idx 2 run 1: 0 initial states are goals.
+Args -n5-b2-w5 idx 2 run 1: 0 problems are trivial.
+Args -n5-b2-w5 idx 2 run 1: 20/20 problems are verified.
+Args -n5-b2-w5 idx 2 run 1: Complete.
+===== Processing Args -n9-b2-w3 idx 3 =====
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-6655.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-4525.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-2045.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-8487.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-3872.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-9386.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-2623.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-5077.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-4019.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-1368.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-4104.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-1460.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-4611.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-3763.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-2336.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-7771.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-2247.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-5841.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-7079.pddl
+Args -n9-b2-w3 idx 3 run 1: Processing ../benchmarks/sokoban/-n9-b2-w3/sokoban-n9-b2-w3-2335.pddl
+Args -n9-b2-w3 idx 3 run 1: 0 problems are not unique.
+Args -n9-b2-w3 idx 3 run 1: 0 initial states are goals.
+Args -n9-b2-w3 idx 3 run 1: 0 problems are trivial.
+Args -n9-b2-w3 idx 3 run 1: 20/20 problems are verified.
+Args -n9-b2-w3 idx 3 run 1: Complete.
+===== Processing Args -n9-b2-w4 idx 4 =====
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-2085.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-3227.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-2831.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-3397.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-8988.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-1123.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-3781.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-8717.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-3996.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-5116.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-3731.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-2444.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-7608.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-3121.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-7055.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-4661.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-6868.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-3325.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-5290.pddl
+Args -n9-b2-w4 idx 4 run 1: Processing ../benchmarks/sokoban/-n9-b2-w4/sokoban-n9-b2-w4-2541.pddl
+Args -n9-b2-w4 idx 4 run 1: 0 problems are not unique.
+Args -n9-b2-w4 idx 4 run 1: 0 initial states are goals.
+Args -n9-b2-w4 idx 4 run 1: 0 problems are trivial.
+Args -n9-b2-w4 idx 4 run 1: 20/20 problems are verified.
+Args -n9-b2-w4 idx 4 run 1: Complete.
+===== Processing Args -n9-b2-w5 idx 5 =====
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-4769.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-4671.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-4084.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-9140.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-7789.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-4575.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-9359.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-9101.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-6399.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-2645.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-7499.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-7920.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-9800.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-2340.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-5546.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-5621.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-8278.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-3131.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-6732.pddl
+Args -n9-b2-w5 idx 5 run 1: Processing ../benchmarks/sokoban/-n9-b2-w5/sokoban-n9-b2-w5-5264.pddl
+Args -n9-b2-w5 idx 5 run 1: 0 problems are not unique.
+Args -n9-b2-w5 idx 5 run 1: 0 initial states are goals.
+Args -n9-b2-w5 idx 5 run 1: 0 problems are trivial.
+Args -n9-b2-w5 idx 5 run 1: 20/20 problems are verified.
+Args -n9-b2-w5 idx 5 run 1: Complete.
+===== Processing Args -n7-b2-w3 idx 6 =====
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-8218.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-5551.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-7029.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-8474.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-1810.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-4598.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-2805.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-7357.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-5076.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-7227.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-3320.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-5852.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-6301.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-4659.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-7883.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-4677.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-4122.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-7444.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-6506.pddl
+Args -n7-b2-w3 idx 6 run 1: Processing ../benchmarks/sokoban/-n7-b2-w3/sokoban-n7-b2-w3-6780.pddl
+Args -n7-b2-w3 idx 6 run 1: 0 problems are not unique.
+Args -n7-b2-w3 idx 6 run 1: 0 initial states are goals.
+Args -n7-b2-w3 idx 6 run 1: 0 problems are trivial.
+Args -n7-b2-w3 idx 6 run 1: 20/20 problems are verified.
+Args -n7-b2-w3 idx 6 run 1: Complete.
+===== Processing Args -n7-b2-w4 idx 7 =====
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-9383.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-5173.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-5735.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-1314.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-2178.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-3549.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-4951.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-9526.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-7609.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-1324.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-8692.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-9375.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-3739.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-2003.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-2060.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-2149.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-3044.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-1609.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-8389.pddl
+Args -n7-b2-w4 idx 7 run 1: Processing ../benchmarks/sokoban/-n7-b2-w4/sokoban-n7-b2-w4-3130.pddl
+Args -n7-b2-w4 idx 7 run 1: 0 problems are not unique.
+Args -n7-b2-w4 idx 7 run 1: 0 initial states are goals.
+Args -n7-b2-w4 idx 7 run 1: 0 problems are trivial.
+Args -n7-b2-w4 idx 7 run 1: 20/20 problems are verified.
+Args -n7-b2-w4 idx 7 run 1: Complete.
+===== Processing Args -n7-b2-w5 idx 8 =====
+Args -n7-b2-w5 idx 8 run 1: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-1477.pddl
+Args -n7-b2-w5 idx 8 run 1: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-3334.pddl
+Args -n7-b2-w5 idx 8 run 1: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-4607.pddl
+Args -n7-b2-w5 idx 8 run 1: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-3332.pddl
+Args -n7-b2-w5 idx 8 run 1: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-9300.pddl
+Args -n7-b2-w5 idx 8 run 1: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-5986.pddl
+Args -n7-b2-w5 idx 8 run 1: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-8237.pddl
+Args -n7-b2-w5 idx 8 run 1: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-7218.pddl
+Args -n7-b2-w5 idx 8 run 1: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-7172.pddl
+Args -n7-b2-w5 idx 8 run 1: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-1795.pddl
+Args -n7-b2-w5 idx 8 run 1: 0 problems are not unique.
+Args -n7-b2-w5 idx 8 run 1: 0 initial states are goals.
+Args -n7-b2-w5 idx 8 run 1: 0 problems are trivial.
+Args -n7-b2-w5 idx 8 run 1: 10/20 problems are verified.
+Args -n7-b2-w5 idx 8 run 1: generating 10 new problems.
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-4510.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-1477.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-3334.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-4607.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-3332.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-3921.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-9300.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-8893.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-3435.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-2272.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-2850.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-5986.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-1705.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-8237.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-7218.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-7172.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-1795.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-2395.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-7044.pddl
+Args -n7-b2-w5 idx 8 run 2: Processing ../benchmarks/sokoban/-n7-b2-w5/sokoban-n7-b2-w5-9317.pddl
+Args -n7-b2-w5 idx 8 run 2: 0 problems are not unique.
+Args -n7-b2-w5 idx 8 run 2: 0 initial states are goals.
+Args -n7-b2-w5 idx 8 run 2: 0 problems are trivial.
+Args -n7-b2-w5 idx 8 run 2: 20/20 problems are verified.
+Args -n7-b2-w5 idx 8 run 2: Complete.
+===== Processing Args -n8-b2-w3 idx 9 =====
+Args -n8-b2-w3 idx 9 run 1: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-4269.pddl
+Args -n8-b2-w3 idx 9 run 1: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-1409.pddl
+Args -n8-b2-w3 idx 9 run 1: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-8666.pddl
+Args -n8-b2-w3 idx 9 run 1: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-1671.pddl
+Args -n8-b2-w3 idx 9 run 1: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-9629.pddl
+Args -n8-b2-w3 idx 9 run 1: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-3363.pddl
+Args -n8-b2-w3 idx 9 run 1: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-5669.pddl
+Args -n8-b2-w3 idx 9 run 1: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-4387.pddl
+Args -n8-b2-w3 idx 9 run 1: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-2048.pddl
+Args -n8-b2-w3 idx 9 run 1: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-9993.pddl
+Args -n8-b2-w3 idx 9 run 1: 0 problems are not unique.
+Args -n8-b2-w3 idx 9 run 1: 0 initial states are goals.
+Args -n8-b2-w3 idx 9 run 1: 0 problems are trivial.
+Args -n8-b2-w3 idx 9 run 1: 10/20 problems are verified.
+Args -n8-b2-w3 idx 9 run 1: generating 10 new problems.
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-8793.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-5911.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-4269.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-4647.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-1409.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-8666.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-3460.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-9057.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-1671.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-9629.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-7756.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-3363.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-4108.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-5669.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-9829.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-8747.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-4387.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-2048.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-9993.pddl
+Args -n8-b2-w3 idx 9 run 2: Processing ../benchmarks/sokoban/-n8-b2-w3/sokoban-n8-b2-w3-1278.pddl
+Args -n8-b2-w3 idx 9 run 2: 0 problems are not unique.
+Args -n8-b2-w3 idx 9 run 2: 0 initial states are goals.
+Args -n8-b2-w3 idx 9 run 2: 0 problems are trivial.
+Args -n8-b2-w3 idx 9 run 2: 20/20 problems are verified.
+Args -n8-b2-w3 idx 9 run 2: Complete.
+===== Processing Args -n8-b2-w4 idx 10 =====
+Args -n8-b2-w4 idx 10 run 1: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-1328.pddl
+Args -n8-b2-w4 idx 10 run 1: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-2005.pddl
+Args -n8-b2-w4 idx 10 run 1: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-2668.pddl
+Args -n8-b2-w4 idx 10 run 1: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-3261.pddl
+Args -n8-b2-w4 idx 10 run 1: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-5166.pddl
+Args -n8-b2-w4 idx 10 run 1: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-4244.pddl
+Args -n8-b2-w4 idx 10 run 1: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-8825.pddl
+Args -n8-b2-w4 idx 10 run 1: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-8976.pddl
+Args -n8-b2-w4 idx 10 run 1: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-2895.pddl
+Args -n8-b2-w4 idx 10 run 1: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-8000.pddl
+Args -n8-b2-w4 idx 10 run 1: 0 problems are not unique.
+Args -n8-b2-w4 idx 10 run 1: 0 initial states are goals.
+Args -n8-b2-w4 idx 10 run 1: 0 problems are trivial.
+Args -n8-b2-w4 idx 10 run 1: 10/20 problems are verified.
+Args -n8-b2-w4 idx 10 run 1: generating 10 new problems.
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-1328.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-2005.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-1483.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-2668.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-2246.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-3261.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-5166.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-1089.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-4244.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-8825.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-3259.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-6430.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-1238.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-6019.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-8976.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-5872.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-2096.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-5043.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-2895.pddl
+Args -n8-b2-w4 idx 10 run 2: Processing ../benchmarks/sokoban/-n8-b2-w4/sokoban-n8-b2-w4-8000.pddl
+Args -n8-b2-w4 idx 10 run 2: 0 problems are not unique.
+Args -n8-b2-w4 idx 10 run 2: 0 initial states are goals.
+Args -n8-b2-w4 idx 10 run 2: 0 problems are trivial.
+Args -n8-b2-w4 idx 10 run 2: 20/20 problems are verified.
+Args -n8-b2-w4 idx 10 run 2: Complete.
+===== Processing Args -n8-b2-w5 idx 11 =====
+Args -n8-b2-w5 idx 11 run 1: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-3315.pddl
+Args -n8-b2-w5 idx 11 run 1: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-4507.pddl
+Args -n8-b2-w5 idx 11 run 1: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-5607.pddl
+Args -n8-b2-w5 idx 11 run 1: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-7774.pddl
+Args -n8-b2-w5 idx 11 run 1: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-2900.pddl
+Args -n8-b2-w5 idx 11 run 1: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-7143.pddl
+Args -n8-b2-w5 idx 11 run 1: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-4939.pddl
+Args -n8-b2-w5 idx 11 run 1: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-9749.pddl
+Args -n8-b2-w5 idx 11 run 1: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-3012.pddl
+Args -n8-b2-w5 idx 11 run 1: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-6146.pddl
+Args -n8-b2-w5 idx 11 run 1: 0 problems are not unique.
+Args -n8-b2-w5 idx 11 run 1: 0 initial states are goals.
+Args -n8-b2-w5 idx 11 run 1: 0 problems are trivial.
+Args -n8-b2-w5 idx 11 run 1: 10/20 problems are verified.
+Args -n8-b2-w5 idx 11 run 1: generating 10 new problems.
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-3315.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-9517.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-8175.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-4507.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-5607.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-7826.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-8354.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-2056.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-5394.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-7774.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-2900.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-3341.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-1153.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-8465.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-7143.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-1229.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-4939.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-9749.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-3012.pddl
+Args -n8-b2-w5 idx 11 run 2: Processing ../benchmarks/sokoban/-n8-b2-w5/sokoban-n8-b2-w5-6146.pddl
+Args -n8-b2-w5 idx 11 run 2: 0 problems are not unique.
+Args -n8-b2-w5 idx 11 run 2: 0 initial states are goals.
+Args -n8-b2-w5 idx 11 run 2: 0 problems are trivial.
+Args -n8-b2-w5 idx 11 run 2: 20/20 problems are verified.
+Args -n8-b2-w5 idx 11 run 2: Complete.
