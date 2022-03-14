@@ -54,24 +54,24 @@ Each dir is a directory containing PDDL problem instances
 """
 if __name__ == "__main__":
 
-    # generator = "./../../pddl-generators/sokoban/random/sokoban-generator-typed"
-    # domain_name = 'sokoban'
-    # arg_list = [['-n', '5', '-b', '2', '-w', '3'],
-    #         ['-n', '5', '-b', '2', '-w', '4'],
-    #         ['-n', '5', '-b', '2', '-w', '5'],
-    #         ['-n', '9', '-b', '2', '-w', '3'],
-    #         ['-n', '9', '-b', '2', '-w', '4'],
-    #         ['-n', '9', '-b', '2', '-w', '5'],
-    #         ['-n', '7', '-b', '2', '-w', '3'],
-    #         ['-n', '7', '-b', '2', '-w', '4'],
-    #         ['-n', '7', '-b', '2', '-w', '5'],
-    #         ['-n', '8', '-b', '2', '-w', '3'],
-    #         ['-n', '8', '-b', '2', '-w', '4'],
-    #         ['-n', '8', '-b', '2', '-w', '5'],
-    # ]
-    # domain_dir = "../benchmarks/sokoban/"
-    # num = 10
-    # domain_file = "../benchmarks/sokoban/typed-sokoban.pddl"
+    generator = "./../../pddl-generators/sokoban/random/sokoban-generator-typed"
+    domain_name = 'sokoban'
+    arg_list = [['-n', '5', '-b', '2', '-w', '3'],
+            ['-n', '5', '-b', '2', '-w', '4'],
+            ['-n', '5', '-b', '2', '-w', '5'],
+            ['-n', '9', '-b', '2', '-w', '3'],
+            ['-n', '9', '-b', '2', '-w', '4'],
+            ['-n', '9', '-b', '2', '-w', '5'],
+            ['-n', '7', '-b', '2', '-w', '3'],
+            ['-n', '7', '-b', '2', '-w', '4'],
+            ['-n', '7', '-b', '2', '-w', '5'],
+            ['-n', '8', '-b', '2', '-w', '3'],
+            ['-n', '8', '-b', '2', '-w', '4'],
+            ['-n', '8', '-b', '2', '-w', '5'],
+    ]
+    domain_dir = "../benchmarks/sokoban/"
+    num = 20
+    domain_file = "../benchmarks/sokoban/typed-sokoban.pddl"
 
     # generator = "./../../pddl-generators/blocksworld/blocksworld 4 "
     # domain_name = 'blocksworld'
@@ -87,16 +87,16 @@ if __name__ == "__main__":
     # num = 100
     # domain_file = "../benchmarks/npuzzle/n-puzzle-typed.pddl"
 
-    generator = "./../../pddl-generators/zenotravel/ztravel "
-    domain_name = 'ztravel'
-    arg_list = []
-    for c in range(2, 5):
-        for pl in range(2, 6):
-            for p in range(3, 8):
-                arg_list.append("{} {} {}".format(c, pl, p))
-    domain_dir = "../benchmarks/ztravel/"
-    num = 5
-    domain_file = "../benchmarks/ztravel/domain.pddl"
+    # generator = "./../../pddl-generators/zenotravel/ztravel "
+    # domain_name = 'ztravel'
+    # arg_list = []
+    # for c in range(2, 5):
+    #     for pl in range(2, 6):
+    #         for p in range(3, 8):
+    #             arg_list.append("{} {} {}".format(c, pl, p))
+    # domain_dir = "../benchmarks/ztravel/"
+    # num = 5
+    # domain_file = "../benchmarks/ztravel/domain.pddl"
 
     handler = logging.FileHandler(os.path.join(domain_dir, 'generate_problems.log'))
     handler.setLevel(logging.INFO)

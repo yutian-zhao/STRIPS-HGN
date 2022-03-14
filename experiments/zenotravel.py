@@ -38,7 +38,6 @@ if __name__ == "__main__":
             for p in range(3, 6):
                 train_problem_pddls += sorted(random.sample(["{}{}{}".format(c, pl, p)+'/'+ prob for prob in os.listdir("../benchmarks/ztravel/"+"{}{}{}".format(c, pl, p))], k=1))
     for pddl in train_problem_pddls:
-        print("___________"+pddl)
         used_problems.add(pddl)
         
     _CONFIGURATION = DomainAndProblemConfiguration(
@@ -125,7 +124,7 @@ if __name__ == "__main__":
                             if best_loss > float(l[(l.find('(best ')+6): (l.find('(best ')+10)]):
                                 best_loss = float(l[(l.find('(best ')+6): (l.find('(best ')+10)])
 
-                report[train_dirname] = {'best_loss': best_loss, 'coverage': solved_count/total_count, 'pass': (solved_count/total_count)>=0.7}
+                report[train_dirname] = {'best_loss': best_loss, 'coverage': solved_count/total_count, 'pass': (solved_count/total_count)>=0.8}
                 json.dump(
                     report,
                     open(os.path.join('../results', 'report.json'), "w"),

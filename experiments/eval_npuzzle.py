@@ -9,6 +9,11 @@ from train import train_wrapper
 from strips_hgn.utils.helpers import mode_to_str
 from strips_hgn.utils.logging_setup import setup_full_logging
 from default_args import get_training_args, DomainAndProblemConfiguration, get_eval_args
+from strips_hgn.planning import (
+    Heuristic,
+    PlannerForEvaluation,
+    SearchAlgorithm,
+)
 
 _log = logging.getLogger(__name__)
 
@@ -19,8 +24,6 @@ if __name__ == "__main__":
     for i in range(3,4):
         valid_problem_pddls += sorted(random.sample([str(i)+'/'+ p for p in os.listdir("../benchmarks/npuzzle/"+str(i))], k=5))
     _log.info(f"Validation problems are: {valid_problem_pddls}.")
-    for pddl in valid_problem_pddls:
-        used_problems.add(pddl)
 
     models = [
         "npuzzle_mode_train_all_False_search_astar_distance_0_novel_2_lifted_False-strips-hgn-02-05-18-55-21",
@@ -41,6 +44,7 @@ if __name__ == "__main__":
                 configurations=[_VALID_CONFIGURATION],
                 max_search_time=5*60,
                 checkpoint= "../results/n-puzzle/{}/model-best.ckpt".format(model),
+                # search_algorithm= SearchAlgorithm.a_star,
             ),
             experiment_type=model.replace("train", "eval"),
             mode={'mode':'eval'},

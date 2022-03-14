@@ -108,7 +108,7 @@ if __name__ == "__main__":
                     for name, result in res['results'].items():
                         if result['strips-hgn']['search_state']=='success':
                             solved_count+=1
-                if solved_count/total_count >=0.7:
+                if solved_count/total_count >=0.8:
                     passes[mode_to_str(mode)] = True
 
                 best_loss=float('inf')
@@ -119,7 +119,7 @@ if __name__ == "__main__":
                             if best_loss > float(l[(l.find('(best ')+6): (l.find('(best ')+10)]):
                                 best_loss = float(l[(l.find('(best ')+6): (l.find('(best ')+10)])
 
-                report[train_dirname] = {'best_loss': best_loss, 'coverage': solved_count/total_count, 'pass': (solved_count/total_count)>=0.7}
+                report[train_dirname] = {'best_loss': best_loss, 'coverage': solved_count/total_count, 'pass': (solved_count/total_count)>=0.8}
                 json.dump(
                     report,
                     open(os.path.join('../results', 'report.json'), "w"),
