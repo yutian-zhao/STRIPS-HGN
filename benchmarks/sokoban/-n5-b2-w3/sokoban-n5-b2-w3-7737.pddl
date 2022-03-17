@@ -55,7 +55,7 @@
 
 
 
-(define (problem typed-sokoban-grid5-boxes2-walls3)
+(define (problem sokoban-n5-b2-w3-7737)
 (:domain typed-sokoban)
 (:objects 
         up down left right - DIR

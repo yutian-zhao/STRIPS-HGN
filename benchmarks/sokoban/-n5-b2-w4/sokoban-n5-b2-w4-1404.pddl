@@ -43,7 +43,7 @@
 
 
 
-(define (problem typed-sokoban-grid5-boxes2-walls4)
+(define (problem sokoban-n5-b2-w4-1404)
 (:domain typed-sokoban)
 (:objects 
         up down left right - DIR
