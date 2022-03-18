@@ -43,6 +43,20 @@ def generate_problems(generator, args, num, domain_name, output_dir):
             # _log.info(proc.stdout)
             file.write(proc.stdout)
         
+        # fname = domain_name+''.join(args).replace(' ', '')+'-'+str(randn)
+        # while os.path.exists(os.path.join(output_dir, fname)):
+        #     randn = random.randint(1000, 9999)
+        #     fname = domain_name+''.join(args).replace(' ', '')+'-'+str(randn)
+        # proc = subprocess.run(generator+output_dir+"/"+fname+" "+args, capture_output=True, shell=True) 
+        # lines = None
+        # with open(output_dir+"/"+fname+".pddl", 'r') as file:
+        #     lines = file.readlines()
+        # with open(output_dir+"/"+fname+".pddl", 'w') as file:
+        #     for l in lines:
+        #         if l.startswith("(:requirements"):
+        #             pass
+        #         else:
+        #             file.write(l)
 
 """
 Checks problems in given directories are unique by comparing their initial state
