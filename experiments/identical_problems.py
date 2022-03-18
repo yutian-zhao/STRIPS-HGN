@@ -54,24 +54,24 @@ Each dir is a directory containing PDDL problem instances
 """
 if __name__ == "__main__":
 
-    generator = "./../../pddl-generators/sokoban/random/sokoban-generator-typed"
-    domain_name = 'sokoban'
-    arg_list = [['-n', '5', '-b', '2', '-w', '3'],
-            ['-n', '5', '-b', '2', '-w', '4'],
-            ['-n', '5', '-b', '2', '-w', '5'],
-            ['-n', '9', '-b', '2', '-w', '3'],
-            ['-n', '9', '-b', '2', '-w', '4'],
-            ['-n', '9', '-b', '2', '-w', '5'],
-            ['-n', '7', '-b', '2', '-w', '3'],
-            ['-n', '7', '-b', '2', '-w', '4'],
-            ['-n', '7', '-b', '2', '-w', '5'],
-            ['-n', '8', '-b', '2', '-w', '3'],
-            ['-n', '8', '-b', '2', '-w', '4'],
-            ['-n', '8', '-b', '2', '-w', '5'],
-    ]
-    domain_dir = "../benchmarks/sokoban/"
-    num = 20
-    domain_file = "../benchmarks/sokoban/typed-sokoban.pddl"
+    # generator = "./../../pddl-generators/sokoban/random/sokoban-generator-typed"
+    # domain_name = 'sokoban'
+    # arg_list = [['-n', '5', '-b', '2', '-w', '3'],
+    #         ['-n', '5', '-b', '2', '-w', '4'],
+    #         ['-n', '5', '-b', '2', '-w', '5'],
+    #         ['-n', '9', '-b', '2', '-w', '3'],
+    #         ['-n', '9', '-b', '2', '-w', '4'],
+    #         ['-n', '9', '-b', '2', '-w', '5'],
+    #         ['-n', '7', '-b', '2', '-w', '3'],
+    #         ['-n', '7', '-b', '2', '-w', '4'],
+    #         ['-n', '7', '-b', '2', '-w', '5'],
+    #         ['-n', '8', '-b', '2', '-w', '3'],
+    #         ['-n', '8', '-b', '2', '-w', '4'],
+    #         ['-n', '8', '-b', '2', '-w', '5'],
+    # ]
+    # domain_dir = "../benchmarks/sokoban/"
+    # num = 20
+    # domain_file = "../benchmarks/sokoban/typed-sokoban.pddl"
 
     # generator = "./../../pddl-generators/blocksworld/blocksworld 4 "
     # domain_name = 'blocksworld'
@@ -97,6 +97,13 @@ if __name__ == "__main__":
     # domain_dir = "../benchmarks/ztravel/"
     # num = 5
     # domain_file = "../benchmarks/ztravel/domain.pddl"
+
+    generator = "./../../pddl-generators/mbw/matching-bw-generator.sh "
+    domain_name = 'mbw'
+    arg_list = ["mbw"+str(i)+" "+str(i) for i in range(3, 9)]
+    domain_dir = "../benchmarks/mbw/"
+    num = 30
+    domain_file = "../benchmarks/mbw/matching-bw-typed.pddl"
 
     file_handler = logging.FileHandler(os.path.join(domain_dir, 'generate_problems.log'))
     file_handler.setLevel(logging.INFO)
@@ -153,7 +160,7 @@ if __name__ == "__main__":
                     continue
                 else:
                     _log.info("  - Testing if the problem is trivial.")
-                    sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 1)
+                    sol, _ = find_solution(task, LmCutHeuristic(task), astar_search, 0.1)
                     if sol:
                         if len(sol) < 5:
                             _log.info(f"Args {''.join(args).replace(' ', '')} idx {idx} run {count}: problem is trivial.")
