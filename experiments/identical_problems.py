@@ -212,6 +212,7 @@ if __name__ == "__main__":
                     for l in lines:
                         match = re.findall(pattern, l)
                         if len(match) >0:
+                            _log.info(f"Renaming {file}.")
                             l = l.replace(match[0], file[:-5])
                         f.write(l)
     

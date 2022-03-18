@@ -1,6 +1,6 @@
 
 
-(define (problem matching-bw-typed-n7)
+(define (problem mbw7-8796)
 (:domain matching-bw-typed)
 (:objects h1 h2 - hand b1 b2 b3 b4 b5 b6 b7  - block)
 (:init
