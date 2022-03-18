@@ -144,8 +144,11 @@ if __name__ == "__main__":
                     break
                 elif metrics['coverage'] > coverage:
                     best_model = model_name
+                    coverage = metrics['coverage']
+                    best_loss = metrics['best_loss']
                 elif metrics['coverage'] == coverage and metrics['best_loss'] < best_loss:
                     best_model = model_name
+                    best_loss = metrics['best_loss']
         _log.info(f"Testing: {best_model}.")
         # best_models.append(best_model)
 
