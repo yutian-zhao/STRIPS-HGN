@@ -80,7 +80,7 @@ if __name__ == "__main__":
                         
                 _VALID_CONFIGURATION = DomainAndProblemConfiguration(
                     base_directory="../benchmarks/mbw",
-                    domain_pddl="domain.pddl",
+                    domain_pddl="matching-bw-typed.pddl",
                     problem_pddls=valid_problem_pddls,
                     )
 
@@ -129,7 +129,7 @@ if __name__ == "__main__":
         
     # prepare test problems
     test_problem_pddls = []
-    for i in range(5, 8):
+    for i in range(5, 9):
         problem_set = set([str(i)+'/'+ p for p in os.listdir("../benchmarks/mbw/"+str(i))])-used_problems 
         test_problem_pddls += sorted(random.sample(list(problem_set), k=10))
 
@@ -157,7 +157,7 @@ if __name__ == "__main__":
         # test phase
         _TEST_CONFIGURATION = DomainAndProblemConfiguration(
             base_directory="../benchmarks/mbw",
-            domain_pddl="domain.pddl",
+            domain_pddl="matching-bw-typed.pddl",
             problem_pddls=test_problem_pddls,
             )
 

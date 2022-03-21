@@ -8,14 +8,20 @@ _CONFIGURATION = DomainAndProblemConfiguration(
 )
 # assert len(_CONFIGURATION.problems) == 17
 
+models = [
+        "ferry_ori_3",
+        "ferry_all_3",
+    ]
+
 
 if __name__ == "__main__":
-
-    eval_wrapper(
-        args=get_eval_args(
-            configurations=[_CONFIGURATION],
-            max_search_time=5*60,
-            checkpoint= "../results/ferry_all_3/model-best.ckpt",
-        ),
-        experiment_type='ferry',
-    )
+    for model in models:
+        eval_wrapper(
+            args=get_eval_args(
+                configurations=[_CONFIGURATION],
+                max_search_time=5*60,
+                checkpoint= "../results/ferry/{}/model-best.ckpt".format(model),
+            ),
+            experiment_type=model.replace("train", "eval"),
+            mode={'mode':'eval'},
+        )
