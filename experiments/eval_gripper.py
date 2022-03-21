@@ -4,18 +4,24 @@ from eval import eval_wrapper
 _CONFIGURATION = DomainAndProblemConfiguration(
     base_directory="../benchmarks/gripper",
     domain_pddl="domain.pddl",
-    problem_pddls=["problems/gripper-n"+str(i)+".pddl" for i in range(4, 21)],
+    problem_pddls=["problems/gripper-n"+str(i)+".pddl" for i in range(5, 21, 5)],
 )
-assert len(_CONFIGURATION.problems) == 17
+# assert len(_CONFIGURATION.problems) == 17
 
+models = [
+        "gripper_ori_90",
+        "gripper_all_90",
+    ]
 
 if __name__ == "__main__":
 
-    eval_wrapper(
-        args=get_eval_args(
-            configurations=[_CONFIGURATION],
-            max_search_time=1*60,
-            checkpoint= "../results/gripper_all_90/model-best.ckpt",
-        ),
-        experiment_type='gripper',
-    )
+    for model in models:
+        eval_wrapper(
+            args=get_eval_args(
+                configurations=[_CONFIGURATION],
+                max_search_time=5*60,
+                checkpoint= "../results/gripper/{}/model-best.ckpt".format(model),
+            ),
+            experiment_type=model.replace("train", "eval"),
+            mode={'mode':'eval'},
+        )
