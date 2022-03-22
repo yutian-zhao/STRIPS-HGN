@@ -17,7 +17,7 @@ MAX_FD_SEARCH_TIME = 120
 DEFAULT_NUM_FOLDS = 10
 DEFAULT_NUM_BINS = 4
 
-DOMAIN_TO_NUM_BINS_OVERRIDE = {"gripper-strips": 3, "hanoi": 5, "sokoban": 5}
+DOMAIN_TO_NUM_BINS_OVERRIDE = {} # {"gripper-strips": 3, "hanoi": 5, "sokoban": 5}
 DEFAULT_DOMAIN_TO_MIN_SAMPLES = {"gripper-strips": 60, "hanoi": 50}
 
 # Training defaults

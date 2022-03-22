@@ -1,6 +1,16 @@
-from default_args import get_training_args, DomainAndProblemConfiguration
-from train import train_wrapper
+import os
+import random 
+import json
+import logging
+from datetime import datetime
 
+from eval import eval_wrapper
+from train import train_wrapper
+from strips_hgn.utils.helpers import mode_to_str
+from strips_hgn.utils.logging_setup import setup_full_logging
+from default_args import get_training_args, DomainAndProblemConfiguration, get_eval_args
+
+_log = logging.getLogger(__name__)
 
 if __name__ == "__main__":
     _log.info(f'Starting experiments: {datetime.now().strftime("%m-%d-%H-%M-%S")}.')
@@ -56,7 +66,7 @@ if __name__ == "__main__":
                     args=get_training_args(
                         configurations=[_CONFIGURATION],
                         # 10 minutes
-                        max_training_time=15*60, #  
+                        max_training_time=30*60, #  
                         num_folds=2,
                         # batch_size=32,
                         # learning_rate=0.005,

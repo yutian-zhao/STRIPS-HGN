@@ -112,12 +112,22 @@ if __name__ == "__main__":
     # num = 5
     # domain_file = "../benchmarks/ztravel/domain.pddl"
 
-    generator = "./../../pddl-generators/mbw/matching-bw-generator.sh "
-    domain_name = 'mbw'
-    arg_list = ["mbw"+str(i)+" "+str(i) for i in range(3, 9)]
-    domain_dir = "../benchmarks/mbw/"
-    num = 30
-    domain_file = "../benchmarks/mbw/matching-bw-typed.pddl"
+    generator = "./../../pddl-generators/ferry/ferry "
+    domain_name = 'fry'
+    arg_list = []
+    for loc in range(2, 11):
+        for car in range(5, 21, 5):
+                arg_list.append("-l {} -c {}".format(loc, car))
+    domain_dir = "../benchmarks/fry/"
+    num = 4
+    domain_file = "../benchmarks/fry/domain.pddl"
+
+    # generator = "./../../pddl-generators/mbw/matching-bw-generator.sh "
+    # domain_name = 'mbw'
+    # arg_list = ["mbw"+str(i)+" "+str(i) for i in range(3, 9)]
+    # domain_dir = "../benchmarks/mbw/"
+    # num = 30
+    # domain_file = "../benchmarks/mbw/matching-bw-typed.pddl"
 
     file_handler = logging.FileHandler(os.path.join(domain_dir, 'generate_problems.log'))
     file_handler.setLevel(logging.INFO)
