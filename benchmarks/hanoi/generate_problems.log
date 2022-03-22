@@ -1,0 +1,234 @@
+===== Processing Args -n3 idx 0 =====
+Args -n3 idx 0 run 1: 0 problems are not unique.
+Args -n3 idx 0 run 1: 0 initial states are goals.
+Args -n3 idx 0 run 1: 0 problems are trivial.
+Args -n3 idx 0 run 1: 0/1 problems are verified.
+Args -n3 idx 0 run 1: generating 1 new problems.
+Args -n3 idx 0 run 2: Processing ../benchmarks/hanoi/-n3/hanoi-n3-9385.pddl
+Args -n3 idx 0 run 2: 0 problems are not unique.
+Args -n3 idx 0 run 2: 0 initial states are goals.
+Args -n3 idx 0 run 2: 0 problems are trivial.
+Args -n3 idx 0 run 2: 1/1 problems are verified.
+Args -n3 idx 0 run 2: Complete.
+===== Processing Args -n4 idx 1 =====
+Args -n4 idx 1 run 1: 0 problems are not unique.
+Args -n4 idx 1 run 1: 0 initial states are goals.
+Args -n4 idx 1 run 1: 0 problems are trivial.
+Args -n4 idx 1 run 1: 0/1 problems are verified.
+Args -n4 idx 1 run 1: generating 1 new problems.
+Args -n4 idx 1 run 2: Processing ../benchmarks/hanoi/-n4/hanoi-n4-9562.pddl
+Args -n4 idx 1 run 2: 0 problems are not unique.
+Args -n4 idx 1 run 2: 0 initial states are goals.
+Args -n4 idx 1 run 2: 0 problems are trivial.
+Args -n4 idx 1 run 2: 1/1 problems are verified.
+Args -n4 idx 1 run 2: Complete.
+===== Processing Args -n5 idx 2 =====
+Args -n5 idx 2 run 1: 0 problems are not unique.
+Args -n5 idx 2 run 1: 0 initial states are goals.
+Args -n5 idx 2 run 1: 0 problems are trivial.
+Args -n5 idx 2 run 1: 0/1 problems are verified.
+Args -n5 idx 2 run 1: generating 1 new problems.
+Args -n5 idx 2 run 2: Processing ../benchmarks/hanoi/-n5/hanoi-n5-5363.pddl
+Args -n5 idx 2 run 2: 0 problems are not unique.
+Args -n5 idx 2 run 2: 0 initial states are goals.
+Args -n5 idx 2 run 2: 0 problems are trivial.
+Args -n5 idx 2 run 2: 1/1 problems are verified.
+Args -n5 idx 2 run 2: Complete.
+===== Processing Args -n6 idx 3 =====
+Args -n6 idx 3 run 1: 0 problems are not unique.
+Args -n6 idx 3 run 1: 0 initial states are goals.
+Args -n6 idx 3 run 1: 0 problems are trivial.
+Args -n6 idx 3 run 1: 0/1 problems are verified.
+Args -n6 idx 3 run 1: generating 1 new problems.
+Args -n6 idx 3 run 2: Processing ../benchmarks/hanoi/-n6/hanoi-n6-9645.pddl
+Args -n6 idx 3 run 2: 0 problems are not unique.
+Args -n6 idx 3 run 2: 0 initial states are goals.
+Args -n6 idx 3 run 2: 0 problems are trivial.
+Args -n6 idx 3 run 2: 1/1 problems are verified.
+Args -n6 idx 3 run 2: Complete.
+===== Processing Args -n7 idx 4 =====
+Args -n7 idx 4 run 1: 0 problems are not unique.
+Args -n7 idx 4 run 1: 0 initial states are goals.
+Args -n7 idx 4 run 1: 0 problems are trivial.
+Args -n7 idx 4 run 1: 0/1 problems are verified.
+Args -n7 idx 4 run 1: generating 1 new problems.
+Args -n7 idx 4 run 2: Processing ../benchmarks/hanoi/-n7/hanoi-n7-8357.pddl
+Args -n7 idx 4 run 2: 0 problems are not unique.
+Args -n7 idx 4 run 2: 0 initial states are goals.
+Args -n7 idx 4 run 2: 0 problems are trivial.
+Args -n7 idx 4 run 2: 1/1 problems are verified.
+Args -n7 idx 4 run 2: Complete.
+===== Processing Args -n8 idx 5 =====
+Args -n8 idx 5 run 1: 0 problems are not unique.
+Args -n8 idx 5 run 1: 0 initial states are goals.
+Args -n8 idx 5 run 1: 0 problems are trivial.
+Args -n8 idx 5 run 1: 0/1 problems are verified.
+Args -n8 idx 5 run 1: generating 1 new problems.
+Args -n8 idx 5 run 2: Processing ../benchmarks/hanoi/-n8/hanoi-n8-9389.pddl
+Args -n8 idx 5 run 2: 0 problems are not unique.
+Args -n8 idx 5 run 2: 0 initial states are goals.
+Args -n8 idx 5 run 2: 0 problems are trivial.
+Args -n8 idx 5 run 2: 1/1 problems are verified.
+Args -n8 idx 5 run 2: Complete.
+===== Processing Args -n9 idx 6 =====
+Args -n9 idx 6 run 1: 0 problems are not unique.
+Args -n9 idx 6 run 1: 0 initial states are goals.
+Args -n9 idx 6 run 1: 0 problems are trivial.
+Args -n9 idx 6 run 1: 0/1 problems are verified.
+Args -n9 idx 6 run 1: generating 1 new problems.
+Args -n9 idx 6 run 2: Processing ../benchmarks/hanoi/-n9/hanoi-n9-6420.pddl
+Args -n9 idx 6 run 2: 0 problems are not unique.
+Args -n9 idx 6 run 2: 0 initial states are goals.
+Args -n9 idx 6 run 2: 0 problems are trivial.
+Args -n9 idx 6 run 2: 1/1 problems are verified.
+Args -n9 idx 6 run 2: Complete.
+===== Processing Args -n10 idx 7 =====
+Args -n10 idx 7 run 1: 0 problems are not unique.
+Args -n10 idx 7 run 1: 0 initial states are goals.
+Args -n10 idx 7 run 1: 0 problems are trivial.
+Args -n10 idx 7 run 1: 0/1 problems are verified.
+Args -n10 idx 7 run 1: generating 1 new problems.
+Args -n10 idx 7 run 2: Processing ../benchmarks/hanoi/-n10/hanoi-n10-8825.pddl
+Args -n10 idx 7 run 2: 0 problems are not unique.
+Args -n10 idx 7 run 2: 0 initial states are goals.
+Args -n10 idx 7 run 2: 0 problems are trivial.
+Args -n10 idx 7 run 2: 1/1 problems are verified.
+Args -n10 idx 7 run 2: Complete.
+===== Processing Args -n11 idx 8 =====
+Args -n11 idx 8 run 1: 0 problems are not unique.
+Args -n11 idx 8 run 1: 0 initial states are goals.
+Args -n11 idx 8 run 1: 0 problems are trivial.
+Args -n11 idx 8 run 1: 0/1 problems are verified.
+Args -n11 idx 8 run 1: generating 1 new problems.
+Args -n11 idx 8 run 2: Processing ../benchmarks/hanoi/-n11/hanoi-n11-9286.pddl
+Args -n11 idx 8 run 2: 0 problems are not unique.
+Args -n11 idx 8 run 2: 0 initial states are goals.
+Args -n11 idx 8 run 2: 0 problems are trivial.
+Args -n11 idx 8 run 2: 1/1 problems are verified.
+Args -n11 idx 8 run 2: Complete.
+===== Processing Args -n12 idx 9 =====
+Args -n12 idx 9 run 1: 0 problems are not unique.
+Args -n12 idx 9 run 1: 0 initial states are goals.
+Args -n12 idx 9 run 1: 0 problems are trivial.
+Args -n12 idx 9 run 1: 0/1 problems are verified.
+Args -n12 idx 9 run 1: generating 1 new problems.
+Args -n12 idx 9 run 2: Processing ../benchmarks/hanoi/-n12/hanoi-n12-9941.pddl
+Args -n12 idx 9 run 2: 0 problems are not unique.
+Args -n12 idx 9 run 2: 0 initial states are goals.
+Args -n12 idx 9 run 2: 0 problems are trivial.
+Args -n12 idx 9 run 2: 1/1 problems are verified.
+Args -n12 idx 9 run 2: Complete.
+===== Processing Args -n13 idx 10 =====
+Args -n13 idx 10 run 1: 0 problems are not unique.
+Args -n13 idx 10 run 1: 0 initial states are goals.
+Args -n13 idx 10 run 1: 0 problems are trivial.
+Args -n13 idx 10 run 1: 0/1 problems are verified.
+Args -n13 idx 10 run 1: generating 1 new problems.
+Args -n13 idx 10 run 2: Processing ../benchmarks/hanoi/-n13/hanoi-n13-5588.pddl
+Args -n13 idx 10 run 2: 0 problems are not unique.
+Args -n13 idx 10 run 2: 0 initial states are goals.
+Args -n13 idx 10 run 2: 0 problems are trivial.
+Args -n13 idx 10 run 2: 1/1 problems are verified.
+Args -n13 idx 10 run 2: Complete.
+===== Processing Args -n14 idx 11 =====
+Args -n14 idx 11 run 1: 0 problems are not unique.
+Args -n14 idx 11 run 1: 0 initial states are goals.
+Args -n14 idx 11 run 1: 0 problems are trivial.
+Args -n14 idx 11 run 1: 0/1 problems are verified.
+Args -n14 idx 11 run 1: generating 1 new problems.
+Args -n14 idx 11 run 2: Processing ../benchmarks/hanoi/-n14/hanoi-n14-9905.pddl
+Args -n14 idx 11 run 2: 0 problems are not unique.
+Args -n14 idx 11 run 2: 0 initial states are goals.
+Args -n14 idx 11 run 2: 0 problems are trivial.
+Args -n14 idx 11 run 2: 1/1 problems are verified.
+Args -n14 idx 11 run 2: Complete.
+===== Processing Args -n15 idx 12 =====
+Args -n15 idx 12 run 1: 0 problems are not unique.
+Args -n15 idx 12 run 1: 0 initial states are goals.
+Args -n15 idx 12 run 1: 0 problems are trivial.
+Args -n15 idx 12 run 1: 0/1 problems are verified.
+Args -n15 idx 12 run 1: generating 1 new problems.
+Args -n15 idx 12 run 2: Processing ../benchmarks/hanoi/-n15/hanoi-n15-6661.pddl
+Args -n15 idx 12 run 2: 0 problems are not unique.
+Args -n15 idx 12 run 2: 0 initial states are goals.
+Args -n15 idx 12 run 2: 0 problems are trivial.
+Args -n15 idx 12 run 2: 1/1 problems are verified.
+Args -n15 idx 12 run 2: Complete.
+===== Processing Args -n16 idx 13 =====
+Args -n16 idx 13 run 1: 0 problems are not unique.
+Args -n16 idx 13 run 1: 0 initial states are goals.
+Args -n16 idx 13 run 1: 0 problems are trivial.
+Args -n16 idx 13 run 1: 0/1 problems are verified.
+Args -n16 idx 13 run 1: generating 1 new problems.
+Args -n16 idx 13 run 2: Processing ../benchmarks/hanoi/-n16/hanoi-n16-7268.pddl
+Args -n16 idx 13 run 2: 0 problems are not unique.
+Args -n16 idx 13 run 2: 0 initial states are goals.
+Args -n16 idx 13 run 2: 0 problems are trivial.
+Args -n16 idx 13 run 2: 1/1 problems are verified.
+Args -n16 idx 13 run 2: Complete.
+===== Processing Args -n17 idx 14 =====
+Args -n17 idx 14 run 1: 0 problems are not unique.
+Args -n17 idx 14 run 1: 0 initial states are goals.
+Args -n17 idx 14 run 1: 0 problems are trivial.
+Args -n17 idx 14 run 1: 0/1 problems are verified.
+Args -n17 idx 14 run 1: generating 1 new problems.
+Args -n17 idx 14 run 2: Processing ../benchmarks/hanoi/-n17/hanoi-n17-5000.pddl
+Args -n17 idx 14 run 2: 0 problems are not unique.
+Args -n17 idx 14 run 2: 0 initial states are goals.
+Args -n17 idx 14 run 2: 0 problems are trivial.
+Args -n17 idx 14 run 2: 1/1 problems are verified.
+Args -n17 idx 14 run 2: Complete.
+===== Processing Args -n18 idx 15 =====
+Args -n18 idx 15 run 1: 0 problems are not unique.
+Args -n18 idx 15 run 1: 0 initial states are goals.
+Args -n18 idx 15 run 1: 0 problems are trivial.
+Args -n18 idx 15 run 1: 0/1 problems are verified.
+Args -n18 idx 15 run 1: generating 1 new problems.
+Args -n18 idx 15 run 2: Processing ../benchmarks/hanoi/-n18/hanoi-n18-7757.pddl
+Args -n18 idx 15 run 2: 0 problems are not unique.
+Args -n18 idx 15 run 2: 0 initial states are goals.
+Args -n18 idx 15 run 2: 0 problems are trivial.
+Args -n18 idx 15 run 2: 1/1 problems are verified.
+Args -n18 idx 15 run 2: Complete.
+===== Processing Args -n19 idx 16 =====
+Args -n19 idx 16 run 1: 0 problems are not unique.
+Args -n19 idx 16 run 1: 0 initial states are goals.
+Args -n19 idx 16 run 1: 0 problems are trivial.
+Args -n19 idx 16 run 1: 0/1 problems are verified.
+Args -n19 idx 16 run 1: generating 1 new problems.
+Args -n19 idx 16 run 2: Processing ../benchmarks/hanoi/-n19/hanoi-n19-6093.pddl
+Args -n19 idx 16 run 2: 0 problems are not unique.
+Args -n19 idx 16 run 2: 0 initial states are goals.
+Args -n19 idx 16 run 2: 0 problems are trivial.
+Args -n19 idx 16 run 2: 1/1 problems are verified.
+Args -n19 idx 16 run 2: Complete.
+===== Processing Args -n20 idx 17 =====
+Args -n20 idx 17 run 1: 0 problems are not unique.
+Args -n20 idx 17 run 1: 0 initial states are goals.
+Args -n20 idx 17 run 1: 0 problems are trivial.
+Args -n20 idx 17 run 1: 0/1 problems are verified.
+Args -n20 idx 17 run 1: generating 1 new problems.
+Args -n20 idx 17 run 2: Processing ../benchmarks/hanoi/-n20/hanoi-n20-5846.pddl
+Args -n20 idx 17 run 2: 0 problems are not unique.
+Args -n20 idx 17 run 2: 0 initial states are goals.
+Args -n20 idx 17 run 2: 0 problems are trivial.
+Args -n20 idx 17 run 2: 1/1 problems are verified.
+Args -n20 idx 17 run 2: Complete.
+Renaming hanoi-n11-9286.pddl.
+Renaming hanoi-n10-8825.pddl.
+Renaming hanoi-n7-8357.pddl.
+Renaming hanoi-n4-9562.pddl.
+Renaming hanoi-n6-9645.pddl.
+Renaming hanoi-n13-5588.pddl.
+Renaming hanoi-n18-7757.pddl.
+Renaming hanoi-n16-7268.pddl.
+Renaming hanoi-n8-9389.pddl.
+Renaming hanoi-n5-5363.pddl.
+Renaming hanoi-n15-6661.pddl.
+Renaming hanoi-n12-9941.pddl.
+Renaming hanoi-n17-5000.pddl.
+Renaming hanoi-n14-9905.pddl.
+Renaming hanoi-n9-6420.pddl.
+Renaming hanoi-n3-9385.pddl.
+Renaming hanoi-n20-5846.pddl.
+Renaming hanoi-n19-6093.pddl.
