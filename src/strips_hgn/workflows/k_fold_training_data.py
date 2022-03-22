@@ -112,11 +112,14 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
             problem_to_state_value_pairs = pickle.load(open(data_file, "rb" ))
             _log.info(f"Loaded training data contains {len(problem_to_state_value_pairs.keys())} problems.")
             _log.info(f"Loaded problems are: {[k.name for k in problem_to_state_value_pairs.keys()]}.")
-            for p in self._problems:
-                if p not in problem_to_state_value_pairs.keys():
-                    _log.warning(f'{p.name} is not in the saved data.')
-                    problem_to_state_value_pairs = None
-                    break
+            if len(problem_to_state_value_pairs.keys()) != len(self._problems):
+                problem_to_state_value_pairs = None
+            else:
+                for p in self._problems:
+                    if p not in problem_to_state_value_pairs.keys():
+                        _log.warning(f'{p.name} is not in the saved data.')
+                        problem_to_state_value_pairs = None
+                        break
         if not problem_to_state_value_pairs: 
             problem_to_state_value_pairs = generate_optimal_state_value_pairs(
                 self._problems, mode=self._mode

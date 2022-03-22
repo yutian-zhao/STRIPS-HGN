@@ -61,7 +61,7 @@ if __name__ == "__main__":
                     args=get_training_args(
                         configurations=[_CONFIGURATION],
                         # 10 minutes
-                        max_training_time=30*60, #  
+                        max_training_time=45*60, #  
                         num_folds=2,
                         # batch_size=32,
                         # learning_rate=0.005,
