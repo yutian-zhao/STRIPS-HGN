@@ -309,6 +309,6 @@ if __name__ == "__main__":
                 checkpoint= checkpoints[i],
                 heuristics = ['h_add', 'h_ff'],
             ),
-            experiment_type=model_name.replace("train", "eval"),
+            experiment_type=checkpoints[i].split('/')[-2].replace("train", "eval"),
             mode={'mode':'eval'},
         )
