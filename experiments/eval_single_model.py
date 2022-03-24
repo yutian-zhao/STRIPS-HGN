@@ -229,10 +229,6 @@ if __name__ == "__main__":
         ))
     checkpoints.append("../results/mbw/results/{}/model-best.ckpt".format('mbw_mode_train_astar_all_False_novel_2_complement_unset_lifted_0-strips-hgn-03-20-03-30-17'))
 
-    # base_directory="../benchmarks/npuzzle/"
-    # domain_pddl="n-puzzle-typed.pddl"
-    # problem_pddls = 
-
     configurations.append(DomainAndProblemConfiguration(
         base_directory="../benchmarks/ztravel/",
         domain_pddl="domain.pddl",
@@ -300,6 +296,65 @@ if __name__ == "__main__":
         ]
     ))
     checkpoints.append("../results/ztravel/results/{}/model-best.ckpt".format("ztravel_mode_train_novelty_all_True_novel_2_complement_unset_lifted_0-strips-hgn-03-14-04-38-49"))
+
+    configurations.append(DomainAndProblemConfiguration(
+        base_directory="../benchmarks/npuzzle/",
+        domain_pddl="n-puzzle-typed.pddl",
+        problem_pddls = [
+        "3/npuzzle3-1464.pddl",
+        "3/npuzzle3-1624.pddl",
+        "3/npuzzle3-1866.pddl",
+        "3/npuzzle3-1999.pddl",
+        "3/npuzzle3-2140.pddl",
+        "3/npuzzle3-2246.pddl",
+        "3/npuzzle3-2405.pddl",
+        "3/npuzzle3-2463.pddl",
+        "3/npuzzle3-2512.pddl",
+        "3/npuzzle3-2575.pddl",
+        "3/npuzzle3-2587.pddl",
+        "3/npuzzle3-2742.pddl",
+        "3/npuzzle3-2838.pddl",
+        "3/npuzzle3-3034.pddl",
+        "3/npuzzle3-3102.pddl",
+        "3/npuzzle3-3136.pddl",
+        "3/npuzzle3-3179.pddl",
+        "3/npuzzle3-3486.pddl",
+        "3/npuzzle3-3669.pddl",
+        "3/npuzzle3-3880.pddl",
+        "3/npuzzle3-3942.pddl",
+        "3/npuzzle3-4182.pddl",
+        "3/npuzzle3-4267.pddl",
+        "3/npuzzle3-4459.pddl",
+        "3/npuzzle3-4872.pddl",
+        "3/npuzzle3-5104.pddl",
+        "3/npuzzle3-5310.pddl",
+        "3/npuzzle3-5568.pddl",
+        "3/npuzzle3-5618.pddl",
+        "3/npuzzle3-5647.pddl",
+        "3/npuzzle3-5689.pddl",
+        "3/npuzzle3-5911.pddl",
+        "3/npuzzle3-6309.pddl",
+        "3/npuzzle3-6704.pddl",
+        "3/npuzzle3-6851.pddl",
+        "3/npuzzle3-6864.pddl",
+        "3/npuzzle3-7157.pddl",
+        "3/npuzzle3-7567.pddl",
+        "3/npuzzle3-7676.pddl",
+        "3/npuzzle3-7784.pddl",
+        "3/npuzzle3-7982.pddl",
+        "3/npuzzle3-8779.pddl",
+        "3/npuzzle3-8823.pddl",
+        "3/npuzzle3-8872.pddl",
+        "3/npuzzle3-8885.pddl",
+        "3/npuzzle3-8905.pddl",
+        "3/npuzzle3-9619.pddl",
+        "3/npuzzle3-9664.pddl",
+        "3/npuzzle3-9700.pddl",
+        "3/npuzzle3-9833.pddl"
+        ]
+    ))
+
+    checkpoints.append("../results/npuzzle/results/{}/model-best.ckpt".format('npuzzle_mode_train_novelty_all_True_novel_2_complement_unset_lifted_1-strips-hgn-03-25-03-34-34'))
     
     for i, config in enumerate(configurations):
         eval_wrapper(
