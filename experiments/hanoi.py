@@ -126,10 +126,10 @@ if __name__ == "__main__":
                 _log.info('Reporting {}: {}'.format(train_dirname, report[train_dirname]))
         
     # prepare test problems
-    test_problem_pddls = []
-    for i in range(6, 11):
-        problem_set = set([str(i)+'/'+ p for p in os.listdir("../benchmarks/hanoi/"+str(i))])-used_problems 
-        test_problem_pddls += sorted(random.sample(list(problem_set), k=10))
+    # test_problem_pddls = []
+    # for i in range(6, 11):
+    #     problem_set = set([str(i)+'/'+ p for p in os.listdir("../benchmarks/hanoi/"+str(i))])-used_problems 
+    #     test_problem_pddls += sorted(random.sample(list(problem_set), k=10))
 
     for mode in modes:
         mode_name = mode_to_str(mode)
@@ -150,7 +150,7 @@ if __name__ == "__main__":
                     best_model = model_name
                     best_loss = metrics['best_loss']
         _log.info(f"Testing: {best_model}.")
-        best_models.append(best_model)
+        # best_models.append(best_model)
 
         # # test phase
         # _TEST_CONFIGURATION = DomainAndProblemConfiguration(

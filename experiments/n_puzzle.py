@@ -12,11 +12,21 @@ from default_args import get_training_args, DomainAndProblemConfiguration, get_e
 
 _log = logging.getLogger(__name__)
 
+# input
+# domain_name
+# base_directory
+# domain_pddl -> unite
+# coverage threshold
+# train_problem_pddls; k
+# valid_problem_pddls
+# max_training_time
+# num_fold
+
 if __name__ == "__main__":
     repeats = 3
     # original setting need folds to be 10.
     modes=[
-        # {'domain':'npuzzle', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
+        {'domain':'npuzzle', 'mode':'train', 'search':'astar', 'all':False, 'novel':0, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
         {'domain':'npuzzle', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
         {'domain':'npuzzle', 'mode':'train', 'search':'astar', 'all':False, 'novel':2, 'lifted':1, 'distance': 0, 'bound': 600, 'auto_bslr': False},
         {'domain':'npuzzle', 'mode':'train', 'search':'astar', 'all':True, 'novel':0, 'lifted':0, 'distance': 0, 'bound': 600, 'auto_bslr': False},
