@@ -59,7 +59,7 @@ if __name__ == "__main__":
             "-l10-c20/fry-l10-c20-2036.pddl"
         ]
     ))
-    checkpoints.append("../results/fry/results/{}/model-best.ckpt".format("fry_mode_eval_novelty_all_True_novel_2_complement_unset_lifted_1-strips-hgn-03-22-09-09-29"))
+    checkpoints.append("../results/fry/results/{}/model-best.ckpt".format("fry_mode_train_novelty_all_True_novel_2_complement_unset_lifted_1-strips-hgn-03-22-09-09-29"))
 
     configurations.append(DomainAndProblemConfiguration(
         base_directory="../benchmarks/sokoban/",
@@ -121,7 +121,7 @@ if __name__ == "__main__":
             "-n8-b2-w5/sokoban-n8-b2-w5-9749.pddl"
         ]
     ))
-    checkpoints.append("../results/sokoban-test/{}/model-best.ckpt".format("sokoban_mode_eval_novelty_all_True_novel_2_complement_unset_lifted_1-strips-hgn-03-16-05-37-34"))
+    checkpoints.append("../results/sokoban-test/results/{}/model-best.ckpt".format("sokoban_mode_train_novelty_all_True_novel_2_complement_unset_lifted_1-strips-hgn-03-16-05-37-34"))
 
     configurations.append(DomainAndProblemConfiguration(
         base_directory="../benchmarks/blocksworld/",
@@ -179,7 +179,7 @@ if __name__ == "__main__":
             "10/blocksworld10-8049.pddl"
         ]
     ))
-    checkpoints.append("../results/blcoksworld-6-gbfs/{}/model-best.ckpt".format("blocksworld_mode_eval_novelty_all_True_novel_2_complement_unset_lifted_0-strips-hgn-03-18-10-05-16"))
+    checkpoints.append("../results/blcoksworld-6-gbfs/results/{}/model-best.ckpt".format("blocksworld_mode_train_novelty_all_True_novel_2_complement_unset_lifted_0-strips-hgn-03-18-10-05-16"))
 
     configurations.append(DomainAndProblemConfiguration(
         base_directory="../benchmarks/mbw/",
@@ -227,7 +227,7 @@ if __name__ == "__main__":
             "8/mbw8-9968.pddl"
         ]
         ))
-    checkpoints.append("../results/mbw/results/{}/model-best.ckpt".format('mbw_mode_eval_astar_all_False_novel_2_complement_unset_lifted_0-strips-hgn-03-20-03-30-17'))
+    checkpoints.append("../results/mbw/results/{}/model-best.ckpt".format('mbw_mode_train_astar_all_False_novel_2_complement_unset_lifted_0-strips-hgn-03-20-03-30-17'))
 
     # base_directory="../benchmarks/npuzzle/"
     # domain_pddl="n-puzzle-typed.pddl"
@@ -299,7 +299,7 @@ if __name__ == "__main__":
             "457/ztravel457-1345.pddl"
         ]
     ))
-    checkpoints.append("../results/ztravel/results/{}/model-best.ckpt".format("ztravel_mode_eval_novelty_all_True_novel_2_complement_unset_lifted_0-strips-hgn-03-14-04-38-49"))
+    checkpoints.append("../results/ztravel/results/{}/model-best.ckpt".format("ztravel_mode_train_novelty_all_True_novel_2_complement_unset_lifted_0-strips-hgn-03-14-04-38-49"))
     
     for i, config in enumerate(configurations):
         eval_wrapper(
