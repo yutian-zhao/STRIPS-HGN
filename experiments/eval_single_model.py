@@ -307,7 +307,7 @@ if __name__ == "__main__":
                 configurations=[config],
                 max_search_time=10*60,
                 checkpoint= checkpoints[i],
-                heuristics = ['h_add', 'h_ff'],
+                heuristics = [Heuristic.h_add, Heuristic.h_ff],
             ),
             experiment_type=checkpoints[i].split('/')[-2].replace("train", "eval"),
             mode={'mode':'eval'},
