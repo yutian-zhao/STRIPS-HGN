@@ -263,7 +263,7 @@ _log = logging.getLogger(__name__)
 #   # "3/npuzzle3-9664.pddl",
 #   # "3/npuzzle3-9700.pddl",
 #   "3/npuzzle3-9833.pddl"
-]
+# ]
 
 base_directory="../benchmarks/ztravel/"
 domain_pddl="domain.pddl"
@@ -339,17 +339,17 @@ args = BaseArgs(domain=os.path.join(base_directory, domain_pddl),
 
 problems = args.get_strips_problems()
 
-file_handler = logging.FileHandler(os.path.join(base_directory, 'optimal_plan.log'))
-file_handler.setLevel(logging.INFO)
-stream_handler = logging.StreamHandler()
-stream_handler.setLevel(logging.INFO)
-_log.setLevel(logging.INFO)
-_log.addHandler(file_handler)
-_log.addHandler(stream_handler)
+# file_handler = logging.FileHandler(os.path.join(base_directory, 'optimal_plan.log'))
+# file_handler.setLevel(logging.INFO)
+# stream_handler = logging.StreamHandler()
+# stream_handler.setLevel(logging.INFO)
+# _log.setLevel(logging.INFO)
+# _log.addHandler(file_handler)
+# _log.addHandler(stream_handler)
 
-_log.info('base_directory: {}'.format(base_directory))
-_log.info('domain_pddl: {}'.format(domain_pddl))
-_log.info('problem_pddls: {}'.format(problem_pddls))
+# _log.info('base_directory: {}'.format(base_directory))
+# _log.info('domain_pddl: {}'.format(domain_pddl))
+# _log.info('problem_pddls: {}'.format(problem_pddls))
 
 # only test on one problem 
 for problem in problems:
