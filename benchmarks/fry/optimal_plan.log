@@ -16,15 +16,15 @@ Plan length: 25
 Problem: fry-l3-c15-1124
 Plan length: 40
 Problem: fry-l3-c20-6203
-Fail to solve problem: fry-l3-c20-6203
+Plan length: -1
 Problem: fry-l4-c5-1587
 Plan length: 7
 Problem: fry-l4-c10-7208
 Plan length: 26
 Problem: fry-l4-c15-9490
-Fail to solve problem: fry-l4-c15-9490
+Plan length: -1
 Problem: fry-l4-c20-9063
-Fail to solve problem: fry-l4-c20-9063
+Plan length: -1
 Problem: fry-l5-c5-8027
 Plan length: 14
 Problem: fry-l5-c10-6602
@@ -32,15 +32,15 @@ Plan length: 37
 Problem: fry-l5-c15-1485
 Plan length: 32
 Problem: fry-l5-c20-7627
-Fail to solve problem: fry-l5-c20-7627
+Plan length: -1
 Problem: fry-l6-c5-8468
 Plan length: 14
 Problem: fry-l6-c10-5212
 Plan length: 25
 Problem: fry-l6-c15-4767
-Fail to solve problem: fry-l6-c15-4767
+Plan length: -1
 Problem: fry-l6-c20-2836
-Fail to solve problem: fry-l6-c20-2836
+Plan length: -1
 Problem: fry-l7-c5-3098
 Plan length: 14
 Problem: fry-l7-c10-3174
@@ -48,28 +48,28 @@ Plan length: 28
 Problem: fry-l7-c15-3985
 Plan length: 34
 Problem: fry-l7-c20-7044
-Fail to solve problem: fry-l7-c20-7044
+Plan length: -1
 Problem: fry-l8-c5-4184
 Plan length: 13
 Problem: fry-l8-c10-1866
 Plan length: 24
 Problem: fry-l8-c15-9844
-Fail to solve problem: fry-l8-c15-9844
+Plan length: -1
 Problem: fry-l8-c20-9531
-Fail to solve problem: fry-l8-c20-9531
+Plan length: -1
 Problem: fry-l9-c5-6157
 Plan length: 14
 Problem: fry-l9-c10-7730
 Plan length: 34
 Problem: fry-l9-c15-6034
-Fail to solve problem: fry-l9-c15-6034
+Plan length: -1
 Problem: fry-l9-c20-4254
-Fail to solve problem: fry-l9-c20-4254
+Plan length: -1
 Problem: fry-l10-c5-9424
 Plan length: 19
 Problem: fry-l10-c10-4852
 Plan length: 35
 Problem: fry-l10-c15-9627
-Fail to solve problem: fry-l10-c15-9627
+Plan length: -1
 Problem: fry-l10-c20-2036
-Fail to solve problem: fry-l10-c20-2036
+Plan length: -1

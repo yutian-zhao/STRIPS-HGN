@@ -6,7 +6,7 @@ from strips_hgn.utils.logging_setup import setup_full_logging
 from time import perf_counter
 
 # hanoi 15*(2^(n-3))+1
-# gripper 3*n-(n%2)
+# gripper 3*n-(1 if n%2 else 0)
 
 _log = logging.getLogger(__name__)
 
