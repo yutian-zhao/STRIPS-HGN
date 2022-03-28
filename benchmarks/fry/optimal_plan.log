@@ -1,0 +1,75 @@
+base_directory: ../benchmarks/fry/
+domain_pddl: domain.pddl
+problem_pddls: ['-l2-c5/fry-l2-c5-9992.pddl', '-l2-c10/fry-l2-c10-4040.pddl', '-l2-c15/fry-l2-c15-4208.pddl', '-l2-c20/fry-l2-c20-4409.pddl', '-l3-c5/fry-l3-c5-5269.pddl', '-l3-c10/fry-l3-c10-3086.pddl', '-l3-c15/fry-l3-c15-1124.pddl', '-l3-c20/fry-l3-c20-6203.pddl', '-l4-c5/fry-l4-c5-1587.pddl', '-l4-c10/fry-l4-c10-7208.pddl', '-l4-c15/fry-l4-c15-9490.pddl', '-l4-c20/fry-l4-c20-9063.pddl', '-l5-c5/fry-l5-c5-8027.pddl', '-l5-c10/fry-l5-c10-6602.pddl', '-l5-c15/fry-l5-c15-1485.pddl', '-l5-c20/fry-l5-c20-7627.pddl', '-l6-c5/fry-l6-c5-8468.pddl', '-l6-c10/fry-l6-c10-5212.pddl', '-l6-c15/fry-l6-c15-4767.pddl', '-l6-c20/fry-l6-c20-2836.pddl', '-l7-c5/fry-l7-c5-3098.pddl', '-l7-c10/fry-l7-c10-3174.pddl', '-l7-c15/fry-l7-c15-3985.pddl', '-l7-c20/fry-l7-c20-7044.pddl', '-l8-c5/fry-l8-c5-4184.pddl', '-l8-c10/fry-l8-c10-1866.pddl', '-l8-c15/fry-l8-c15-9844.pddl', '-l8-c20/fry-l8-c20-9531.pddl', '-l9-c5/fry-l9-c5-6157.pddl', '-l9-c10/fry-l9-c10-7730.pddl', '-l9-c15/fry-l9-c15-6034.pddl', '-l9-c20/fry-l9-c20-4254.pddl', '-l10-c5/fry-l10-c5-9424.pddl', '-l10-c10/fry-l10-c10-4852.pddl', '-l10-c15/fry-l10-c15-9627.pddl', '-l10-c20/fry-l10-c20-2036.pddl']
+Problem: fry-l2-c5-9992
+Plan length: 6
+Problem: fry-l2-c10-4040
+Plan length: 23
+Problem: fry-l2-c15-4208
+Plan length: 27
+Problem: fry-l2-c20-4409
+Plan length: 30
+Problem: fry-l3-c5-5269
+Plan length: 16
+Problem: fry-l3-c10-3086
+Plan length: 25
+Problem: fry-l3-c15-1124
+Plan length: 40
+Problem: fry-l3-c20-6203
+Fail to solve problem: fry-l3-c20-6203
+Problem: fry-l4-c5-1587
+Plan length: 7
+Problem: fry-l4-c10-7208
+Plan length: 26
+Problem: fry-l4-c15-9490
+Fail to solve problem: fry-l4-c15-9490
+Problem: fry-l4-c20-9063
+Fail to solve problem: fry-l4-c20-9063
+Problem: fry-l5-c5-8027
+Plan length: 14
+Problem: fry-l5-c10-6602
+Plan length: 37
+Problem: fry-l5-c15-1485
+Plan length: 32
+Problem: fry-l5-c20-7627
+Fail to solve problem: fry-l5-c20-7627
+Problem: fry-l6-c5-8468
+Plan length: 14
+Problem: fry-l6-c10-5212
+Plan length: 25
+Problem: fry-l6-c15-4767
+Fail to solve problem: fry-l6-c15-4767
+Problem: fry-l6-c20-2836
+Fail to solve problem: fry-l6-c20-2836
+Problem: fry-l7-c5-3098
+Plan length: 14
+Problem: fry-l7-c10-3174
+Plan length: 28
+Problem: fry-l7-c15-3985
+Plan length: 34
+Problem: fry-l7-c20-7044
+Fail to solve problem: fry-l7-c20-7044
+Problem: fry-l8-c5-4184
+Plan length: 13
+Problem: fry-l8-c10-1866
+Plan length: 24
+Problem: fry-l8-c15-9844
+Fail to solve problem: fry-l8-c15-9844
+Problem: fry-l8-c20-9531
+Fail to solve problem: fry-l8-c20-9531
+Problem: fry-l9-c5-6157
+Plan length: 14
+Problem: fry-l9-c10-7730
+Plan length: 34
+Problem: fry-l9-c15-6034
+Fail to solve problem: fry-l9-c15-6034
+Problem: fry-l9-c20-4254
+Fail to solve problem: fry-l9-c20-4254
+Problem: fry-l10-c5-9424
+Plan length: 19
+Problem: fry-l10-c10-4852
+Plan length: 35
+Problem: fry-l10-c15-9627
+Fail to solve problem: fry-l10-c15-9627
+Problem: fry-l10-c20-2036
+Fail to solve problem: fry-l10-c20-2036
