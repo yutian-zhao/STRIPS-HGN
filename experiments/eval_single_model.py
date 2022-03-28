@@ -355,6 +355,47 @@ if __name__ == "__main__":
     ))
 
     checkpoints.append("../results/npuzzle/results/{}/model-best.ckpt".format('npuzzle_mode_train_novelty_all_True_novel_2_complement_unset_lifted_1-strips-hgn-03-25-03-34-34'))
+
+    configurations.append(DomainAndProblemConfiguration(
+        base_directory="../benchmarks/gripper/",
+        domain_pddl="domain.pddl",
+        problem_pddls = [
+            "problems/gripper-n7.pddl",
+            "problems/gripper-n8.pddl",
+            "problems/gripper-n9.pddl",
+            "problems/gripper-n11.pddl",
+            "problems/gripper-n12.pddl",
+            "problems/gripper-n13.pddl",
+            "problems/gripper-n15.pddl",
+            "problems/gripper-n16.pddl",
+            "problems/gripper-n17.pddl",
+            "problems/gripper-n19.pddl",
+            "problems/gripper-n20.pddl",
+            "problems/gripper-n21.pddl",
+            "problems/gripper-n23.pddl",
+            "problems/gripper-n24.pddl",
+            "problems/gripper-n25.pddl"
+        ]
+    ))
+    checkpoints.append("../results/{}/model-best.ckpt".format("gripper_mode_train_bfs_all_False_novel_2_complement_unset_lifted_1-strips-hgn-03-23-05-04-29"))
+
+    configurations.append(DomainAndProblemConfiguration(
+        base_directory="../benchmarks/hanoi/",
+        domain_pddl="domain.pddl",
+        problem_pddls = [
+            "-n6/hanoi-n6-9645.pddl",
+            "-n7/hanoi-n7-8357.pddl",
+            "-n8/hanoi-n8-9389.pddl",
+            "-n9/hanoi-n9-6420.pddl",
+            "-n10/hanoi-n10-8825.pddl",
+            "-n11/hanoi-n11-9286.pddl",
+            "-n12/hanoi-n12-9941.pddl",
+            "-n13/hanoi-n13-5588.pddl",
+            "-n14/hanoi-n14-9905.pddl",
+            "-n15/hanoi-n15-6661.pddl"
+        ]
+    ))
+    checkpoints.append("../results/{}/model-best.ckpt".format("hanoi_mode_train_astar_all_True_novel_0_complement_unset_lifted_0-strips-hgn-03-23-20-49-48"))
     
     for i, config in enumerate(configurations):
         eval_wrapper(
