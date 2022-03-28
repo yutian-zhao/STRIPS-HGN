@@ -10,7 +10,7 @@ training workflow.
 TRAINING_DATA_TIMER_LOG_LEVEL = logging.DEBUG
 
 # Maximum time to run Fast Downward when solving training problems optimally
-MAX_FD_SEARCH_TIME = 120
+MAX_FD_SEARCH_TIME = 300 # 120
 
 
 # For 'get_kfold_training_data'
