@@ -1,0 +1,11 @@
+base_directory: ../benchmarks/ztravel/
+domain_pddl: domain.pddl
+problem_pddls: ['456/ztravel456-1657.pddl']
+Problem: ztravel456-1657
+Plan length: 16
+base_directory: ../benchmarks/ztravel/
+domain_pddl: domain.pddl
+problem_pddls: ['456/ztravel456-1657.pddl']
+Problem: ztravel456-1657
+Plan length: 16
+Search time: 7.0981981

@@ -2,6 +2,8 @@ import logging
 import os
 from strips_hgn.utils.args.base_args import BaseArgs
 from strips_hgn.planning.fast_downward_api import get_optimal_actions_using_fd
+from strips_hgn.utils.logging_setup import setup_full_logging
+from time import perf_counter
 
 # hanoi 15*(2^(n-3))+1
 # gripper 3*n-(n%2)
@@ -51,64 +53,64 @@ _log = logging.getLogger(__name__)
 #     "-l10-c20/fry-l10-c20-2036.pddl"
 #   ]
 
-# base_directory="../benchmarks/sokoban/"
-# domain_pddl="typed-sokoban.pddl"
-# problem_pddls = [
-#     # "-n5-b2-w3/sokoban-n5-b2-w3-1116.pddl",
-#     # "-n5-b2-w3/sokoban-n5-b2-w3-5556.pddl",
-#     # "-n5-b2-w3/sokoban-n5-b2-w3-6060.pddl",
-#     # "-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl",
-#     # "-n5-b2-w3/sokoban-n5-b2-w3-8512.pddl",
-#     # "-n5-b2-w3/sokoban-n5-b2-w3-9035.pddl",
-#     # "-n5-b2-w4/sokoban-n5-b2-w4-2105.pddl",
-#     # "-n5-b2-w4/sokoban-n5-b2-w4-3165.pddl",
-#     # "-n5-b2-w4/sokoban-n5-b2-w4-3499.pddl",
-#     # "-n5-b2-w4/sokoban-n5-b2-w4-5940.pddl",
-#     # "-n5-b2-w4/sokoban-n5-b2-w4-6771.pddl",
-#     # "-n5-b2-w4/sokoban-n5-b2-w4-7504.pddl",
-#     # "-n5-b2-w5/sokoban-n5-b2-w5-3625.pddl",
-#     # "-n5-b2-w5/sokoban-n5-b2-w5-4295.pddl",
-#     # "-n5-b2-w5/sokoban-n5-b2-w5-5219.pddl",
-#     # "-n5-b2-w5/sokoban-n5-b2-w5-6330.pddl",
-#     # "-n5-b2-w5/sokoban-n5-b2-w5-7043.pddl",
-#     # "-n5-b2-w5/sokoban-n5-b2-w5-7856.pddl",
-#     # "-n7-b2-w3/sokoban-n7-b2-w3-1810.pddl",
-#     # "-n7-b2-w3/sokoban-n7-b2-w3-2805.pddl",
-#     # "-n7-b2-w3/sokoban-n7-b2-w3-3320.pddl",
-#     # "-n7-b2-w3/sokoban-n7-b2-w3-4598.pddl",
-#     # "-n7-b2-w3/sokoban-n7-b2-w3-5076.pddl",
-#     # "-n7-b2-w3/sokoban-n7-b2-w3-7444.pddl",
-#     # "-n7-b2-w4/sokoban-n7-b2-w4-1314.pddl",
-#     # "-n7-b2-w4/sokoban-n7-b2-w4-1324.pddl",
-#     # "-n7-b2-w4/sokoban-n7-b2-w4-1609.pddl",
-#     # "-n7-b2-w4/sokoban-n7-b2-w4-2178.pddl",
-#     # "-n7-b2-w4/sokoban-n7-b2-w4-3044.pddl",
-#     # "-n7-b2-w4/sokoban-n7-b2-w4-9383.pddl",
-#     # "-n7-b2-w5/sokoban-n7-b2-w5-1705.pddl",
-#     # "-n7-b2-w5/sokoban-n7-b2-w5-1795.pddl",
-#     # "-n7-b2-w5/sokoban-n7-b2-w5-2395.pddl",
-#     # "-n7-b2-w5/sokoban-n7-b2-w5-3332.pddl",
-#     # "-n7-b2-w5/sokoban-n7-b2-w5-3334.pddl",
-#     # "-n7-b2-w5/sokoban-n7-b2-w5-7172.pddl",
-#     # "-n8-b2-w3/sokoban-n8-b2-w3-1671.pddl",
-#     # "-n8-b2-w3/sokoban-n8-b2-w3-3460.pddl",
-#     # "-n8-b2-w3/sokoban-n8-b2-w3-4108.pddl",
-#     # "-n8-b2-w3/sokoban-n8-b2-w3-4269.pddl",
-#     # "-n8-b2-w3/sokoban-n8-b2-w3-7756.pddl",
-#     # "-n8-b2-w3/sokoban-n8-b2-w3-9829.pddl",
-#     # "-n8-b2-w4/sokoban-n8-b2-w4-2096.pddl",
-#     # "-n8-b2-w4/sokoban-n8-b2-w4-2668.pddl",
-#     # "-n8-b2-w4/sokoban-n8-b2-w4-3261.pddl",
-#     # "-n8-b2-w4/sokoban-n8-b2-w4-4244.pddl",
-#     # "-n8-b2-w4/sokoban-n8-b2-w4-5043.pddl",
-#     # "-n8-b2-w4/sokoban-n8-b2-w4-5872.pddl",
-#     # "-n8-b2-w5/sokoban-n8-b2-w5-2900.pddl",
-#     # "-n8-b2-w5/sokoban-n8-b2-w5-3012.pddl",
-#     # "-n8-b2-w5/sokoban-n8-b2-w5-4939.pddl",
-#     # "-n8-b2-w5/sokoban-n8-b2-w5-8175.pddl",
-#     # "-n8-b2-w5/sokoban-n8-b2-w5-8354.pddl",
-#     "-n8-b2-w5/sokoban-n8-b2-w5-9749.pddl"
-#   ]
+base_directory="../benchmarks/sokoban/"
+domain_pddl="typed-sokoban.pddl"
+problem_pddls = [
+    "-n5-b2-w3/sokoban-n5-b2-w3-1116.pddl",
+    "-n5-b2-w3/sokoban-n5-b2-w3-5556.pddl",
+    "-n5-b2-w3/sokoban-n5-b2-w3-6060.pddl",
+    "-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl",
+    "-n5-b2-w3/sokoban-n5-b2-w3-8512.pddl",
+    "-n5-b2-w3/sokoban-n5-b2-w3-9035.pddl",
+    "-n5-b2-w4/sokoban-n5-b2-w4-2105.pddl",
+    "-n5-b2-w4/sokoban-n5-b2-w4-3165.pddl",
+    "-n5-b2-w4/sokoban-n5-b2-w4-3499.pddl",
+    "-n5-b2-w4/sokoban-n5-b2-w4-5940.pddl",
+    "-n5-b2-w4/sokoban-n5-b2-w4-6771.pddl",
+    "-n5-b2-w4/sokoban-n5-b2-w4-7504.pddl",
+    "-n5-b2-w5/sokoban-n5-b2-w5-3625.pddl",
+    "-n5-b2-w5/sokoban-n5-b2-w5-4295.pddl",
+    "-n5-b2-w5/sokoban-n5-b2-w5-5219.pddl",
+    "-n5-b2-w5/sokoban-n5-b2-w5-6330.pddl",
+    "-n5-b2-w5/sokoban-n5-b2-w5-7043.pddl",
+    "-n5-b2-w5/sokoban-n5-b2-w5-7856.pddl",
+    "-n7-b2-w3/sokoban-n7-b2-w3-1810.pddl",
+    "-n7-b2-w3/sokoban-n7-b2-w3-2805.pddl",
+    "-n7-b2-w3/sokoban-n7-b2-w3-3320.pddl",
+    "-n7-b2-w3/sokoban-n7-b2-w3-4598.pddl",
+    "-n7-b2-w3/sokoban-n7-b2-w3-5076.pddl",
+    "-n7-b2-w3/sokoban-n7-b2-w3-7444.pddl",
+    "-n7-b2-w4/sokoban-n7-b2-w4-1314.pddl",
+    "-n7-b2-w4/sokoban-n7-b2-w4-1324.pddl",
+    "-n7-b2-w4/sokoban-n7-b2-w4-1609.pddl",
+    "-n7-b2-w4/sokoban-n7-b2-w4-2178.pddl",
+    "-n7-b2-w4/sokoban-n7-b2-w4-3044.pddl",
+    "-n7-b2-w4/sokoban-n7-b2-w4-9383.pddl",
+    "-n7-b2-w5/sokoban-n7-b2-w5-1705.pddl",
+    "-n7-b2-w5/sokoban-n7-b2-w5-1795.pddl",
+    "-n7-b2-w5/sokoban-n7-b2-w5-2395.pddl",
+    "-n7-b2-w5/sokoban-n7-b2-w5-3332.pddl",
+    "-n7-b2-w5/sokoban-n7-b2-w5-3334.pddl",
+    "-n7-b2-w5/sokoban-n7-b2-w5-7172.pddl",
+    "-n8-b2-w3/sokoban-n8-b2-w3-1671.pddl",
+    "-n8-b2-w3/sokoban-n8-b2-w3-3460.pddl",
+    "-n8-b2-w3/sokoban-n8-b2-w3-4108.pddl",
+    "-n8-b2-w3/sokoban-n8-b2-w3-4269.pddl",
+    "-n8-b2-w3/sokoban-n8-b2-w3-7756.pddl",
+    "-n8-b2-w3/sokoban-n8-b2-w3-9829.pddl",
+    "-n8-b2-w4/sokoban-n8-b2-w4-2096.pddl",
+    "-n8-b2-w4/sokoban-n8-b2-w4-2668.pddl",
+    "-n8-b2-w4/sokoban-n8-b2-w4-3261.pddl",
+    "-n8-b2-w4/sokoban-n8-b2-w4-4244.pddl",
+    "-n8-b2-w4/sokoban-n8-b2-w4-5043.pddl",
+    "-n8-b2-w4/sokoban-n8-b2-w4-5872.pddl",
+    "-n8-b2-w5/sokoban-n8-b2-w5-2900.pddl",
+    "-n8-b2-w5/sokoban-n8-b2-w5-3012.pddl",
+    "-n8-b2-w5/sokoban-n8-b2-w5-4939.pddl",
+    "-n8-b2-w5/sokoban-n8-b2-w5-8175.pddl",
+    "-n8-b2-w5/sokoban-n8-b2-w5-8354.pddl",
+    "-n8-b2-w5/sokoban-n8-b2-w5-9749.pddl"
+  ]
 
 # base_directory="../benchmarks/blocksworld/"
 # domain_pddl="domain.pddl"
@@ -210,7 +212,7 @@ _log = logging.getLogger(__name__)
 #     "8/mbw8-9968.pddl"
 #   ]
 
-# base_directory=""
+# base_directory="../benchmarks/npuzzle/"
 # domain_pddl="n-puzzle-typed.pddl"
 # problem_pddls = [
 #   # "3/npuzzle3-1464.pddl",
@@ -265,70 +267,70 @@ _log = logging.getLogger(__name__)
 #   "3/npuzzle3-9833.pddl"
 # ]
 
-base_directory="../benchmarks/ztravel/"
-domain_pddl="domain.pddl"
-problem_pddls = [
-    # "223/ztravel223-2660.pddl",
-    # "224/ztravel224-7079.pddl",
-    # "225/ztravel225-1424.pddl",
-    # "226/ztravel226-8511.pddl",
-    # "227/ztravel227-6261.pddl",
-    # "233/ztravel233-4906.pddl",
-    # "234/ztravel234-8446.pddl",
-    # "235/ztravel235-3285.pddl",
-    # "236/ztravel236-7361.pddl",
-    # "237/ztravel237-7938.pddl",
-    # "243/ztravel243-6968.pddl",
-    # "244/ztravel244-7537.pddl",
-    # "245/ztravel245-5778.pddl",
-    # "246/ztravel246-1310.pddl",
-    # "247/ztravel247-3579.pddl",
-    # "253/ztravel253-7169.pddl",
-    # "254/ztravel254-6330.pddl",
-    # "255/ztravel255-8530.pddl",
-    # "256/ztravel256-5265.pddl",
-    # "257/ztravel257-9920.pddl",
-    # "323/ztravel323-9823.pddl",
-    # "324/ztravel324-5857.pddl",
-    # "325/ztravel325-8939.pddl",
-    # "326/ztravel326-8272.pddl",
-    # "327/ztravel327-6129.pddl",
-    # "333/ztravel333-4907.pddl",
-    # "334/ztravel334-3274.pddl",
-    # "335/ztravel335-8588.pddl",
-    # "336/ztravel336-2634.pddl",
-    # "337/ztravel337-2313.pddl",
-    # "343/ztravel343-2970.pddl",
-    # "344/ztravel344-8959.pddl",
-    # "345/ztravel345-2620.pddl",
-    # "346/ztravel346-5005.pddl",
-    # "347/ztravel347-6744.pddl",
-    # "353/ztravel353-5246.pddl",
-    # "354/ztravel354-2889.pddl",
-    # "355/ztravel355-3454.pddl",
-    # "356/ztravel356-7552.pddl",
-    # "357/ztravel357-8292.pddl",
-    # "423/ztravel423-4168.pddl",
-    # "424/ztravel424-2099.pddl",
-    # "425/ztravel425-2212.pddl",
-    # "426/ztravel426-5549.pddl",
-    # "427/ztravel427-8446.pddl",
-    # "433/ztravel433-1402.pddl",
-    # "434/ztravel434-6277.pddl",
-    # "435/ztravel435-8607.pddl",
-    # "436/ztravel436-9840.pddl",
-    # "437/ztravel437-7844.pddl",
-    # "443/ztravel443-4418.pddl",
-    # "444/ztravel444-4312.pddl",
-    # "445/ztravel445-5321.pddl",
-    # "446/ztravel446-7461.pddl",
-    # "447/ztravel447-2095.pddl",
-    # "453/ztravel453-1759.pddl",
-    # "454/ztravel454-9172.pddl",
-    # "455/ztravel455-7226.pddl",
-    # "456/ztravel456-1657.pddl",
-    "457/ztravel457-1345.pddl"
-  ]
+# base_directory="../benchmarks/ztravel/"
+# domain_pddl="domain.pddl"
+# problem_pddls = [
+#     # "223/ztravel223-2660.pddl",
+#     # "224/ztravel224-7079.pddl",
+#     # "225/ztravel225-1424.pddl",
+#     # "226/ztravel226-8511.pddl",
+#     # "227/ztravel227-6261.pddl",
+#     # "233/ztravel233-4906.pddl",
+#     # "234/ztravel234-8446.pddl",
+#     # "235/ztravel235-3285.pddl",
+#     # "236/ztravel236-7361.pddl",
+#     # "237/ztravel237-7938.pddl",
+#     # "243/ztravel243-6968.pddl",
+#     # "244/ztravel244-7537.pddl",
+#     # "245/ztravel245-5778.pddl",
+#     # "246/ztravel246-1310.pddl",
+#     # "247/ztravel247-3579.pddl",
+#     # "253/ztravel253-7169.pddl",
+#     # "254/ztravel254-6330.pddl",
+#     # "255/ztravel255-8530.pddl",
+#     # "256/ztravel256-5265.pddl",
+#     # "257/ztravel257-9920.pddl",
+#     # "323/ztravel323-9823.pddl",
+#     # "324/ztravel324-5857.pddl",
+#     # "325/ztravel325-8939.pddl",
+#     # "326/ztravel326-8272.pddl",
+#     # "327/ztravel327-6129.pddl",
+#     # "333/ztravel333-4907.pddl",
+#     # "334/ztravel334-3274.pddl",
+#     # "335/ztravel335-8588.pddl",
+#     # "336/ztravel336-2634.pddl",
+#     # "337/ztravel337-2313.pddl",
+#     # "343/ztravel343-2970.pddl",
+#     # "344/ztravel344-8959.pddl",
+#     # "345/ztravel345-2620.pddl",
+#     # "346/ztravel346-5005.pddl",
+#     # "347/ztravel347-6744.pddl",
+#     # "353/ztravel353-5246.pddl",
+#     # "354/ztravel354-2889.pddl",
+#     # "355/ztravel355-3454.pddl",
+#     # "356/ztravel356-7552.pddl",
+#     # "357/ztravel357-8292.pddl",
+#     # "423/ztravel423-4168.pddl",
+#     # "424/ztravel424-2099.pddl",
+#     # "425/ztravel425-2212.pddl",
+#     # "426/ztravel426-5549.pddl",
+#     # "427/ztravel427-8446.pddl",
+#     # "433/ztravel433-1402.pddl",
+#     # "434/ztravel434-6277.pddl",
+#     # "435/ztravel435-8607.pddl",
+#     # "436/ztravel436-9840.pddl",
+#     # "437/ztravel437-7844.pddl",
+#     # "443/ztravel443-4418.pddl",
+#     # "444/ztravel444-4312.pddl",
+#     # "445/ztravel445-5321.pddl",
+#     # "446/ztravel446-7461.pddl",
+#     # "447/ztravel447-2095.pddl",
+#     # "453/ztravel453-1759.pddl",
+#     # "454/ztravel454-9172.pddl",
+#     # "455/ztravel455-7226.pddl",
+#     "456/ztravel456-1657.pddl",
+#     # "457/ztravel457-1345.pddl"
+#   ]
 
 # remember to manually check the plots are consistent
 
@@ -339,23 +341,26 @@ args = BaseArgs(domain=os.path.join(base_directory, domain_pddl),
 
 problems = args.get_strips_problems()
 
-# file_handler = logging.FileHandler(os.path.join(base_directory, 'optimal_plan.log'))
-# file_handler.setLevel(logging.INFO)
-# stream_handler = logging.StreamHandler()
-# stream_handler.setLevel(logging.INFO)
-# _log.setLevel(logging.INFO)
-# _log.addHandler(file_handler)
-# _log.addHandler(stream_handler)
+file_handler = logging.FileHandler(os.path.join(base_directory, 'optimal_plan.log'))
+file_handler.setLevel(logging.INFO)
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.INFO)
+_log.setLevel(logging.INFO)
+_log.addHandler(file_handler)
+_log.addHandler(stream_handler)
 
-# _log.info('base_directory: {}'.format(base_directory))
-# _log.info('domain_pddl: {}'.format(domain_pddl))
-# _log.info('problem_pddls: {}'.format(problem_pddls))
+_log.info('base_directory: {}'.format(base_directory))
+_log.info('domain_pddl: {}'.format(domain_pddl))
+_log.info('problem_pddls: {}'.format(problem_pddls))
 
 # only test on one problem 
 for problem in problems:
+    start_time = perf_counter()
     plan = get_optimal_actions_using_fd(problem)
+    end_time = perf_counter()
     _log.info('Problem: {}'.format(problem.name))
     if plan: 
         _log.info('Plan length: {}'.format(len(plan)))
     else:
-        _log.info('Fail to solve problem: {}'.format(problem.name))
+        _log.info('Plan length: -1')
+    _log.info('Search time: {}'.format(end_time-start_time))
