@@ -1,0 +1,123 @@
+base_directory: ../benchmarks/mbw/
+domain_pddl: matching-bw-typed.pddl
+problem_pddls: ['5/mbw5-5610.pddl', '5/mbw5-6378.pddl', '5/mbw5-6394.pddl', '5/mbw5-6729.pddl', '5/mbw5-7541.pddl', '5/mbw5-8058.pddl', '5/mbw5-8648.pddl', '5/mbw5-8758.pddl', '5/mbw5-9632.pddl', '5/mbw5-9668.pddl', '6/mbw6-2034.pddl', '6/mbw6-2465.pddl', '6/mbw6-2469.pddl', '6/mbw6-2471.pddl', '6/mbw6-3142.pddl', '6/mbw6-4104.pddl', '6/mbw6-5675.pddl', '6/mbw6-7806.pddl', '6/mbw6-8124.pddl', '6/mbw6-9163.pddl', '7/mbw7-2446.pddl', '7/mbw7-2641.pddl', '7/mbw7-2918.pddl', '7/mbw7-4031.pddl', '7/mbw7-5526.pddl', '7/mbw7-5532.pddl', '7/mbw7-7060.pddl', '7/mbw7-9416.pddl', '7/mbw7-9473.pddl', '7/mbw7-9989.pddl', '8/mbw8-2229.pddl', '8/mbw8-2650.pddl', '8/mbw8-3387.pddl', '8/mbw8-4014.pddl', '8/mbw8-4103.pddl', '8/mbw8-5096.pddl', '8/mbw8-6303.pddl', '8/mbw8-8912.pddl', '8/mbw8-9183.pddl', '8/mbw8-9968.pddl']
+Problem: mbw5-5610
+Plan length: 10
+Search time: 0.07965210825204849
+Problem: mbw5-6378
+Plan length: 14
+Search time: 0.08851988799870014
+Problem: mbw5-6394
+Plan length: 5
+Search time: 0.07746300473809242
+Problem: mbw5-6729
+Plan length: 8
+Search time: 0.07899543270468712
+Problem: mbw5-7541
+Plan length: 12
+Search time: 0.08090547099709511
+Problem: mbw5-8058
+Plan length: 8
+Search time: 0.08091508969664574
+Problem: mbw5-8648
+Plan length: 6
+Search time: 0.0750650130212307
+Problem: mbw5-8758
+Plan length: 6
+Search time: 0.07783493399620056
+Problem: mbw5-9632
+Plan length: 10
+Search time: 0.08287016861140728
+Problem: mbw5-9668
+Plan length: 6
+Search time: 0.07701181247830391
+Problem: mbw6-2034
+Plan length: 12
+Search time: 0.10423295013606548
+Problem: mbw6-2465
+Plan length: 14
+Search time: 0.14221255481243134
+Problem: mbw6-2469
+Plan length: 6
+Search time: 0.08254550024867058
+Problem: mbw6-2471
+Plan length: 18
+Search time: 0.10826159827411175
+Problem: mbw6-3142
+Plan length: 12
+Search time: 0.09121617674827576
+Problem: mbw6-4104
+Plan length: 12
+Search time: 0.08151567541062832
+Problem: mbw6-5675
+Plan length: 10
+Search time: 0.0818338617682457
+Problem: mbw6-7806
+Plan length: 10
+Search time: 0.08929571881890297
+Problem: mbw6-8124
+Plan length: 14
+Search time: 0.08660584315657616
+Problem: mbw6-9163
+Plan length: 14
+Search time: 0.09487509727478027
+Problem: mbw7-2446
+Plan length: 12
+Search time: 0.09351288340985775
+Problem: mbw7-2641
+Plan length: 12
+Search time: 0.14691724069416523
+Problem: mbw7-2918
+Plan length: 20
+Search time: 0.26803760789334774
+Problem: mbw7-4031
+Plan length: 12
+Search time: 0.10020909830927849
+Problem: mbw7-5526
+Plan length: 11
+Search time: 0.10755959153175354
+Problem: mbw7-5532
+Plan length: 13
+Search time: 0.09951101243495941
+Problem: mbw7-7060
+Plan length: 12
+Search time: 0.11246120370924473
+Problem: mbw7-9416
+Plan length: 18
+Search time: 0.10804353468120098
+Problem: mbw7-9473
+Plan length: 11
+Search time: 0.09448023699223995
+Problem: mbw7-9989
+Plan length: 16
+Search time: 0.16844978369772434
+Problem: mbw8-2229
+Plan length: 26
+Search time: 5.646348811686039
+Problem: mbw8-2650
+Plan length: 24
+Search time: 0.4921008460223675
+Problem: mbw8-3387
+Plan length: 18
+Search time: 0.544872896745801
+Problem: mbw8-4014
+Plan length: 13
+Search time: 0.1285332553088665
+Problem: mbw8-4103
+Plan length: 16
+Search time: 0.20936456136405468
+Problem: mbw8-5096
+Plan length: 22
+Search time: 1.0775007493793964
+Problem: mbw8-6303
+Plan length: 18
+Search time: 0.3288707286119461
+Problem: mbw8-8912
+Plan length: 20
+Search time: 0.25673004798591137
+Problem: mbw8-9183
+Plan length: 13
+Search time: 0.10820562019944191
+Problem: mbw8-9968
+Plan length: 24
+Search time: 0.6477235518395901

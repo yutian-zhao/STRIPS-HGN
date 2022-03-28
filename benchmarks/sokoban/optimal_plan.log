@@ -1,0 +1,165 @@
+base_directory: ../benchmarks/sokoban/
+domain_pddl: typed-sokoban.pddl
+problem_pddls: ['-n5-b2-w3/sokoban-n5-b2-w3-1116.pddl', '-n5-b2-w3/sokoban-n5-b2-w3-5556.pddl', '-n5-b2-w3/sokoban-n5-b2-w3-6060.pddl', '-n5-b2-w3/sokoban-n5-b2-w3-7028.pddl', '-n5-b2-w3/sokoban-n5-b2-w3-8512.pddl', '-n5-b2-w3/sokoban-n5-b2-w3-9035.pddl', '-n5-b2-w4/sokoban-n5-b2-w4-2105.pddl', '-n5-b2-w4/sokoban-n5-b2-w4-3165.pddl', '-n5-b2-w4/sokoban-n5-b2-w4-3499.pddl', '-n5-b2-w4/sokoban-n5-b2-w4-5940.pddl', '-n5-b2-w4/sokoban-n5-b2-w4-6771.pddl', '-n5-b2-w4/sokoban-n5-b2-w4-7504.pddl', '-n5-b2-w5/sokoban-n5-b2-w5-3625.pddl', '-n5-b2-w5/sokoban-n5-b2-w5-4295.pddl', '-n5-b2-w5/sokoban-n5-b2-w5-5219.pddl', '-n5-b2-w5/sokoban-n5-b2-w5-6330.pddl', '-n5-b2-w5/sokoban-n5-b2-w5-7043.pddl', '-n5-b2-w5/sokoban-n5-b2-w5-7856.pddl', '-n7-b2-w3/sokoban-n7-b2-w3-1810.pddl', '-n7-b2-w3/sokoban-n7-b2-w3-2805.pddl', '-n7-b2-w3/sokoban-n7-b2-w3-3320.pddl', '-n7-b2-w3/sokoban-n7-b2-w3-4598.pddl', '-n7-b2-w3/sokoban-n7-b2-w3-5076.pddl', '-n7-b2-w3/sokoban-n7-b2-w3-7444.pddl', '-n7-b2-w4/sokoban-n7-b2-w4-1314.pddl', '-n7-b2-w4/sokoban-n7-b2-w4-1324.pddl', '-n7-b2-w4/sokoban-n7-b2-w4-1609.pddl', '-n7-b2-w4/sokoban-n7-b2-w4-2178.pddl', '-n7-b2-w4/sokoban-n7-b2-w4-3044.pddl', '-n7-b2-w4/sokoban-n7-b2-w4-9383.pddl', '-n7-b2-w5/sokoban-n7-b2-w5-1705.pddl', '-n7-b2-w5/sokoban-n7-b2-w5-1795.pddl', '-n7-b2-w5/sokoban-n7-b2-w5-2395.pddl', '-n7-b2-w5/sokoban-n7-b2-w5-3332.pddl', '-n7-b2-w5/sokoban-n7-b2-w5-3334.pddl', '-n7-b2-w5/sokoban-n7-b2-w5-7172.pddl', '-n8-b2-w3/sokoban-n8-b2-w3-1671.pddl', '-n8-b2-w3/sokoban-n8-b2-w3-3460.pddl', '-n8-b2-w3/sokoban-n8-b2-w3-4108.pddl', '-n8-b2-w3/sokoban-n8-b2-w3-4269.pddl', '-n8-b2-w3/sokoban-n8-b2-w3-7756.pddl', '-n8-b2-w3/sokoban-n8-b2-w3-9829.pddl', '-n8-b2-w4/sokoban-n8-b2-w4-2096.pddl', '-n8-b2-w4/sokoban-n8-b2-w4-2668.pddl', '-n8-b2-w4/sokoban-n8-b2-w4-3261.pddl', '-n8-b2-w4/sokoban-n8-b2-w4-4244.pddl', '-n8-b2-w4/sokoban-n8-b2-w4-5043.pddl', '-n8-b2-w4/sokoban-n8-b2-w4-5872.pddl', '-n8-b2-w5/sokoban-n8-b2-w5-2900.pddl', '-n8-b2-w5/sokoban-n8-b2-w5-3012.pddl', '-n8-b2-w5/sokoban-n8-b2-w5-4939.pddl', '-n8-b2-w5/sokoban-n8-b2-w5-8175.pddl', '-n8-b2-w5/sokoban-n8-b2-w5-8354.pddl', '-n8-b2-w5/sokoban-n8-b2-w5-9749.pddl']
+Problem: sokoban-n5-b2-w3-1116
+Plan length: 25
+Search time: 0.10053635947406292
+Problem: sokoban-n5-b2-w3-5556
+Plan length: 25
+Search time: 0.10613124817609787
+Problem: sokoban-n5-b2-w3-6060
+Plan length: 28
+Search time: 0.11981667578220367
+Problem: sokoban-n5-b2-w3-7028
+Plan length: 28
+Search time: 0.11957924999296665
+Problem: sokoban-n5-b2-w3-8512
+Plan length: 24
+Search time: 0.11270127072930336
+Problem: sokoban-n5-b2-w3-9035
+Plan length: 19
+Search time: 0.08512473851442337
+Problem: sokoban-n5-b2-w4-2105
+Plan length: 26
+Search time: 0.0986852440983057
+Problem: sokoban-n5-b2-w4-3165
+Plan length: 22
+Search time: 0.10172112099826336
+Problem: sokoban-n5-b2-w4-3499
+Plan length: 24
+Search time: 0.0942978635430336
+Problem: sokoban-n5-b2-w4-5940
+Plan length: 28
+Search time: 0.1205013245344162
+Problem: sokoban-n5-b2-w4-6771
+Plan length: 23
+Search time: 0.08988123573362827
+Problem: sokoban-n5-b2-w4-7504
+Plan length: 24
+Search time: 0.0968365278095007
+Problem: sokoban-n5-b2-w5-3625
+Plan length: 24
+Search time: 0.11202700436115265
+Problem: sokoban-n5-b2-w5-4295
+Plan length: 24
+Search time: 0.09778060019016266
+Problem: sokoban-n5-b2-w5-5219
+Plan length: 25
+Search time: 0.10085058026015759
+Problem: sokoban-n5-b2-w5-6330
+Plan length: 24
+Search time: 0.09608562849462032
+Problem: sokoban-n5-b2-w5-7043
+Plan length: 22
+Search time: 0.09077159874141216
+Problem: sokoban-n5-b2-w5-7856
+Plan length: 25
+Search time: 0.09661679901182652
+Problem: sokoban-n7-b2-w3-1810
+Plan length: 33
+Search time: 0.7123671304434538
+Problem: sokoban-n7-b2-w3-2805
+Plan length: 28
+Search time: 0.6261575147509575
+Problem: sokoban-n7-b2-w3-3320
+Plan length: 28
+Search time: 0.3553210813552141
+Problem: sokoban-n7-b2-w3-4598
+Plan length: 31
+Search time: 1.3860851544886827
+Problem: sokoban-n7-b2-w3-5076
+Plan length: 30
+Search time: 0.3212715070694685
+Problem: sokoban-n7-b2-w3-7444
+Plan length: 33
+Search time: 0.7018684409558773
+Problem: sokoban-n7-b2-w4-1314
+Plan length: 36
+Search time: 0.801464106887579
+Problem: sokoban-n7-b2-w4-1324
+Plan length: 24
+Search time: 0.23670942150056362
+Problem: sokoban-n7-b2-w4-1609
+Plan length: 29
+Search time: 0.3981957696378231
+Problem: sokoban-n7-b2-w4-2178
+Plan length: 40
+Search time: 0.3057081513106823
+Problem: sokoban-n7-b2-w4-3044
+Plan length: 27
+Search time: 0.415856396779418
+Problem: sokoban-n7-b2-w4-9383
+Plan length: 32
+Search time: 0.21091619320213795
+Problem: sokoban-n7-b2-w5-1705
+Plan length: 28
+Search time: 0.24159005098044872
+Problem: sokoban-n7-b2-w5-1795
+Plan length: 24
+Search time: 0.1687233280390501
+Problem: sokoban-n7-b2-w5-2395
+Plan length: 34
+Search time: 0.27757563441991806
+Problem: sokoban-n7-b2-w5-3332
+Plan length: 30
+Search time: 0.22332804836332798
+Problem: sokoban-n7-b2-w5-3334
+Plan length: 23
+Search time: 0.15863033942878246
+Problem: sokoban-n7-b2-w5-7172
+Plan length: 30
+Search time: 0.2094380259513855
+Problem: sokoban-n8-b2-w3-1671
+Plan length: 29
+Search time: 0.4181634150445461
+Problem: sokoban-n8-b2-w3-3460
+Plan length: 37
+Search time: 3.249488953500986
+Problem: sokoban-n8-b2-w3-4108
+Plan length: 37
+Search time: 1.414828460663557
+Problem: sokoban-n8-b2-w3-4269
+Plan length: 32
+Search time: 1.6536170151084661
+Problem: sokoban-n8-b2-w3-7756
+Plan length: 29
+Search time: 0.6162454430013895
+Problem: sokoban-n8-b2-w3-9829
+Plan length: 47
+Search time: 6.0622208174318075
+Problem: sokoban-n8-b2-w4-2096
+Plan length: 22
+Search time: 0.23088492080569267
+Problem: sokoban-n8-b2-w4-2668
+Plan length: 34
+Search time: 0.5486522596329451
+Problem: sokoban-n8-b2-w4-3261
+Plan length: 37
+Search time: 0.802644981071353
+Problem: sokoban-n8-b2-w4-4244
+Plan length: 30
+Search time: 0.5316043794155121
+Problem: sokoban-n8-b2-w4-5043
+Plan length: 38
+Search time: 1.7002502232789993
+Problem: sokoban-n8-b2-w4-5872
+Plan length: 28
+Search time: 0.2082239482551813
+Problem: sokoban-n8-b2-w5-2900
+Plan length: 35
+Search time: 1.6657417118549347
+Problem: sokoban-n8-b2-w5-3012
+Plan length: 35
+Search time: 1.3018826190382242
+Problem: sokoban-n8-b2-w5-4939
+Plan length: 29
+Search time: 0.2008244562894106
+Problem: sokoban-n8-b2-w5-8175
+Plan length: 40
+Search time: 1.7246866412460804
+Problem: sokoban-n8-b2-w5-8354
+Plan length: 32
+Search time: 0.9723610766232014
+Problem: sokoban-n8-b2-w5-9749
+Plan length: 48
+Search time: 2.7426018118858337

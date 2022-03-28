@@ -1,0 +1,153 @@
+base_directory: ../benchmarks/blocksworld/
+domain_pddl: domain.pddl
+problem_pddls: ['6/blocksworld6-2050.pddl', '6/blocksworld6-3519.pddl', '6/blocksworld6-4480.pddl', '6/blocksworld6-5890.pddl', '6/blocksworld6-6177.pddl', '6/blocksworld6-7497.pddl', '6/blocksworld6-8104.pddl', '6/blocksworld6-8853.pddl', '6/blocksworld6-9199.pddl', '6/blocksworld6-9926.pddl', '7/blocksworld7-1197.pddl', '7/blocksworld7-1611.pddl', '7/blocksworld7-3969.pddl', '7/blocksworld7-4115.pddl', '7/blocksworld7-5171.pddl', '7/blocksworld7-5261.pddl', '7/blocksworld7-6753.pddl', '7/blocksworld7-8688.pddl', '7/blocksworld7-8712.pddl', '7/blocksworld7-8979.pddl', '8/blocksworld8-1161.pddl', '8/blocksworld8-3862.pddl', '8/blocksworld8-4362.pddl', '8/blocksworld8-5535.pddl', '8/blocksworld8-6221.pddl', '8/blocksworld8-6305.pddl', '8/blocksworld8-6321.pddl', '8/blocksworld8-7549.pddl', '8/blocksworld8-7844.pddl', '8/blocksworld8-9225.pddl', '9/blocksworld9-1039.pddl', '9/blocksworld9-4369.pddl', '9/blocksworld9-5085.pddl', '9/blocksworld9-5791.pddl', '9/blocksworld9-5988.pddl', '9/blocksworld9-7298.pddl', '9/blocksworld9-7894.pddl', '9/blocksworld9-8000.pddl', '9/blocksworld9-8972.pddl', '9/blocksworld9-9629.pddl', '10/blocksworld10-2196.pddl', '10/blocksworld10-2596.pddl', '10/blocksworld10-3208.pddl', '10/blocksworld10-3409.pddl', '10/blocksworld10-3507.pddl', '10/blocksworld10-6221.pddl', '10/blocksworld10-6323.pddl', '10/blocksworld10-6703.pddl', '10/blocksworld10-7281.pddl', '10/blocksworld10-8049.pddl']
+Problem: blocksworld6-2050
+Plan length: 6
+Search time: 0.06254450231790543
+Problem: blocksworld6-3519
+Plan length: 12
+Search time: 0.06556262634694576
+Problem: blocksworld6-4480
+Plan length: 14
+Search time: 0.0668500978499651
+Problem: blocksworld6-5890
+Plan length: 18
+Search time: 0.07107620313763618
+Problem: blocksworld6-6177
+Plan length: 12
+Search time: 0.06673789583146572
+Problem: blocksworld6-7497
+Plan length: 12
+Search time: 0.06289637088775635
+Problem: blocksworld6-8104
+Plan length: 12
+Search time: 0.06467942520976067
+Problem: blocksworld6-8853
+Plan length: 16
+Search time: 0.06709429249167442
+Problem: blocksworld6-9199
+Plan length: 14
+Search time: 0.06403307989239693
+Problem: blocksworld6-9926
+Plan length: 14
+Search time: 0.0648400280624628
+Problem: blocksworld7-1197
+Plan length: 14
+Search time: 0.07113202661275864
+Problem: blocksworld7-1611
+Plan length: 10
+Search time: 0.06858663260936737
+Problem: blocksworld7-3969
+Plan length: 16
+Search time: 0.07219350337982178
+Problem: blocksworld7-4115
+Plan length: 14
+Search time: 0.06993119604885578
+Problem: blocksworld7-5171
+Plan length: 18
+Search time: 0.07467891275882721
+Problem: blocksworld7-5261
+Plan length: 16
+Search time: 0.0762390997260809
+Problem: blocksworld7-6753
+Plan length: 20
+Search time: 0.09350001066923141
+Problem: blocksworld7-8688
+Plan length: 14
+Search time: 0.07574038952589035
+Problem: blocksworld7-8712
+Plan length: 18
+Search time: 0.08066503144800663
+Problem: blocksworld7-8979
+Plan length: 20
+Search time: 0.08644864335656166
+Problem: blocksworld8-1161
+Plan length: 14
+Search time: 0.07655639015138149
+Problem: blocksworld8-3862
+Plan length: 16
+Search time: 0.09165627509355545
+Problem: blocksworld8-4362
+Plan length: 16
+Search time: 0.07423905096948147
+Problem: blocksworld8-5535
+Plan length: 14
+Search time: 0.07326239719986916
+Problem: blocksworld8-6221
+Plan length: 18
+Search time: 0.0948013924062252
+Problem: blocksworld8-6305
+Plan length: 16
+Search time: 0.09920929186046124
+Problem: blocksworld8-6321
+Plan length: 18
+Search time: 0.10251268371939659
+Problem: blocksworld8-7549
+Plan length: 16
+Search time: 0.07956499606370926
+Problem: blocksworld8-7844
+Plan length: 20
+Search time: 0.10372898355126381
+Problem: blocksworld8-9225
+Plan length: 20
+Search time: 0.1434023082256317
+Problem: blocksworld9-1039
+Plan length: 22
+Search time: 0.10336064547300339
+Problem: blocksworld9-4369
+Plan length: 16
+Search time: 0.09979150630533695
+Problem: blocksworld9-5085
+Plan length: 26
+Search time: 0.15088449232280254
+Problem: blocksworld9-5791
+Plan length: 20
+Search time: 0.10039417259395123
+Problem: blocksworld9-5988
+Plan length: 8
+Search time: 0.07604977861046791
+Problem: blocksworld9-7298
+Plan length: 26
+Search time: 0.22896348126232624
+Problem: blocksworld9-7894
+Plan length: 30
+Search time: 2.1111865676939487
+Problem: blocksworld9-8000
+Plan length: 18
+Search time: 0.12237053737044334
+Problem: blocksworld9-8972
+Plan length: 24
+Search time: 0.17353230714797974
+Problem: blocksworld9-9629
+Plan length: 20
+Search time: 0.10525137186050415
+Problem: blocksworld10-2196
+Plan length: 22
+Search time: 0.10148590989410877
+Problem: blocksworld10-2596
+Plan length: 22
+Search time: 0.0894650500267744
+Problem: blocksworld10-3208
+Plan length: 20
+Search time: 0.10699442401528358
+Problem: blocksworld10-3409
+Plan length: 26
+Search time: 0.1387993637472391
+Problem: blocksworld10-3507
+Plan length: 16
+Search time: 0.08418221957981586
+Problem: blocksworld10-6221
+Plan length: 22
+Search time: 0.4538944158703089
+Problem: blocksworld10-6323
+Plan length: 18
+Search time: 0.12039420753717422
+Problem: blocksworld10-6703
+Plan length: 26
+Search time: 0.8510302230715752
+Problem: blocksworld10-7281
+Plan length: 28
+Search time: 2.6699921786785126
+Problem: blocksworld10-8049
+Plan length: 22
+Search time: 0.6590255349874496

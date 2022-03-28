@@ -9,3 +9,186 @@ problem_pddls: ['456/ztravel456-1657.pddl']
 Problem: ztravel456-1657
 Plan length: 16
 Search time: 7.0981981
+base_directory: ../benchmarks/ztravel/
+domain_pddl: domain.pddl
+problem_pddls: ['223/ztravel223-2660.pddl', '224/ztravel224-7079.pddl', '225/ztravel225-1424.pddl', '226/ztravel226-8511.pddl', '227/ztravel227-6261.pddl', '233/ztravel233-4906.pddl', '234/ztravel234-8446.pddl', '235/ztravel235-3285.pddl', '236/ztravel236-7361.pddl', '237/ztravel237-7938.pddl', '243/ztravel243-6968.pddl', '244/ztravel244-7537.pddl', '245/ztravel245-5778.pddl', '246/ztravel246-1310.pddl', '247/ztravel247-3579.pddl', '253/ztravel253-7169.pddl', '254/ztravel254-6330.pddl', '255/ztravel255-8530.pddl', '256/ztravel256-5265.pddl', '257/ztravel257-9920.pddl', '323/ztravel323-9823.pddl', '324/ztravel324-5857.pddl', '325/ztravel325-8939.pddl', '326/ztravel326-8272.pddl', '327/ztravel327-6129.pddl', '333/ztravel333-4907.pddl', '334/ztravel334-3274.pddl', '335/ztravel335-8588.pddl', '336/ztravel336-2634.pddl', '337/ztravel337-2313.pddl', '343/ztravel343-2970.pddl', '344/ztravel344-8959.pddl', '345/ztravel345-2620.pddl', '346/ztravel346-5005.pddl', '347/ztravel347-6744.pddl', '353/ztravel353-5246.pddl', '354/ztravel354-2889.pddl', '355/ztravel355-3454.pddl', '356/ztravel356-7552.pddl', '357/ztravel357-8292.pddl', '423/ztravel423-4168.pddl', '424/ztravel424-2099.pddl', '425/ztravel425-2212.pddl', '426/ztravel426-5549.pddl', '427/ztravel427-8446.pddl', '433/ztravel433-1402.pddl', '434/ztravel434-6277.pddl', '435/ztravel435-8607.pddl', '436/ztravel436-9840.pddl', '437/ztravel437-7844.pddl', '443/ztravel443-4418.pddl', '444/ztravel444-4312.pddl', '445/ztravel445-5321.pddl', '446/ztravel446-7461.pddl', '447/ztravel447-2095.pddl', '453/ztravel453-1759.pddl', '454/ztravel454-9172.pddl', '455/ztravel455-7226.pddl', '456/ztravel456-1657.pddl', '457/ztravel457-1345.pddl']
+Problem: ztravel223-2660
+Plan length: 8
+Search time: 0.06627496890723705
+Problem: ztravel224-7079
+Plan length: 8
+Search time: 0.06963512301445007
+Problem: ztravel225-1424
+Plan length: 10
+Search time: 0.07331823371350765
+Problem: ztravel226-8511
+Plan length: 8
+Search time: 0.07187105901539326
+Problem: ztravel227-6261
+Plan length: 12
+Search time: 0.07690201513469219
+Problem: ztravel233-4906
+Plan length: 4
+Search time: 0.07185103744268417
+Problem: ztravel234-8446
+Plan length: 14
+Search time: 0.37822545506060123
+Problem: ztravel235-3285
+Plan length: 10
+Search time: 0.08106978423893452
+Problem: ztravel236-7361
+Plan length: 8
+Search time: 0.07769552059471607
+Problem: ztravel237-7938
+Plan length: 10
+Search time: 0.09190276637673378
+Problem: ztravel243-6968
+Plan length: 4
+Search time: 0.07824869640171528
+Problem: ztravel244-7537
+Plan length: 6
+Search time: 0.08144807443022728
+Problem: ztravel245-5778
+Plan length: 12
+Search time: 0.17134857177734375
+Problem: ztravel246-1310
+Plan length: 6
+Search time: 0.08472779765725136
+Problem: ztravel247-3579
+Plan length: 14
+Search time: 0.20881031267344952
+Problem: ztravel253-7169
+Plan length: 4
+Search time: 0.08244934864342213
+Problem: ztravel254-6330
+Plan length: 8
+Search time: 0.0915907770395279
+Problem: ztravel255-8530
+Plan length: 6
+Search time: 0.08910493552684784
+Problem: ztravel256-5265
+Plan length: 8
+Search time: 0.09384199418127537
+Problem: ztravel257-9920
+Plan length: 8
+Search time: 0.10872589237987995
+Problem: ztravel323-9823
+Plan length: 10
+Search time: 0.07856983505189419
+Problem: ztravel324-5857
+Plan length: 10
+Search time: 0.08582466281950474
+Problem: ztravel325-8939
+Plan length: 12
+Search time: 0.0824926421046257
+Problem: ztravel326-8272
+Plan length: 20
+Search time: 0.5306431781500578
+Problem: ztravel327-6129
+Plan length: 16
+Search time: 0.11439806409180164
+Problem: ztravel333-4907
+Plan length: 6
+Search time: 0.0899196956306696
+Problem: ztravel334-3274
+Plan length: 12
+Search time: 0.11215708032250404
+Problem: ztravel335-8588
+Plan length: 14
+Search time: 0.2464600671082735
+Problem: ztravel336-2634
+Plan length: 14
+Search time: 0.15235347673296928
+Problem: ztravel337-2313
+Plan length: 20
+Search time: 0.3753140941262245
+Problem: ztravel343-2970
+Plan length: 8
+Search time: 0.10485859587788582
+Problem: ztravel344-8959
+Plan length: 10
+Search time: 0.1058544423431158
+Problem: ztravel345-2620
+Plan length: 10
+Search time: 0.15078363195061684
+Problem: ztravel346-5005
+Plan length: 18
+Search time: 2.2858419362455606
+Problem: ztravel347-6744
+Plan length: 14
+Search time: 0.5401918813586235
+Problem: ztravel353-5246
+Plan length: 12
+Search time: 0.4103955365717411
+Problem: ztravel354-2889
+Plan length: 16
+Search time: 1.592812793329358
+Problem: ztravel355-3454
+Plan length: 16
+Search time: 2.2229413632303476
+Problem: ztravel356-7552
+Plan length: 10
+Search time: 0.2448895089328289
+Problem: ztravel357-8292
+Plan length: 18
+Search time: 17.322491586208344
+Problem: ztravel423-4168
+Plan length: 14
+Search time: 0.11755371280014515
+Problem: ztravel424-2099
+Plan length: 4
+Search time: 0.09304908476769924
+Problem: ztravel425-2212
+Plan length: 12
+Search time: 0.1042373739182949
+Problem: ztravel426-5549
+Plan length: 20
+Search time: 0.8997133374214172
+Problem: ztravel427-8446
+Plan length: 22
+Search time: 2.417508836835623
+Problem: ztravel433-1402
+Plan length: 12
+Search time: 0.15484016202390194
+Problem: ztravel434-6277
+Plan length: 8
+Search time: 0.11090594716370106
+Problem: ztravel435-8607
+Plan length: 12
+Search time: 0.13076862320303917
+Problem: ztravel436-9840
+Plan length: 12
+Search time: 0.13615725748240948
+Problem: ztravel437-7844
+Plan length: 16
+Search time: 0.4672762304544449
+Problem: ztravel443-4418
+Plan length: 12
+Search time: 0.14601499028503895
+Problem: ztravel444-4312
+Plan length: 10
+Search time: 0.1587219461798668
+Problem: ztravel445-5321
+Plan length: 12
+Search time: 0.18329269997775555
+Problem: ztravel446-7461
+Plan length: 18
+Search time: 9.318068841472268
+Problem: ztravel447-2095
+Plan length: 20
+Search time: 7.329467615112662
+Problem: ztravel453-1759
+Plan length: 12
+Search time: 0.2972396742552519
+Problem: ztravel454-9172
+Plan length: 10
+Search time: 0.2337245736271143
+Problem: ztravel455-7226
+Plan length: 12
+Search time: 0.2577619906514883
+Problem: ztravel456-1657
+Plan length: 16
+Search time: 4.243684694170952
+Problem: ztravel457-1345
+Plan length: 18
+Search time: 40.64565768651664

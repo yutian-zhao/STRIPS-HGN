@@ -1,0 +1,153 @@
+base_directory: ../benchmarks/npuzzle/
+domain_pddl: n-puzzle-typed.pddl
+problem_pddls: ['3/npuzzle3-1464.pddl', '3/npuzzle3-1624.pddl', '3/npuzzle3-1866.pddl', '3/npuzzle3-1999.pddl', '3/npuzzle3-2140.pddl', '3/npuzzle3-2246.pddl', '3/npuzzle3-2405.pddl', '3/npuzzle3-2463.pddl', '3/npuzzle3-2512.pddl', '3/npuzzle3-2575.pddl', '3/npuzzle3-2587.pddl', '3/npuzzle3-2742.pddl', '3/npuzzle3-2838.pddl', '3/npuzzle3-3034.pddl', '3/npuzzle3-3102.pddl', '3/npuzzle3-3136.pddl', '3/npuzzle3-3179.pddl', '3/npuzzle3-3486.pddl', '3/npuzzle3-3669.pddl', '3/npuzzle3-3880.pddl', '3/npuzzle3-3942.pddl', '3/npuzzle3-4182.pddl', '3/npuzzle3-4267.pddl', '3/npuzzle3-4459.pddl', '3/npuzzle3-4872.pddl', '3/npuzzle3-5104.pddl', '3/npuzzle3-5310.pddl', '3/npuzzle3-5568.pddl', '3/npuzzle3-5618.pddl', '3/npuzzle3-5647.pddl', '3/npuzzle3-5689.pddl', '3/npuzzle3-5911.pddl', '3/npuzzle3-6309.pddl', '3/npuzzle3-6704.pddl', '3/npuzzle3-6851.pddl', '3/npuzzle3-6864.pddl', '3/npuzzle3-7157.pddl', '3/npuzzle3-7567.pddl', '3/npuzzle3-7676.pddl', '3/npuzzle3-7784.pddl', '3/npuzzle3-7982.pddl', '3/npuzzle3-8779.pddl', '3/npuzzle3-8823.pddl', '3/npuzzle3-8872.pddl', '3/npuzzle3-8885.pddl', '3/npuzzle3-8905.pddl', '3/npuzzle3-9619.pddl', '3/npuzzle3-9664.pddl', '3/npuzzle3-9700.pddl', '3/npuzzle3-9833.pddl']
+Problem: npuzzle3-1464
+Plan length: 24
+Search time: 0.10860273241996765
+Problem: npuzzle3-1624
+Plan length: 26
+Search time: 0.18193640373647213
+Problem: npuzzle3-1866
+Plan length: 20
+Search time: 0.09103362448513508
+Problem: npuzzle3-1999
+Plan length: 21
+Search time: 0.08652688935399055
+Problem: npuzzle3-2140
+Plan length: 19
+Search time: 0.08512826636433601
+Problem: npuzzle3-2246
+Plan length: 24
+Search time: 0.1120026633143425
+Problem: npuzzle3-2405
+Plan length: 15
+Search time: 0.0719265379011631
+Problem: npuzzle3-2463
+Plan length: 22
+Search time: 0.09968233481049538
+Problem: npuzzle3-2512
+Plan length: 20
+Search time: 0.0831312071532011
+Problem: npuzzle3-2575
+Plan length: 21
+Search time: 0.09007307700812817
+Problem: npuzzle3-2587
+Plan length: 20
+Search time: 0.09963011555373669
+Problem: npuzzle3-2742
+Plan length: 26
+Search time: 0.20215429551899433
+Problem: npuzzle3-2838
+Plan length: 21
+Search time: 0.10562855564057827
+Problem: npuzzle3-3034
+Plan length: 21
+Search time: 0.08993907459080219
+Problem: npuzzle3-3102
+Plan length: 27
+Search time: 0.3093586191534996
+Problem: npuzzle3-3136
+Plan length: 23
+Search time: 0.11483121290802956
+Problem: npuzzle3-3179
+Plan length: 28
+Search time: 0.45508717373013496
+Problem: npuzzle3-3486
+Plan length: 27
+Search time: 0.366949001327157
+Problem: npuzzle3-3669
+Plan length: 25
+Search time: 0.13726439327001572
+Problem: npuzzle3-3880
+Plan length: 24
+Search time: 0.1600734479725361
+Problem: npuzzle3-3942
+Plan length: 27
+Search time: 0.2856053002178669
+Problem: npuzzle3-4182
+Plan length: 19
+Search time: 0.08432651683688164
+Problem: npuzzle3-4267
+Plan length: 25
+Search time: 0.20572002418339252
+Problem: npuzzle3-4459
+Plan length: 19
+Search time: 0.08608384057879448
+Problem: npuzzle3-4872
+Plan length: 20
+Search time: 0.08157256804406643
+Problem: npuzzle3-5104
+Plan length: 25
+Search time: 0.16860459186136723
+Problem: npuzzle3-5310
+Plan length: 25
+Search time: 0.14536477625370026
+Problem: npuzzle3-5568
+Plan length: 27
+Search time: 0.20030320063233376
+Problem: npuzzle3-5618
+Plan length: 20
+Search time: 0.09594252519309521
+Problem: npuzzle3-5647
+Plan length: 16
+Search time: 0.0723706092685461
+Problem: npuzzle3-5689
+Plan length: 20
+Search time: 0.08259670436382294
+Problem: npuzzle3-5911
+Plan length: 20
+Search time: 0.08406956866383553
+Problem: npuzzle3-6309
+Plan length: 25
+Search time: 0.16337229311466217
+Problem: npuzzle3-6704
+Plan length: 16
+Search time: 0.07769745215773582
+Problem: npuzzle3-6851
+Plan length: 22
+Search time: 0.10187547095119953
+Problem: npuzzle3-6864
+Plan length: 26
+Search time: 0.20110053941607475
+Problem: npuzzle3-7157
+Plan length: 17
+Search time: 0.07439064793288708
+Problem: npuzzle3-7567
+Plan length: 25
+Search time: 0.1667910236865282
+Problem: npuzzle3-7676
+Plan length: 23
+Search time: 0.10327457822859287
+Problem: npuzzle3-7784
+Plan length: 26
+Search time: 0.20222136564552784
+Problem: npuzzle3-7982
+Plan length: 24
+Search time: 0.14120732061564922
+Problem: npuzzle3-8779
+Plan length: 27
+Search time: 0.24582266062498093
+Problem: npuzzle3-8823
+Plan length: 16
+Search time: 0.07460684329271317
+Problem: npuzzle3-8872
+Plan length: 20
+Search time: 0.09345059283077717
+Problem: npuzzle3-8885
+Plan length: 18
+Search time: 0.08398375660181046
+Problem: npuzzle3-8905
+Plan length: 19
+Search time: 0.08107013627886772
+Problem: npuzzle3-9619
+Plan length: 24
+Search time: 0.117944760248065
+Problem: npuzzle3-9664
+Plan length: 27
+Search time: 0.32506257109344006
+Problem: npuzzle3-9700
+Plan length: 24
+Search time: 0.1292396243661642
+Problem: npuzzle3-9833
+Plan length: 26
+Search time: 0.2821005526930094
