@@ -14,7 +14,9 @@ from pyperplan.heuristics.relaxation import (
 )
 from pyperplan.pddl.parser import Parser
 from pyperplan.pddl.pddl import Domain, Problem
-from pyperplan.search import SearchMetrics, astar_search, breadth_first_search, novelty_search, greedy_best_first_search, weighted_astar_search
+from pyperplan.search import SearchMetrics, \
+    astar_search, breadth_first_search, novelty_search, \
+    greedy_best_first_search, weighted_astar_search, monte_carlo_tree_search
 from pyperplan.task import Task
 
 from strips_hgn.utils import Number
@@ -36,6 +38,7 @@ SEARCH_ALGO_STR_TO_FUNC = {
     "a-star": astar_search,
     "weighted-a-star": weighted_astar_search,
     "gbfs": greedy_best_first_search,
+    "mcts": monte_carlo_tree_search
 }
 
 """
@@ -138,6 +141,10 @@ def find_solution(
         return solution, metrics
     elif search_algo == breadth_first_search or search_algo == novelty_search:
         return  search_algo(task, max_search_time=max_search_time, mode=mode), None
+    elif search_algo == monte_carlo_tree_search:
+        solution, metrics = search_algo(task, heuristic, max_search_time=max_search_time, mode=mode)
+        _log.info(f"Search took ~{round(metrics.search_time, 5)}s")
+        return solution, metrics
     else:
         raise RuntimeError(f"Unsupported search algorithm {search_algo}")
 
