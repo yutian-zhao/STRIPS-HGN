@@ -73,3 +73,114 @@ Problem: fry-l10-c15-9627
 Plan length: -1
 Problem: fry-l10-c20-2036
 Plan length: -1
+base_directory: ../benchmarks/fry/
+domain_pddl: domain.pddl
+problem_pddls: ['-l2-c5/fry-l2-c5-9992.pddl', '-l2-c10/fry-l2-c10-4040.pddl', '-l2-c15/fry-l2-c15-4208.pddl', '-l2-c20/fry-l2-c20-4409.pddl', '-l3-c5/fry-l3-c5-5269.pddl', '-l3-c10/fry-l3-c10-3086.pddl', '-l3-c15/fry-l3-c15-1124.pddl', '-l3-c20/fry-l3-c20-6203.pddl', '-l4-c5/fry-l4-c5-1587.pddl', '-l4-c10/fry-l4-c10-7208.pddl', '-l4-c15/fry-l4-c15-9490.pddl', '-l4-c20/fry-l4-c20-9063.pddl', '-l5-c5/fry-l5-c5-8027.pddl', '-l5-c10/fry-l5-c10-6602.pddl', '-l5-c15/fry-l5-c15-1485.pddl', '-l5-c20/fry-l5-c20-7627.pddl', '-l6-c5/fry-l6-c5-8468.pddl', '-l6-c10/fry-l6-c10-5212.pddl', '-l6-c15/fry-l6-c15-4767.pddl', '-l6-c20/fry-l6-c20-2836.pddl', '-l7-c5/fry-l7-c5-3098.pddl', '-l7-c10/fry-l7-c10-3174.pddl', '-l7-c15/fry-l7-c15-3985.pddl', '-l7-c20/fry-l7-c20-7044.pddl', '-l8-c5/fry-l8-c5-4184.pddl', '-l8-c10/fry-l8-c10-1866.pddl', '-l8-c15/fry-l8-c15-9844.pddl', '-l8-c20/fry-l8-c20-9531.pddl', '-l9-c5/fry-l9-c5-6157.pddl', '-l9-c10/fry-l9-c10-7730.pddl', '-l9-c15/fry-l9-c15-6034.pddl', '-l9-c20/fry-l9-c20-4254.pddl', '-l10-c5/fry-l10-c5-9424.pddl', '-l10-c10/fry-l10-c10-4852.pddl', '-l10-c15/fry-l10-c15-9627.pddl', '-l10-c20/fry-l10-c20-2036.pddl']
+Problem: fry-l2-c5-9992
+Plan length: 6
+Search time: 0.10086807422339916
+Problem: fry-l2-c10-4040
+Plan length: 23
+Search time: 0.19935717061161995
+Problem: fry-l2-c15-4208
+Plan length: 27
+Search time: 0.46745188906788826
+Problem: fry-l2-c20-4409
+Plan length: 30
+Search time: 2.264169881120324
+Problem: fry-l3-c5-5269
+Plan length: 16
+Search time: 0.1409396231174469
+Problem: fry-l3-c10-3086
+Plan length: 25
+Search time: 0.3255154397338629
+Problem: fry-l3-c15-1124
+Plan length: 40
+Search time: 58.56803083047271
+Problem: fry-l3-c20-6203
+Plan length: 44
+Search time: 594.8892213311046
+Problem: fry-l4-c5-1587
+Plan length: 7
+Search time: 0.09559979662299156
+Problem: fry-l4-c10-7208
+Plan length: 26
+Search time: 0.253904415294528
+Problem: fry-l4-c15-9490
+Plan length: 40
+Search time: 198.37485062517226
+Problem: fry-l4-c20-9063
+Plan length: 44
+Search time: 1213.4829027317464
+Problem: fry-l5-c5-8027
+Plan length: 14
+Search time: 0.12061498872935772
+Problem: fry-l5-c10-6602
+Plan length: 37
+Search time: 30.409194791689515
+Problem: fry-l5-c15-1485
+Plan length: 32
+Search time: 6.0095140393823385
+Problem: fry-l5-c20-7627
+Plan length: -1
+Search time: 3602.8284878823906
+Problem: fry-l6-c5-8468
+Plan length: 14
+Search time: 0.12691927142441273
+Problem: fry-l6-c10-5212
+Plan length: 25
+Search time: 0.34329389221966267
+Problem: fry-l6-c15-4767
+Plan length: 39
+Search time: 122.23220572061837
+Problem: fry-l6-c20-2836
+Plan length: -1
+Search time: 3602.9887646269053
+Problem: fry-l7-c5-3098
+Plan length: 14
+Search time: 0.13218174688518047
+Problem: fry-l7-c10-3174
+Plan length: 28
+Search time: 0.6727215796709061
+Problem: fry-l7-c15-3985
+Plan length: 34
+Search time: 19.22352115996182
+Problem: fry-l7-c20-7044
+Plan length: -1
+Search time: 3602.6507724635303
+Problem: fry-l8-c5-4184
+Plan length: 13
+Search time: 0.08984274417161942
+Problem: fry-l8-c10-1866
+Plan length: 24
+Search time: 0.12084660306572914
+Problem: fry-l8-c15-9844
+Plan length: -1
+Search time: 3602.7294400148094
+Problem: fry-l8-c20-9531
+Plan length: -1
+Search time: 3601.1302765905857
+Problem: fry-l9-c5-6157
+Plan length: 14
+Search time: 0.0673494040966034
+Problem: fry-l9-c10-7730
+Plan length: 34
+Search time: 7.090620269998908
+Problem: fry-l9-c15-6034
+Plan length: 41
+Search time: 165.474361628294
+Problem: fry-l9-c20-4254
+Plan length: -1
+Search time: 3601.1361415293068
+Problem: fry-l10-c5-9424
+Plan length: 19
+Search time: 0.0942689124494791
+Problem: fry-l10-c10-4852
+Plan length: 35
+Search time: 19.21779570169747
+Problem: fry-l10-c15-9627
+Plan length: 43
+Search time: 139.3000238481909
+Problem: fry-l10-c20-2036
+Plan length: -1
+Search time: 3601.1420709639788
