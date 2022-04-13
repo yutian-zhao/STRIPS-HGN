@@ -45,7 +45,7 @@ def _copy_best_model(train_workflow: TrainSTRIPSHGNWorkflow):
 
 
 @timed("TrainingDriverMethodTime")
-def train_main(args: TrainingArgs, experiments_dir: str, mode=None,):
+def train_main(args: TrainingArgs, experiments_dir: str, mode=None, **kwargs):
     """
     Main runner method.
 
@@ -72,12 +72,13 @@ def train_main(args: TrainingArgs, experiments_dir: str, mode=None,):
         hyperedge_feature_mapper_cls=args.hyperedge_feature_mapper_cls,
         experiment_dir=experiments_dir,
         mode=mode,
+        **kwargs,
     )
     kfold_dataloaders: List[
         Tuple[DataLoader, DataLoader]
     ] = kfold_training_data_wf.run()
 
-    if mode.get('auto_bslr', False):
+    if mode and mode.get('auto_bslr', False):
         bs = kfold_dataloaders[0][0].batch_size
         new_learning_rate = 0.001*(bs//4)
         if new_learning_rate==0:
@@ -92,7 +93,7 @@ def train_main(args: TrainingArgs, experiments_dir: str, mode=None,):
         receiver_k=kfold_training_data_wf.max_receivers,
         sender_k=kfold_training_data_wf.max_senders,
         hidden_size=args.hidden_size,
-        learning_rate=new_learning_rate if mode.get('auto_bslr', False) else args.learning_rate,
+        learning_rate=new_learning_rate if mode and mode.get('auto_bslr', False) else args.learning_rate,
         weight_decay=args.weight_decay,
         global_feature_mapper_cls=args.global_feature_mapper_cls,
         node_feature_mapper_cls=args.node_feature_mapper_cls,
@@ -114,9 +115,22 @@ def train_main(args: TrainingArgs, experiments_dir: str, mode=None,):
             "RunFoldTrainingTime", context={"fold_idx": fold_idx}
         ).start()
 
+        strips_model_path = kwargs.get('strips_model_path', None)
+        _log.info('Initializing STRIPSHGN.')
+        strips_model = STRIPSHGN(hparams=strips_hgn_hparams)
+        if strips_model_path:
+            _log.info('Replacing STRIPSHGN with pretrained model.')
+            pretrained_model = STRIPSHGN.load_from_checkpoint(strips_model_path, hparams=strips_hgn_hparams)
+            # _log.info(f"STRIPS-HGN best val loss: {pretrained_model.best_val_loss}")
+            # _log.info(f"STRIPS-HGN hparams: {pretrained_model.hparams}")
+            strips_model.hgn = pretrained_model.hgn
+            # strips_model = pretrained_model
+            # strips_model.train()
+        
+
         # Create training workflow and run
         current_train_wf = TrainSTRIPSHGNWorkflow(
-            strips_hgn=STRIPSHGN(hparams=strips_hgn_hparams),
+            strips_hgn=strips_model, # STRIPSHGN(hparams=strips_hgn_hparams) if not strips_model_path else strips_model,
             max_training_time=args.max_training_time,
             max_num_epochs=args.max_epochs,
             train_dataloader=train_dataloader,
@@ -183,16 +197,20 @@ def train_main(args: TrainingArgs, experiments_dir: str, mode=None,):
     # )
     # _log.info(f"Copied best STRIPS-HGN to {best_model_fname}")
 
+    # add return
+    return best_model_fname
 
-def train_wrapper(args: TrainingArgs, experiment_type="train", mode=None, use_logging=True):
+
+def train_wrapper(args: TrainingArgs, experiment_type="train", mode=None, use_logging=True, **kwargs):
     # Wrap the training method
-    wrap_method(
+    return wrap_method(
         args=args,
         wrapped_method=train_main,
         experiment_type=experiment_type,
         results_directory=_RESULTS_DIRECTORY,
         mode=mode,
-        use_logging=use_logging
+        use_logging=use_logging,
+        **kwargs,
     )
 
 

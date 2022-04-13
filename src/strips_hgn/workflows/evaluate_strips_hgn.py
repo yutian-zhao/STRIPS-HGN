@@ -40,6 +40,8 @@ class EvaluateSTRIPSHGNWorkflow(BaseFeatureMappingWorkflow):
         planner: PlannerForEvaluation,
         max_search_time: Number,
         experiments_dir: str,
+        mode=None,
+        **kwargs,
     ):
         """
         Parameters
@@ -72,6 +74,8 @@ class EvaluateSTRIPSHGNWorkflow(BaseFeatureMappingWorkflow):
         self._planner = planner
         self._max_search_time = max_search_time
         self._experiments_dir = experiments_dir
+        self._mode = mode
+        self.kwargs = kwargs
 
         # Metrics
         self._evaluation_metrics: Dict[str, Dict] = {
@@ -107,8 +111,8 @@ class EvaluateSTRIPSHGNWorkflow(BaseFeatureMappingWorkflow):
         """
         hypergraph = DeleteRelaxationHypergraphView(problem)
 
-        def state_to_input_h_tup(state) -> HypergraphsTuple:
-            return self._get_input_hypergraphs_tuple(state, hypergraph)
+        def state_to_input_h_tup(state, target=None) -> HypergraphsTuple:
+            return self._get_input_hypergraphs_tuple(state, hypergraph, target)
 
         return STRIPSHGNHeuristic(
             self._model, state_to_input_h_tup, self._planner
@@ -141,13 +145,25 @@ class EvaluateSTRIPSHGNWorkflow(BaseFeatureMappingWorkflow):
                     strips_hgn_heuristic=strips_hgn_heuristic,
                     heuristics=self._heuristics,
                     max_search_time=self._max_search_time,
+                    experiment_dir = self._experiments_dir,
+                    mode=self._mode,
+                    **self.kwargs,
                 )
 
                 # Store metrics for this problem
+                _log.info(f"Storing metrics for {problem.name}.")
                 self._evaluation_metrics["results"][problem.name] = {
                     str(heuristic): metrics._asdict()
                     for heuristic, metrics in heuristic_to_metrics.items()
                 }
+
+                # replace with retrained checkpoint
+                if self.kwargs.get('checkpoint', None):
+                    self.kwargs['checkpoint'] = heuristic_to_metrics[strips_hgn_heuristic].checkpoint
+                _log.info(f"Replace with retrained checkpoint {self.kwargs['checkpoint']}.")
+
+                # Write metrics JSON to experiments directory EVERYTIME
+                self._write_metrics_to_disk()
                 
                 # stop when fail to solve a problem to save evaluation time
                 if self._evaluation_metrics["results"][problem.name]["strips-hgn"]["search_state"].name == "success":

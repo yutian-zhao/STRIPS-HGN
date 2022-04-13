@@ -36,6 +36,7 @@ class TrainSTRIPSHGNWorkflow(object):
         # Set model to training mode
         strips_hgn.train()
         self.model = strips_hgn
+        _log.info("----------------------- Hparams before retraining start: {}".format(self.model.hparams))
 
         self.max_training_time = max_training_time
         self.max_epochs = max_num_epochs
@@ -134,5 +135,5 @@ class TrainSTRIPSHGNWorkflow(object):
                 train_dataloader=self._train_dataloader,
                 val_dataloaders=self._val_dataloader,
             )
-
+            _log.info("----------------------- Hparams after retraining start: {}".format(self.model.hparams))
             self._workflow_ran = True

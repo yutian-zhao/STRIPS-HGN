@@ -70,6 +70,7 @@ if __name__ == "__main__":
                     ),
                     experiment_type=mode_to_str(mode),
                     mode=mode,
+                    # strips_model_path = "../results/blocksworld_mode_train_astar_all_False_novel_2_complement_unset_lifted_0-strips-hgn-04-09-02-08-49/model-best.ckpt"
                 )
 
                 # validation phase

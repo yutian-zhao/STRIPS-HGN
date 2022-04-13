@@ -32,6 +32,8 @@ def evaluate_problem_with_pyperplan(
     strips_hgn_heuristic: Optional[STRIPSHGNHeuristic],
     heuristics: List[Heuristic],
     max_search_time: Number,
+    mode=None,
+    **kwargs,
 ) -> Dict[Union[Heuristic, STRIPSHGNHeuristic], SearchMetrics]:
     """
     Evaluate a problem with Pyperplan
@@ -71,6 +73,9 @@ def evaluate_problem_with_pyperplan(
             heuristic=heuristic.to_pyperplan(task),
             search_algo=pyperplan_search_algorithm,
             max_search_time=max_search_time,
+            problem=problem,
+            mode=mode,
+            **kwargs,
         )
         heuristic_to_metrics[heuristic] = metrics
 

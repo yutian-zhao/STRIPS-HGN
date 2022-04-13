@@ -55,6 +55,7 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         hyperedge_feature_mapper_cls: Type[HyperedgeFeatureMapper],
         experiment_dir: str,
         mode=None,
+        **kwargs,
     ):
         """
         Parameters
@@ -86,6 +87,7 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         self._remove_duplicates = remove_duplicates
         self._shuffle = shuffle
         self._mode = mode
+        self.data_path = kwargs.get('data_path', None)
 
     @timed("KFoldTrainingDataWorkflow.GenerateTrainingDataTime")
     def _generate_kfold_training_data(
@@ -103,23 +105,25 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         for the given fold.
         """
         # 1. Generate optimal state-value pairs for all problems
-        data_directory = os.path.join(os.path.dirname(os.path.dirname(os.path.normpath(self._experiments_dir))), 'training_data')
-        data_file = os.path.join(data_directory, mode_to_str(self._mode)+'.pkl')
-
         problem_to_state_value_pairs = None
-        if os.path.exists(data_file):  # load if data file exists
-            _log.info(f'Loading trianing data from {data_file}.')
-            problem_to_state_value_pairs = pickle.load(open(data_file, "rb" ))
-            _log.info(f"Loaded training data contains {len(problem_to_state_value_pairs.keys())} problems.")
-            _log.info(f"Loaded problems are: {[k.name for k in problem_to_state_value_pairs.keys()]}.")
-            if len(problem_to_state_value_pairs.keys()) != len(self._problems):
-                problem_to_state_value_pairs = None
-            else:
-                for p in self._problems:
-                    if p not in problem_to_state_value_pairs.keys():
-                        _log.warning(f'{p.name} is not in the saved data.')
-                        problem_to_state_value_pairs = None
-                        break
+        if self.data_path:
+            problem_to_state_value_pairs = pickle.load(open(self.data_path, "rb" ))
+        else:
+            data_directory = os.path.join(os.path.dirname(os.path.dirname(os.path.normpath(self._experiments_dir))), 'training_data')
+            data_file = os.path.join(data_directory, mode_to_str(self._mode)+'.pkl')
+            if os.path.exists(data_file):  # load if data file exists
+                _log.info(f'Loading trianing data from {data_file}.')
+                problem_to_state_value_pairs = pickle.load(open(data_file, "rb" ))
+                _log.info(f"Loaded training data contains {len(problem_to_state_value_pairs.keys())} problems.")
+                _log.info(f"Loaded problems are: {[k.name for k in problem_to_state_value_pairs.keys()]}.")
+                if len(problem_to_state_value_pairs.keys()) != len(self._problems):
+                    problem_to_state_value_pairs = None
+                else:
+                    for p in self._problems:
+                        if p not in problem_to_state_value_pairs.keys():
+                            _log.warning(f'{p.name} is not in the saved data.')
+                            problem_to_state_value_pairs = None
+                            break
         if not problem_to_state_value_pairs: 
             problem_to_state_value_pairs = generate_optimal_state_value_pairs(
                 self._problems, mode=self._mode
@@ -127,7 +131,7 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
             if not os.path.exists(data_directory):
                 os.mkdir(data_directory)
             _log.info(f'Dumping trianing data to {data_file}.')
-            pickle.dump(problem_to_state_value_pairs, open(data_file, "wb" ) )
+            pickle.dump(problem_to_state_value_pairs, open(data_file, "wb" ))
 
         # 2. Merge state-value pairs by domain
         domain_to_training_pairs = merge_state_value_pairs_by_domain(
@@ -249,7 +253,7 @@ class KFoldTrainingDataWorkflow(BaseTrainingDataWorkflow):
         )
 
         # change batch size base on the number of training pairs
-        if self._mode.get('auto_bslr', False):
+        if self._mode and self._mode.get('auto_bslr', False):
             times = (len(kfold_datasets[0][0])//300)
             
             new_batch_size = times if times%2==0 else times+1

@@ -20,7 +20,7 @@ _RESULTS_DIRECTORY = os.path.join(
 
 
 @timed("EvaluationDriverMethodTime")
-def eval_main(args: EvaluationArgs, experiments_dir: str):
+def eval_main(args: EvaluationArgs, experiments_dir: str, mode=None, **kwargs):
     """
     Main runner method for evaluating a STRIPS-HGN.
 
@@ -42,19 +42,22 @@ def eval_main(args: EvaluationArgs, experiments_dir: str):
         planner=args.planner,
         max_search_time=args.max_search_time,
         experiments_dir=experiments_dir,
+        mode=mode,
+        **kwargs,
     )
     eval_wf.run(problems=args.get_strips_problems())
 
 
-def eval_wrapper(args: EvaluationArgs, experiment_type='eval', mode={'mode':'eval'}, use_logging=True):
+def eval_wrapper(args: EvaluationArgs, experiment_type='eval', mode={'mode':'eval'}, use_logging=True, **kwargs):
     # Wrap the evaluation method
-    wrap_method(
+    return wrap_method(
         args=args,
         wrapped_method=eval_main,
         experiment_type=experiment_type,
         results_directory=_RESULTS_DIRECTORY,
         mode=mode,
         use_logging=use_logging,
+        **kwargs,
     )
 
 

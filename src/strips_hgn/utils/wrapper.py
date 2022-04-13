@@ -15,7 +15,8 @@ def wrap_method(
     results_directory: str,
     experiments_dir: Optional[str] = None,
     mode=None,
-    use_logging=True
+    use_logging=True,
+    **kwargs,
 ):
     """
     This method is used to wrap main methods by clearing metrics, setting
@@ -51,10 +52,10 @@ def wrap_method(
     exception = None
     try:
         # Run the wrapped method
-        if mode and 'eval' in mode['mode']:
-            wrapped_method(args, experiments_dir)
-        else:
-            wrapped_method(args, experiments_dir, mode)
+        # if mode and 'eval' in mode['mode']:
+        #     results = wrapped_method(args, experiments_dir, **kwargs)
+        # else:
+        results = wrapped_method(args, experiments_dir, mode, **kwargs)
 
     except Exception as ex:
         _log.error("An unexpected error occurred.", exc_info=True)
@@ -75,3 +76,5 @@ def wrap_method(
             raise exception
 
         _log.info(f"{experiment_type} script complete!")
+
+        return results

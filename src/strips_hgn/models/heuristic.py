@@ -42,7 +42,7 @@ class STRIPSHGNHeuristic(PyperplanHeuristic, PyperplanSupported):
     def to_pyperplan(self, task: PyperplanTask) -> PyperplanHeuristic:
         return self
 
-    def __call__(self, obj) -> float:
+    def __call__(self, obj, target=None) -> float:
         """
         Heuristic call from the planner
 
@@ -57,7 +57,11 @@ class STRIPSHGNHeuristic(PyperplanHeuristic, PyperplanSupported):
         if self._planner == PlannerForEvaluation.pyperplan:
             node = obj
             # Get the hypergraphs tuple for the current state
-            input_h_tuple = self._state_to_input_hypergraphs_tuple(node.state)
+            # not elligent
+            if isinstance(node, frozenset):
+                input_h_tuple =  self._state_to_input_hypergraphs_tuple(node, target)
+            else:
+                input_h_tuple = self._state_to_input_hypergraphs_tuple(node.state, target)
 
             # Run the STRIPS-HGN and get the predicted heuristic value
             output_h_tuple = self.model(input_h_tuple, self._num_steps)

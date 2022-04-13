@@ -117,6 +117,7 @@ def find_solution(
     max_search_time: Number,
     mode=None,
     heuristic_models = None, # test : Optional[List[STRIPSHGNHeuristic]]
+    **kwargs,
 ) -> Tuple[List[str], SearchMetrics]:
     """
     Runs a search algorithm to find a solution for a task
@@ -135,14 +136,14 @@ def find_solution(
     # Only support A* search for now
     if search_algo == astar_search or search_algo == greedy_best_first_search or search_algo == weighted_astar_search:
         solution, metrics = search_algo(
-            task, heuristic, max_search_time=max_search_time, mode=mode, heuristic_models=heuristic_models
+            task, heuristic, max_search_time=max_search_time, mode=mode, heuristic_models=heuristic_models, **kwargs,
         )
         _log.info(f"Search took ~{round(metrics.search_time, 5)}s")
         return solution, metrics
     elif search_algo == breadth_first_search or search_algo == novelty_search:
-        return  search_algo(task, max_search_time=max_search_time, mode=mode), None
+        return  search_algo(task, max_search_time=max_search_time, mode=mode, **kwargs,), None
     elif search_algo == monte_carlo_tree_search:
-        solution, metrics = search_algo(task, heuristic, max_search_time=max_search_time, mode=mode)
+        solution, metrics = search_algo(task, heuristic, max_search_time=max_search_time, mode=mode, **kwargs,)
         _log.info(f"Search took ~{round(metrics.search_time, 5)}s")
         return solution, metrics
     else:
