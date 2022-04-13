@@ -40,6 +40,7 @@ class SearchAlgorithm(_BasePlanningEnum, PyperplanSupportedEnum):
     a_star = "a-star"
     greedy_best_first_search = 'gbfs'
     weighted_astar_search = 'weighted-a-star'
+    monte_carlo_tree_search = 'mcts'
 
 
     def to_pyperplan(self, _: PyperplanTask):
